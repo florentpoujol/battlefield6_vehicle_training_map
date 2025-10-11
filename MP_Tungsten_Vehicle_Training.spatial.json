@@ -1,0 +1,1852 @@
+{
+    "Portal_Dynamic": [
+        {
+            "name": "TEAM_2_HQ",
+            "Team": "Team2",
+            "AltTeam": "TeamNeutral",
+            "VehicleSpawnersEnabled": true,
+            "ObjId": 1,
+            "InfantrySpawns": [
+                "TEAM_2_HQ/SpawnPoint_1_1",
+                "TEAM_2_HQ/SpawnPoint_1_2",
+                "TEAM_2_HQ/SpawnPoint_1_3",
+                "TEAM_2_HQ/SpawnPoint_1_4"
+            ],
+            "HQArea": "TEAM_2_HQ/HQ_Team2",
+            "type": "HQ_PlayerSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 484.528,
+                "y": 87.7289,
+                "z": -505.698
+            },
+            "id": "TEAM_2_HQ",
+            "linked": [
+                "HQArea",
+                "InfantrySpawns"
+            ]
+        },
+        {
+            "name": "HQ_Team2",
+            "type": "PolygonVolume",
+            "id": "TEAM_2_HQ/HQ_Team2",
+            "height": 0,
+            "points": [
+                {
+                    "x": 489.528,
+                    "y": 92.7289,
+                    "z": -500.698
+                },
+                {
+                    "x": 489.528,
+                    "y": 92.7289,
+                    "z": -510.698
+                },
+                {
+                    "x": 479.528,
+                    "y": 92.7289,
+                    "z": -510.698
+                },
+                {
+                    "x": 479.528,
+                    "y": 92.7289,
+                    "z": -500.698
+                }
+            ]
+        },
+        {
+            "name": "SpawnPoint_1_1",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": 484.528,
+                "y": 87.7289,
+                "z": -508.698
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_1"
+        },
+        {
+            "name": "SpawnPoint_1_2",
+            "type": "SpawnPoint",
+            "right": {
+                "x": -0.9995,
+                "y": 0,
+                "z": 0.0316198
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0316198,
+                "y": 0,
+                "z": -0.9995
+            },
+            "position": {
+                "x": 487.528,
+                "y": 87.7289,
+                "z": -505.698
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_2"
+        },
+        {
+            "name": "SpawnPoint_1_3",
+            "type": "SpawnPoint",
+            "right": {
+                "x": -0.0428871,
+                "y": 0,
+                "z": -0.99908
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.99908,
+                "y": 0,
+                "z": -0.0428871
+            },
+            "position": {
+                "x": 481.528,
+                "y": 87.7289,
+                "z": -505.698
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_3"
+        },
+        {
+            "name": "SpawnPoint_1_4",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.0841819,
+                "y": 0,
+                "z": 0.99645
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.99645,
+                "y": 0,
+                "z": 0.0841819
+            },
+            "position": {
+                "x": 484.528,
+                "y": 87.7289,
+                "z": -502.698
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_4"
+        },
+        {
+            "name": "CombatArea",
+            "CombatVolume": "CombatArea/CollisionPolygon3D",
+            "type": "CombatArea",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "id": "CombatArea",
+            "linked": [
+                "CombatVolume"
+            ]
+        },
+        {
+            "name": "CollisionPolygon3D",
+            "type": "PolygonVolume",
+            "id": "CombatArea/CollisionPolygon3D",
+            "height": 100,
+            "points": [
+                {
+                    "x": 2008.921,
+                    "y": 140.862,
+                    "z": -1646.254
+                },
+                {
+                    "x": -1494.529,
+                    "y": 140.862,
+                    "z": -2135.354
+                },
+                {
+                    "x": -2005.129,
+                    "y": 140.862,
+                    "z": -338.443
+                },
+                {
+                    "x": -1288.529,
+                    "y": 140.862,
+                    "z": 1275.809
+                },
+                {
+                    "x": 2814.971,
+                    "y": 140.862,
+                    "z": 1783.596
+                }
+            ]
+        },
+        {
+            "name": "TEAM_1_HQ",
+            "AltTeam": "TeamNeutral",
+            "ObjId": 1,
+            "InfantrySpawns": [
+                "TEAM_1_HQ/SpawnPoint_1_1",
+                "TEAM_1_HQ/SpawnPoint_1_2",
+                "TEAM_1_HQ/SpawnPoint_1_3",
+                "TEAM_1_HQ/SpawnPoint_1_4"
+            ],
+            "HQArea": "TEAM_1_HQ/HQ_Team1",
+            "type": "HQ_PlayerSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -399.041,
+                "y": 83.5063,
+                "z": -227.852
+            },
+            "id": "TEAM_1_HQ",
+            "linked": [
+                "HQArea",
+                "InfantrySpawns"
+            ]
+        },
+        {
+            "name": "HQ_Team1",
+            "type": "PolygonVolume",
+            "id": "TEAM_1_HQ/HQ_Team1",
+            "height": 0,
+            "points": [
+                {
+                    "x": -394.041,
+                    "y": 88.5063,
+                    "z": -222.852
+                },
+                {
+                    "x": -394.041,
+                    "y": 88.5063,
+                    "z": -232.852
+                },
+                {
+                    "x": -404.041,
+                    "y": 88.5063,
+                    "z": -232.852
+                },
+                {
+                    "x": -404.041,
+                    "y": 88.5063,
+                    "z": -222.852
+                }
+            ]
+        },
+        {
+            "name": "SpawnPoint_1_1",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": -399.041,
+                "y": 83.5063,
+                "z": -230.852
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_1"
+        },
+        {
+            "name": "SpawnPoint_1_2",
+            "type": "SpawnPoint",
+            "right": {
+                "x": -0.9995,
+                "y": 0,
+                "z": 0.0316198
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0316198,
+                "y": 0,
+                "z": -0.9995
+            },
+            "position": {
+                "x": -396.041,
+                "y": 83.5063,
+                "z": -227.852
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_2"
+        },
+        {
+            "name": "SpawnPoint_1_3",
+            "type": "SpawnPoint",
+            "right": {
+                "x": -0.0428871,
+                "y": 0,
+                "z": -0.99908
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.99908,
+                "y": 0,
+                "z": -0.0428871
+            },
+            "position": {
+                "x": -402.041,
+                "y": 83.5063,
+                "z": -227.852
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_3"
+        },
+        {
+            "name": "SpawnPoint_1_4",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.0841819,
+                "y": 0,
+                "z": 0.99645
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.99645,
+                "y": 0,
+                "z": 0.0841819
+            },
+            "position": {
+                "x": -399.041,
+                "y": 83.5063,
+                "z": -224.852
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_4"
+        },
+        {
+            "name": "VEH_F16",
+            "type": "VEH_F16",
+            "right": {
+                "x": -0.0979823,
+                "y": 0,
+                "z": 0.995188
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.995188,
+                "y": 0,
+                "z": -0.0979823
+            },
+            "position": {
+                "x": 505.1339,
+                "y": 84.40531,
+                "z": -619.3632
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_F16"
+        },
+        {
+            "name": "VEH_F17",
+            "type": "VEH_F16",
+            "right": {
+                "x": -0.0979823,
+                "y": 0,
+                "z": 0.995188
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.995188,
+                "y": 0,
+                "z": -0.0979823
+            },
+            "position": {
+                "x": 512.9478,
+                "y": 84.40531,
+                "z": -609.8767
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_F17"
+        },
+        {
+            "name": "VEH_F22",
+            "type": "VEH_F22",
+            "right": {
+                "x": 0.0698087,
+                "y": 0,
+                "z": 0.99756
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.99756,
+                "y": 0,
+                "z": 0.0698087
+            },
+            "position": {
+                "x": 505.8782,
+                "y": 84.90348,
+                "z": -585.4331
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_F22"
+        },
+        {
+            "name": "VEH_F23",
+            "type": "VEH_F22",
+            "right": {
+                "x": 0.0281311,
+                "y": 0,
+                "z": 0.999604
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.999604,
+                "y": 0,
+                "z": 0.0281311
+            },
+            "position": {
+                "x": 516.9133,
+                "y": 83.85501,
+                "z": -595.72592
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_F23"
+        },
+        {
+            "name": "VEH_JAS39",
+            "type": "VEH_JAS39",
+            "right": {
+                "x": -0.0274506,
+                "y": 0,
+                "z": -0.999623
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999623,
+                "y": 0,
+                "z": -0.0274506
+            },
+            "position": {
+                "x": 367.4581,
+                "y": 87.078974,
+                "z": -618.9164
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_JAS39"
+        },
+        {
+            "name": "VEH_JAS40",
+            "type": "VEH_JAS39",
+            "right": {
+                "x": -0.0274506,
+                "y": 0,
+                "z": -0.999623
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999623,
+                "y": 0,
+                "z": -0.0274506
+            },
+            "position": {
+                "x": 362.4226,
+                "y": 87.078974,
+                "z": -608.6086
+            },
+            "id": "Team2_vehicle_spawns/Jets/VEH_JAS40"
+        },
+        {
+            "name": "VEH_Eurocopter2",
+            "type": "VEH_Eurocopter",
+            "right": {
+                "x": 0.435813,
+                "y": 0,
+                "z": 0.900038
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.900038,
+                "y": 0,
+                "z": 0.435813
+            },
+            "position": {
+                "x": 515.6163,
+                "y": 86.050951,
+                "z": -560.385
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_Eurocopter2"
+        },
+        {
+            "name": "VEH_Eurocopter3",
+            "type": "VEH_Eurocopter",
+            "right": {
+                "x": 0.435813,
+                "y": 0,
+                "z": 0.900038
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.900038,
+                "y": 0,
+                "z": 0.435813
+            },
+            "position": {
+                "x": 523.3587,
+                "y": 86.050951,
+                "z": -547.5622
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_Eurocopter3"
+        },
+        {
+            "name": "VEH_UH60",
+            "type": "VEH_UH60",
+            "right": {
+                "x": 0.598003,
+                "y": 0,
+                "z": 0.801494
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.801494,
+                "y": 0,
+                "z": 0.598003
+            },
+            "position": {
+                "x": 524.8302,
+                "y": 85.854906,
+                "z": -528.42062
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_UH60"
+        },
+        {
+            "name": "VEH_UH61",
+            "type": "VEH_UH60",
+            "right": {
+                "x": -0.883111,
+                "y": 0,
+                "z": 0.469163
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.469163,
+                "y": 0,
+                "z": -0.883111
+            },
+            "position": {
+                "x": 508.3498,
+                "y": 87.006525,
+                "z": -510.5508
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_UH61"
+        },
+        {
+            "name": "VEH_AH64E",
+            "type": "VEH_AH64E",
+            "right": {
+                "x": -0.00404918,
+                "y": 0,
+                "z": -0.999992
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999992,
+                "y": 0,
+                "z": -0.00404918
+            },
+            "position": {
+                "x": 475.774034,
+                "y": 88.26531,
+                "z": -531.4421
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_AH64E"
+        },
+        {
+            "name": "VEH_AH64E2",
+            "type": "VEH_AH64E",
+            "right": {
+                "x": 0.838499,
+                "y": 0,
+                "z": -0.544902
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.544902,
+                "y": 0,
+                "z": 0.838499
+            },
+            "position": {
+                "x": 491.6387,
+                "y": 87.493349,
+                "z": -544.7522
+            },
+            "id": "Team2_vehicle_spawns/Helis/VEH_AH64E2"
+        },
+        {
+            "name": "VEH_Abrams",
+            "type": "VEH_Abrams",
+            "right": {
+                "x": -0.914847,
+                "y": 0,
+                "z": 0.403801
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.403801,
+                "y": 0,
+                "z": -0.914847
+            },
+            "position": {
+                "x": 483.88552,
+                "y": 87.5017,
+                "z": -483.8929
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Abrams"
+        },
+        {
+            "name": "VEH_Abrams2",
+            "type": "VEH_Abrams",
+            "right": {
+                "x": -0.914847,
+                "y": 0,
+                "z": 0.403801
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.403801,
+                "y": 0,
+                "z": -0.914847
+            },
+            "position": {
+                "x": 479.78984,
+                "y": 87.5017,
+                "z": -481.8874
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Abrams2"
+        },
+        {
+            "name": "VEH_Leopard",
+            "type": "VEH_Leopard",
+            "right": {
+                "x": -0.831605,
+                "y": 0,
+                "z": 0.555367
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.555367,
+                "y": 0,
+                "z": -0.831605
+            },
+            "position": {
+                "x": 474.29182,
+                "y": 88.16493,
+                "z": -479.3874
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Leopard"
+        },
+        {
+            "name": "VEH_Leopard2",
+            "type": "VEH_Leopard",
+            "right": {
+                "x": -0.831605,
+                "y": 0,
+                "z": 0.555367
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.555367,
+                "y": 0,
+                "z": -0.831605
+            },
+            "position": {
+                "x": 469.53471,
+                "y": 88.16493,
+                "z": -476.1382
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Leopard2"
+        },
+        {
+            "name": "VEH_Gepard",
+            "type": "VEH_Gepard",
+            "right": {
+                "x": -0.981777,
+                "y": 0,
+                "z": -0.190038
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.190038,
+                "y": 0,
+                "z": -0.981777
+            },
+            "position": {
+                "x": 414.04532,
+                "y": 89.50716,
+                "z": -462.9015
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Gepard"
+        },
+        {
+            "name": "VEH_Gepard2",
+            "type": "VEH_Gepard",
+            "right": {
+                "x": -0.986754,
+                "y": 0,
+                "z": -0.162224
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.162224,
+                "y": 0,
+                "z": -0.986754
+            },
+            "position": {
+                "x": 422.42272,
+                "y": 89.92133,
+                "z": -461.4518
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Gepard2"
+        },
+        {
+            "name": "VEH_Cheetah",
+            "type": "VEH_Cheetah",
+            "right": {
+                "x": -0.984007,
+                "y": 0,
+                "z": 0.178132
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.178132,
+                "y": 0,
+                "z": -0.984007
+            },
+            "position": {
+                "x": 459.76322,
+                "y": 88.59891,
+                "z": -470.6331
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Cheetah"
+        },
+        {
+            "name": "VEH_Cheetah2",
+            "type": "VEH_Cheetah",
+            "right": {
+                "x": -0.984007,
+                "y": 0,
+                "z": 0.178132
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.178132,
+                "y": 0,
+                "z": -0.984007
+            },
+            "position": {
+                "x": 451.36242,
+                "y": 88.59891,
+                "z": -470.2443
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Cheetah2"
+        },
+        {
+            "name": "VEH_Flyer60",
+            "type": "VEH_Flyer60",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 441.26122,
+                "y": 90.64233,
+                "z": -503.7619
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Flyer60"
+        },
+        {
+            "name": "VEH_Flyer61",
+            "type": "VEH_Flyer60",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 438.46622,
+                "y": 91.0231585,
+                "z": -503.5323
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Flyer61"
+        },
+        {
+            "name": "VEH_Vector",
+            "type": "VEH_Vector",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 434.24122,
+                "y": 91.0136904,
+                "z": -504.0946
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Vector"
+        },
+        {
+            "name": "VEH_Vector2",
+            "type": "VEH_Vector",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 431.18622,
+                "y": 91.0136904,
+                "z": -504.2273
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Vector2"
+        },
+        {
+            "name": "VEH_Quadbike",
+            "type": "VEH_Quadbike",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 427.28462,
+                "y": 91.0785479,
+                "z": -505.4846
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Quadbike"
+        },
+        {
+            "name": "VEH_Quadbike2",
+            "type": "VEH_Quadbike",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 424.26662,
+                "y": 91.0785479,
+                "z": -505.5872
+            },
+            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Quadbike2"
+        },
+        {
+            "name": "VEH_F16",
+            "type": "VEH_F16",
+            "right": {
+                "x": -0.944422,
+                "y": 0,
+                "z": -0.328735
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.328735,
+                "y": 0,
+                "z": -0.944422
+            },
+            "position": {
+                "x": -503.6535,
+                "y": 81.51939,
+                "z": -291.231
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_F16"
+        },
+        {
+            "name": "VEH_F17",
+            "type": "VEH_F16",
+            "right": {
+                "x": -0.920947,
+                "y": 0,
+                "z": -0.389686
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.389686,
+                "y": 0,
+                "z": -0.920947
+            },
+            "position": {
+                "x": -508.8897,
+                "y": 81.70677,
+                "z": -308.3401
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_F17"
+        },
+        {
+            "name": "VEH_F22",
+            "type": "VEH_F22",
+            "right": {
+                "x": 0.939484,
+                "y": 0,
+                "z": 0.342594
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.342594,
+                "y": 0,
+                "z": 0.939484
+            },
+            "position": {
+                "x": -434.9413,
+                "y": 89.67698,
+                "z": -403.4879
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_F22"
+        },
+        {
+            "name": "VEH_F23",
+            "type": "VEH_F22",
+            "right": {
+                "x": 0.961947,
+                "y": 0,
+                "z": 0.273237
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.273237,
+                "y": 0,
+                "z": 0.961947
+            },
+            "position": {
+                "x": -457.47912,
+                "y": 88.62851,
+                "z": -415.1633
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_F23"
+        },
+        {
+            "name": "VEH_JAS39",
+            "type": "VEH_JAS39",
+            "right": {
+                "x": -0.921694,
+                "y": 0,
+                "z": -0.387918
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.387918,
+                "y": 0,
+                "z": -0.921694
+            },
+            "position": {
+                "x": -493.6625,
+                "y": 81.1308,
+                "z": -285.7724
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_JAS39"
+        },
+        {
+            "name": "VEH_JAS40",
+            "type": "VEH_JAS39",
+            "right": {
+                "x": -0.897997,
+                "y": 0,
+                "z": -0.440002
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.440002,
+                "y": 0,
+                "z": -0.897997
+            },
+            "position": {
+                "x": -482.7302,
+                "y": 81.4042,
+                "z": -283.5837
+            },
+            "id": "Team1_vehicle_spawns/Jets/VEH_JAS40"
+        },
+        {
+            "name": "VEH_Eurocopter2",
+            "type": "VEH_Eurocopter",
+            "right": {
+                "x": -0.0546544,
+                "y": 0,
+                "z": -0.998505
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.998505,
+                "y": 0,
+                "z": -0.0546544
+            },
+            "position": {
+                "x": -560.823,
+                "y": 84.17755,
+                "z": -242.83015
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_Eurocopter2"
+        },
+        {
+            "name": "VEH_Eurocopter3",
+            "type": "VEH_Eurocopter",
+            "right": {
+                "x": 0.0908756,
+                "y": 0,
+                "z": -0.995862
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.995862,
+                "y": 0,
+                "z": 0.0908756
+            },
+            "position": {
+                "x": -558.851,
+                "y": 83.55886,
+                "z": -227.8358
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_Eurocopter3"
+        },
+        {
+            "name": "VEH_UH60",
+            "type": "VEH_UH60",
+            "right": {
+                "x": -0.854658,
+                "y": 0,
+                "z": -0.519191
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.519191,
+                "y": 0,
+                "z": -0.854658
+            },
+            "position": {
+                "x": -539.859,
+                "y": 85.98186,
+                "z": -163.9793
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_UH60"
+        },
+        {
+            "name": "VEH_UH61",
+            "type": "VEH_UH60",
+            "right": {
+                "x": -0.798026,
+                "y": 0,
+                "z": -0.602623
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.602623,
+                "y": 0,
+                "z": -0.798026
+            },
+            "position": {
+                "x": -526.912,
+                "y": 85.48539,
+                "z": -151.2181
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_UH61"
+        },
+        {
+            "name": "VEH_AH64E",
+            "type": "VEH_AH64E",
+            "right": {
+                "x": -0.00404918,
+                "y": 0,
+                "z": -0.999992
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999992,
+                "y": 0,
+                "z": -0.00404918
+            },
+            "position": {
+                "x": -562.552,
+                "y": 84.7855,
+                "z": -195.6917
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_AH64E"
+        },
+        {
+            "name": "VEH_AH64E2",
+            "type": "VEH_AH64E",
+            "right": {
+                "x": 0.085469,
+                "y": 0,
+                "z": -0.996341
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.996341,
+                "y": 0,
+                "z": 0.085469
+            },
+            "position": {
+                "x": -562.194,
+                "y": 84.04415,
+                "z": -210.5361
+            },
+            "id": "Team1_vehicle_spawns/Helis/VEH_AH64E2"
+        },
+        {
+            "name": "VEH_Abrams",
+            "type": "VEH_Abrams",
+            "right": {
+                "x": -0.475056,
+                "y": 0,
+                "z": -0.879956
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.879956,
+                "y": 0,
+                "z": -0.475056
+            },
+            "position": {
+                "x": -402.89037,
+                "y": 86.10829,
+                "z": -153.0129
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Abrams"
+        },
+        {
+            "name": "VEH_Abrams2",
+            "type": "VEH_Abrams",
+            "right": {
+                "x": -0.501934,
+                "y": 0,
+                "z": -0.864906
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.864906,
+                "y": 0,
+                "z": -0.501934
+            },
+            "position": {
+                "x": -399.47642,
+                "y": 87.6719,
+                "z": -148.0888
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Abrams2"
+        },
+        {
+            "name": "VEH_Leopard",
+            "type": "VEH_Leopard",
+            "right": {
+                "x": 0.963158,
+                "y": 0,
+                "z": -0.268937
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.268937,
+                "y": 0,
+                "z": 0.963158
+            },
+            "position": {
+                "x": -380.13858,
+                "y": 86.66214,
+                "z": -193.481
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Leopard"
+        },
+        {
+            "name": "VEH_Leopard2",
+            "type": "VEH_Leopard",
+            "right": {
+                "x": 0.946565,
+                "y": 0,
+                "z": -0.322513
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.322513,
+                "y": 0,
+                "z": 0.946565
+            },
+            "position": {
+                "x": -385.42908,
+                "y": 88.16573,
+                "z": -191.0031
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Leopard2"
+        },
+        {
+            "name": "VEH_Gepard",
+            "type": "VEH_Gepard",
+            "right": {
+                "x": -0.981777,
+                "y": 0,
+                "z": -0.190038
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.190038,
+                "y": 0,
+                "z": -0.981777
+            },
+            "position": {
+                "x": -475.67518,
+                "y": 74.66255,
+                "z": -150.9348
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Gepard"
+        },
+        {
+            "name": "VEH_Gepard2",
+            "type": "VEH_Gepard",
+            "right": {
+                "x": -0.986754,
+                "y": 0,
+                "z": -0.162224
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.162224,
+                "y": 0,
+                "z": -0.986754
+            },
+            "position": {
+                "x": -467.33298,
+                "y": 75.07665,
+                "z": -149.5573
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Gepard2"
+        },
+        {
+            "name": "VEH_Cheetah",
+            "type": "VEH_Cheetah",
+            "right": {
+                "x": -0.984007,
+                "y": 0,
+                "z": 0.178132
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.178132,
+                "y": 0,
+                "z": -0.984007
+            },
+            "position": {
+                "x": -437.53358,
+                "y": 85.90352,
+                "z": -160.98799
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Cheetah"
+        },
+        {
+            "name": "VEH_Cheetah2",
+            "type": "VEH_Cheetah",
+            "right": {
+                "x": -0.984007,
+                "y": 0,
+                "z": 0.178132
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.178132,
+                "y": 0,
+                "z": -0.984007
+            },
+            "position": {
+                "x": -445.93438,
+                "y": 85.90352,
+                "z": -160.59913
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Cheetah2"
+        },
+        {
+            "name": "VEH_Flyer60",
+            "type": "VEH_Flyer60",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -452.07478,
+                "y": 81.41625,
+                "z": -249.6809
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Flyer60"
+        },
+        {
+            "name": "VEH_Flyer61",
+            "type": "VEH_Flyer60",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -454.86978,
+                "y": 81.79705,
+                "z": -249.4513
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Flyer61"
+        },
+        {
+            "name": "VEH_Vector",
+            "type": "VEH_Vector",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -461.36248,
+                "y": 79.98935,
+                "z": -248.3521
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Vector"
+        },
+        {
+            "name": "VEH_Vector2",
+            "type": "VEH_Vector",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -464.41748,
+                "y": 79.98935,
+                "z": -248.4848
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Vector2"
+        },
+        {
+            "name": "VEH_Quadbike",
+            "type": "VEH_Quadbike",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -468.31908,
+                "y": 80.05415,
+                "z": -249.7421
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Quadbike"
+        },
+        {
+            "name": "VEH_Quadbike2",
+            "type": "VEH_Quadbike",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -471.33708,
+                "y": 80.05415,
+                "z": -249.8447
+            },
+            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Quadbike2"
+        },
+        {
+            "name": "FiringRange_Target_01",
+            "type": "FiringRange_Target_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -414.29029,
+                "y": 87.93569,
+                "z": -292.98029
+            },
+            "id": "targets/FiringRange_Target_01"
+        },
+        {
+            "name": "FiringRange_Target_02",
+            "type": "FiringRange_Target_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -412.50437,
+                "y": 87.93569,
+                "z": -292.98029
+            },
+            "id": "targets/FiringRange_Target_02"
+        },
+        {
+            "name": "FiringRange_Target_03",
+            "type": "FiringRange_Target_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -416.25303,
+                "y": 87.93569,
+                "z": -292.98029
+            },
+            "id": "targets/FiringRange_Target_03"
+        },
+        {
+            "name": "FiringRange_Target_04",
+            "type": "FiringRange_Target_01",
+            "right": {
+                "x": -0.972723,
+                "y": 0,
+                "z": 0.231969
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.231969,
+                "y": 0,
+                "z": -0.972723
+            },
+            "position": {
+                "x": -418.08012,
+                "y": 87.93569,
+                "z": -292.98029
+            },
+            "id": "targets/FiringRange_Target_04"
+        }
+    ],
+    "Static": [
+        {
+            "name": "MP_Tungsten_Terrain",
+            "type": "MP_Tungsten_Terrain",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "id": "Static/MP_Tungsten_Terrain"
+        },
+        {
+            "name": "MP_Tungsten_Assets",
+            "type": "MP_Tungsten_Assets",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "id": "Static/MP_Tungsten_Assets"
+        }
+    ]
+}
