@@ -1,18 +1,43 @@
 {
     "Portal_Dynamic": [
         {
-            "name": "TEAM_2_HQ",
-            "Team": "Team2",
+            "name": "DeployCam",
+            "physics_interpolation_mode": 2,
+            "type": "DeployCam",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -4.37114e-08,
+                "z": -1
+            },
+            "front": {
+                "x": 0,
+                "y": 1,
+                "z": -4.37114e-08
+            },
+            "position": {
+                "x": 20.6384,
+                "y": 257.525,
+                "z": -357.248
+            },
+            "id": "DeployCam"
+        },
+        {
+            "name": "TEAM_1_HQ",
             "AltTeam": "TeamNeutral",
             "VehicleSpawnersEnabled": true,
             "ObjId": 1,
             "InfantrySpawns": [
-                "TEAM_2_HQ/SpawnPoint_1_1",
-                "TEAM_2_HQ/SpawnPoint_1_2",
-                "TEAM_2_HQ/SpawnPoint_1_3",
-                "TEAM_2_HQ/SpawnPoint_1_4"
+                "TEAM_1_HQ/SpawnPoint_1_1",
+                "TEAM_1_HQ/SpawnPoint_1_2",
+                "TEAM_1_HQ/SpawnPoint_1_3",
+                "TEAM_1_HQ/SpawnPoint_1_4"
             ],
-            "HQArea": "TEAM_2_HQ/HQ_Team2",
+            "HQArea": "TEAM_1_HQ/HQ_Team1",
             "type": "HQ_PlayerSpawner",
             "right": {
                 "x": 1,
@@ -30,41 +55,41 @@
                 "z": 1
             },
             "position": {
-                "x": 484.528,
-                "y": 87.7289,
-                "z": -505.698
+                "x": -225.773,
+                "y": 88.623,
+                "z": -392.224
             },
-            "id": "TEAM_2_HQ",
+            "id": "TEAM_1_HQ",
             "linked": [
                 "HQArea",
                 "InfantrySpawns"
             ]
         },
         {
-            "name": "HQ_Team2",
+            "name": "HQ_Team1",
             "type": "PolygonVolume",
-            "id": "TEAM_2_HQ/HQ_Team2",
+            "id": "TEAM_1_HQ/HQ_Team1",
             "height": 0,
             "points": [
                 {
-                    "x": 489.528,
-                    "y": 92.7289,
-                    "z": -500.698
+                    "x": -220.773,
+                    "y": 93.623,
+                    "z": -387.224
                 },
                 {
-                    "x": 489.528,
-                    "y": 92.7289,
-                    "z": -510.698
+                    "x": -220.773,
+                    "y": 93.623,
+                    "z": -397.224
                 },
                 {
-                    "x": 479.528,
-                    "y": 92.7289,
-                    "z": -510.698
+                    "x": -230.773,
+                    "y": 93.623,
+                    "z": -397.224
                 },
                 {
-                    "x": 479.528,
-                    "y": 92.7289,
-                    "z": -500.698
+                    "x": -230.773,
+                    "y": 93.623,
+                    "z": -387.224
                 }
             ]
         },
@@ -87,11 +112,111 @@
                 "z": 0.999884
             },
             "position": {
-                "x": 484.528,
-                "y": 87.7289,
-                "z": -508.698
+                "x": -225.773,
+                "y": 88.623,
+                "z": -395.224
             },
-            "id": "TEAM_2_HQ/SpawnPoint_1_1"
+            "id": "TEAM_1_HQ/SpawnPoint_1_1"
+        },
+        {
+            "name": "SpawnPoint_1_5",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": -222.74936,
+                "y": 88.623,
+                "z": -395.224
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_5"
+        },
+        {
+            "name": "SpawnPoint_1_6",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": -228.77355,
+                "y": 88.623,
+                "z": -395.224
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_6"
+        },
+        {
+            "name": "SpawnPoint_1_7",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": -228.77355,
+                "y": 88.623,
+                "z": -389.13869
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_7"
+        },
+        {
+            "name": "SpawnPoint_1_8",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.999884,
+                "y": 0,
+                "z": 0.0152535
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0152535,
+                "y": 0,
+                "z": 0.999884
+            },
+            "position": {
+                "x": -222.72432,
+                "y": 88.623,
+                "z": -389.13869
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_8"
         },
         {
             "name": "SpawnPoint_1_2",
@@ -112,11 +237,11 @@
                 "z": -0.9995
             },
             "position": {
-                "x": 487.528,
-                "y": 87.7289,
-                "z": -505.698
+                "x": -222.773,
+                "y": 88.623,
+                "z": -392.224
             },
-            "id": "TEAM_2_HQ/SpawnPoint_1_2"
+            "id": "TEAM_1_HQ/SpawnPoint_1_2"
         },
         {
             "name": "SpawnPoint_1_3",
@@ -137,11 +262,11 @@
                 "z": -0.0428871
             },
             "position": {
-                "x": 481.528,
-                "y": 87.7289,
-                "z": -505.698
+                "x": -228.773,
+                "y": 88.623,
+                "z": -392.224
             },
-            "id": "TEAM_2_HQ/SpawnPoint_1_3"
+            "id": "TEAM_1_HQ/SpawnPoint_1_3"
         },
         {
             "name": "SpawnPoint_1_4",
@@ -162,11 +287,2154 @@
                 "z": 0.0841819
             },
             "position": {
-                "x": 484.528,
-                "y": 87.7289,
-                "z": -502.698
+                "x": -225.773,
+                "y": 88.623,
+                "z": -389.224
+            },
+            "id": "TEAM_1_HQ/SpawnPoint_1_4"
+        },
+        {
+            "name": "Tank_1",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.0220242,
+                "y": 0,
+                "z": -0.999757
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999757,
+                "y": 0,
+                "z": 0.0220242
+            },
+            "position": {
+                "x": -246.5563,
+                "y": 88.847144,
+                "z": -392.481468
+            },
+            "id": "TEAM1_VehicleSpawns/Tank_1"
+        },
+        {
+            "name": "AntiAir_1",
+            "VehicleType": "Cheetah",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -239.8685,
+                "y": 90.37633,
+                "z": -400.74303
+            },
+            "id": "TEAM1_VehicleSpawns/AntiAir_1"
+        },
+        {
+            "name": "AntiAir_2",
+            "VehicleType": "Cheetah",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -231.8343,
+                "y": 90.37633,
+                "z": -400.74303
+            },
+            "id": "TEAM1_VehicleSpawns/AntiAir_2"
+        },
+        {
+            "name": "AntiAir_3",
+            "VehicleType": "Gepard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -224.43239,
+                "y": 90.37633,
+                "z": -401.61974
+            },
+            "id": "TEAM1_VehicleSpawns/AntiAir_3"
+        },
+        {
+            "name": "AntiAir_4",
+            "VehicleType": "Gepard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -216.04177,
+                "y": 90.37633,
+                "z": -401.35787
+            },
+            "id": "TEAM1_VehicleSpawns/AntiAir_4"
+        },
+        {
+            "name": "Tank_2",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0370275,
+                "y": 0,
+                "z": -0.999314
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999314,
+                "y": 0,
+                "z": -0.0370275
+            },
+            "position": {
+                "x": -246.5563,
+                "y": 88.847144,
+                "z": -386.50555
+            },
+            "id": "TEAM1_VehicleSpawns/Tank_2"
+        },
+        {
+            "name": "Tank_3",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0100355,
+                "y": 0,
+                "z": -0.99995
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.99995,
+                "y": 0,
+                "z": -0.0100355
+            },
+            "position": {
+                "x": -246.5563,
+                "y": 88.847144,
+                "z": -379.8738
+            },
+            "id": "TEAM1_VehicleSpawns/Tank_3"
+        },
+        {
+            "name": "Tank_4",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.00516619,
+                "y": 0,
+                "z": -0.999987
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999987,
+                "y": 0,
+                "z": -0.00516619
+            },
+            "position": {
+                "x": -245.0638,
+                "y": 87.797934,
+                "z": -372.2982
+            },
+            "id": "TEAM1_VehicleSpawns/Tank_4"
+        },
+        {
+            "name": "IFV_1",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -214.08716,
+                "y": 88.5856694,
+                "z": -391.71429
+            },
+            "id": "TEAM1_VehicleSpawns/IFV_1"
+        },
+        {
+            "name": "IFV_2",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -206.9249,
+                "y": 88.522818,
+                "z": -391.52514
+            },
+            "id": "TEAM1_VehicleSpawns/IFV_2"
+        },
+        {
+            "name": "IFV_3",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -200.3655,
+                "y": 88.522818,
+                "z": -391.9179
+            },
+            "id": "TEAM1_VehicleSpawns/IFV_3"
+        },
+        {
+            "name": "IFV_4",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -195.1101,
+                "y": 89.113707,
+                "z": -391.88476
+            },
+            "id": "TEAM1_VehicleSpawns/IFV_4"
+        },
+        {
+            "name": "Car_1",
+            "VehicleType": "Vector",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0428696,
+                "y": 0,
+                "z": -0.999081
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999081,
+                "y": 0,
+                "z": -0.0428696
+            },
+            "position": {
+                "x": -216.80811,
+                "y": 85.09581,
+                "z": -354.6232
+            },
+            "id": "TEAM1_VehicleSpawns/Car_1"
+        },
+        {
+            "name": "Car_3",
+            "VehicleType": "Flyer60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.00724302,
+                "y": 0,
+                "z": -0.999974
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999974,
+                "y": 0,
+                "z": -0.00724302
+            },
+            "position": {
+                "x": -233.256,
+                "y": 86.55383,
+                "z": -355.5927
+            },
+            "id": "TEAM1_VehicleSpawns/Car_3"
+        },
+        {
+            "name": "Car_4",
+            "VehicleType": "Flyer60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.00724302,
+                "y": 0,
+                "z": -0.999974
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999974,
+                "y": 0,
+                "z": -0.00724302
+            },
+            "position": {
+                "x": -242.9464,
+                "y": 85.51037,
+                "z": -354.7482
+            },
+            "id": "TEAM1_VehicleSpawns/Car_4"
+        },
+        {
+            "name": "Car_2",
+            "VehicleType": "Vector",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0428696,
+                "y": 0,
+                "z": -0.999081
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.999081,
+                "y": 0,
+                "z": -0.0428696
+            },
+            "position": {
+                "x": -208.1599,
+                "y": 85.16643,
+                "z": -354.0698
+            },
+            "id": "TEAM1_VehicleSpawns/Car_2"
+        },
+        {
+            "name": "Car_5",
+            "VehicleType": "Quadbike",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0973745,
+                "y": 0,
+                "z": 0.995248
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.995248,
+                "y": 0,
+                "z": -0.0973745
+            },
+            "position": {
+                "x": -194.9776,
+                "y": 87.55197,
+                "z": -368.1453
+            },
+            "id": "TEAM1_VehicleSpawns/Car_5"
+        },
+        {
+            "name": "Car_6",
+            "VehicleType": "Quadbike",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.0973745,
+                "y": 0,
+                "z": 0.995248
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.995248,
+                "y": 0,
+                "z": -0.0973745
+            },
+            "position": {
+                "x": -194.0661,
+                "y": 87.16038,
+                "z": -371.1922
+            },
+            "id": "TEAM1_VehicleSpawns/Car_6"
+        },
+        {
+            "name": "Heli_1",
+            "VehicleType": "UH60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -236.3657,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_1"
+        },
+        {
+            "name": "Heli_2",
+            "VehicleType": "UH60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -252.1934,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_2"
+        },
+        {
+            "name": "Jet_1",
+            "VehicleType": "JAS39",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -257.7573,
+                "y": 90.85692,
+                "z": -441.3147
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_1"
+        },
+        {
+            "name": "Jet_2",
+            "VehicleType": "JAS39",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -244.9623,
+                "y": 90.85692,
+                "z": -441.3654
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_2"
+        },
+        {
+            "name": "Jet_3",
+            "VehicleType": "F22",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -230.3447,
+                "y": 90.85692,
+                "z": -441.4233
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_3"
+        },
+        {
+            "name": "Jet_4",
+            "VehicleType": "F22",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -214.49277,
+                "y": 90.85692,
+                "z": -441.4861
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_4"
+        },
+        {
+            "name": "Jet_5",
+            "VehicleType": "F16",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -200.7831,
+                "y": 90.85692,
+                "z": -441.5405
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_5"
+        },
+        {
+            "name": "Jet_7",
+            "VehicleType": "SU57",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -174.6143,
+                "y": 90.85692,
+                "z": -441.6441
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_7"
+        },
+        {
+            "name": "Jet_8",
+            "VehicleType": "SU57",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -163.02,
+                "y": 90.85692,
+                "z": -441.69
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_8"
+        },
+        {
+            "name": "Jet_6",
+            "VehicleType": "F16",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.999992,
+                "y": 0,
+                "z": 0.00396194
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.00396194,
+                "y": 0,
+                "z": -0.999992
+            },
+            "position": {
+                "x": -188.7086,
+                "y": 90.85692,
+                "z": -441.5883
+            },
+            "id": "TEAM1_VehicleSpawns/Jet_6"
+        },
+        {
+            "name": "Heli_3",
+            "VehicleType": "Eurocopter",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -219.8281154,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_3"
+        },
+        {
+            "name": "Heli_4",
+            "VehicleType": "Eurocopter",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -203.1215,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_4"
+        },
+        {
+            "name": "Heli_5",
+            "VehicleType": "AH64",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -188.7324,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_5"
+        },
+        {
+            "name": "Heli_6",
+            "VehicleType": "AH64",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -172.2866,
+                "y": 90.85692,
+                "z": -417.5266
+            },
+            "id": "TEAM1_VehicleSpawns/Heli_6"
+        },
+        {
+            "name": "TEAM_2_HQ",
+            "Team": "Team2",
+            "AltTeam": "TeamNeutral",
+            "VehicleSpawnersEnabled": true,
+            "ObjId": 2,
+            "InfantrySpawns": [
+                "TEAM_2_HQ/SpawnPoint_1_1",
+                "TEAM_2_HQ/SpawnPoint_1_2"
+            ],
+            "HQArea": "TEAM_2_HQ/HQ_Team2",
+            "type": "HQ_PlayerSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 259.6,
+                "y": 88.054,
+                "z": -293.947
+            },
+            "id": "TEAM_2_HQ",
+            "linked": [
+                "HQArea",
+                "InfantrySpawns"
+            ]
+        },
+        {
+            "name": "HQ_Team2",
+            "type": "PolygonVolume",
+            "id": "TEAM_2_HQ/HQ_Team2",
+            "height": 0,
+            "points": [
+                {
+                    "x": 264.6,
+                    "y": 93.054,
+                    "z": -288.947
+                },
+                {
+                    "x": 264.6,
+                    "y": 93.054,
+                    "z": -298.947
+                },
+                {
+                    "x": 254.6,
+                    "y": 93.054,
+                    "z": -298.947
+                },
+                {
+                    "x": 254.6,
+                    "y": 93.054,
+                    "z": -288.947
+                }
+            ]
+        },
+        {
+            "name": "SpawnPoint_1_1",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.712553,
+                "y": 0,
+                "z": -0.701619
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.701619,
+                "y": 0,
+                "z": 0.712553
+            },
+            "position": {
+                "x": 262.09306,
+                "y": 88.054,
+                "z": -293.8842861
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_1"
+        },
+        {
+            "name": "SpawnPoint_1_8",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.712553,
+                "y": 0,
+                "z": -0.701619
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.701619,
+                "y": 0,
+                "z": 0.712553
+            },
+            "position": {
+                "x": 258.38423,
+                "y": 88.054,
+                "z": -297.65092
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_8"
+        },
+        {
+            "name": "SpawnPoint_1_9",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.712553,
+                "y": 0,
+                "z": -0.701619
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.701619,
+                "y": 0,
+                "z": 0.712553
+            },
+            "position": {
+                "x": 261.63784,
+                "y": 88.054,
+                "z": -297.9177
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_9"
+        },
+        {
+            "name": "SpawnPoint_1_2",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.539477,
+                "y": 0,
+                "z": -0.842001
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.842001,
+                "y": 0,
+                "z": 0.539477
+            },
+            "position": {
+                "x": 261.28909,
+                "y": 88.054,
+                "z": -289.11253
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_2"
+        },
+        {
+            "name": "SpawnPoint_1_3",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.624071,
+                "y": 0,
+                "z": -0.781368
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.781368,
+                "y": 0,
+                "z": 0.624071
+            },
+            "position": {
+                "x": 257.61147,
+                "y": 88.054,
+                "z": -289.28459
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_3"
+        },
+        {
+            "name": "SpawnPoint_1_4",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.613624,
+                "y": 0,
+                "z": -0.789598
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.789598,
+                "y": 0,
+                "z": 0.613624
+            },
+            "position": {
+                "x": 253.57336,
+                "y": 88.054,
+                "z": -289.41566
             },
             "id": "TEAM_2_HQ/SpawnPoint_1_4"
+        },
+        {
+            "name": "SpawnPoint_1_6",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.729697,
+                "y": 0,
+                "z": -0.68377
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.68377,
+                "y": 0,
+                "z": 0.729697
+            },
+            "position": {
+                "x": 254.36355,
+                "y": 88.054,
+                "z": -297.49258
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_6"
+        },
+        {
+            "name": "SpawnPoint_1_7",
+            "type": "SpawnPoint",
+            "right": {
+                "x": -0.9995,
+                "y": 0,
+                "z": 0.0316198
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.0316198,
+                "y": 0,
+                "z": -0.9995
+            },
+            "position": {
+                "x": 254.01447,
+                "y": 88.054,
+                "z": -293.611824
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_7"
+        },
+        {
+            "name": "SpawnPoint_1_5",
+            "type": "SpawnPoint",
+            "right": {
+                "x": 0.627202,
+                "y": 0,
+                "z": -0.778856
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.778856,
+                "y": 0,
+                "z": 0.627202
+            },
+            "position": {
+                "x": 258.53141,
+                "y": 88.054,
+                "z": -293.795114
+            },
+            "id": "TEAM_2_HQ/SpawnPoint_1_5"
+        },
+        {
+            "name": "Abrams",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 259.606,
+                "y": 85.13618,
+                "z": -318.2395
+            },
+            "id": "Team2_VehicleSpawns/Abrams"
+        },
+        {
+            "name": "Abrams_2",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 263.813,
+                "y": 85.13618,
+                "z": -314.0996
+            },
+            "id": "Team2_VehicleSpawns/Abrams_2"
+        },
+        {
+            "name": "Leopard",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 268.7015,
+                "y": 85.13618,
+                "z": -308.5846
+            },
+            "id": "Team2_VehicleSpawns/Leopard"
+        },
+        {
+            "name": "Leopard2",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 272.8494,
+                "y": 85.13618,
+                "z": -304.50296
+            },
+            "id": "Team2_VehicleSpawns/Leopard2"
+        },
+        {
+            "name": "AntiAir_1",
+            "VehicleType": "Gepard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 280.3422,
+                "y": 85.13618,
+                "z": -300.45295
+            },
+            "id": "Team2_VehicleSpawns/AntiAir_1"
+        },
+        {
+            "name": "AntiAir_2",
+            "VehicleType": "Gepard",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 285.2864,
+                "y": 85.13618,
+                "z": -295.58769
+            },
+            "id": "Team2_VehicleSpawns/AntiAir_2"
+        },
+        {
+            "name": "AntiAir_3",
+            "VehicleType": "Cheetah",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 289.4168,
+                "y": 85.13618,
+                "z": -291.52324
+            },
+            "id": "Team2_VehicleSpawns/AntiAir_3"
+        },
+        {
+            "name": "AntiAir_4",
+            "VehicleType": "Cheetah",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.712773,
+                "y": 0,
+                "z": 0.701395
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.701395,
+                "y": 0,
+                "z": 0.712773
+            },
+            "position": {
+                "x": 293.3935,
+                "y": 85.13618,
+                "z": -287.6099
+            },
+            "id": "Team2_VehicleSpawns/AntiAir_4"
+        },
+        {
+            "name": "Car_1",
+            "VehicleType": "Quadbike",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 222.9467,
+                "y": 90.94487,
+                "z": -293.31218
+            },
+            "id": "Team2_VehicleSpawns/Car_1"
+        },
+        {
+            "name": "Car_2",
+            "VehicleType": "Quadbike",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 225.9645,
+                "y": 90.94487,
+                "z": -296.9851
+            },
+            "id": "Team2_VehicleSpawns/Car_2"
+        },
+        {
+            "name": "Car_3",
+            "VehicleType": "Vector",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 218.3837,
+                "y": 90.94487,
+                "z": -287.7586
+            },
+            "id": "Team2_VehicleSpawns/Car_3"
+        },
+        {
+            "name": "Car_4",
+            "VehicleType": "Vector",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 214.3931,
+                "y": 90.94487,
+                "z": -282.9017
+            },
+            "id": "Team2_VehicleSpawns/Car_4"
+        },
+        {
+            "name": "Car_5",
+            "VehicleType": "Flyer60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 253.0635,
+                "y": 86.92435,
+                "z": -328.1704
+            },
+            "id": "Team2_VehicleSpawns/Car_5"
+        },
+        {
+            "name": "Car_6",
+            "VehicleType": "Flyer60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.772645,
+                "y": 0,
+                "z": 0.634838
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.634838,
+                "y": 0,
+                "z": 0.772645
+            },
+            "position": {
+                "x": 248.27466,
+                "y": 86.92435,
+                "z": -322.342
+            },
+            "id": "Team2_VehicleSpawns/Car_6"
+        },
+        {
+            "name": "IFV_1",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.795622,
+                "y": 0,
+                "z": -0.605794
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.605794,
+                "y": 0,
+                "z": -0.795622
+            },
+            "position": {
+                "x": 245.2514,
+                "y": 88.944648,
+                "z": -280.0148
+            },
+            "id": "Team2_VehicleSpawns/IFV_1"
+        },
+        {
+            "name": "IFV_2",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.795622,
+                "y": 0,
+                "z": -0.605794
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.605794,
+                "y": 0,
+                "z": -0.795622
+            },
+            "position": {
+                "x": 250.50656,
+                "y": 88.944648,
+                "z": -276.0135
+            },
+            "id": "Team2_VehicleSpawns/IFV_2"
+        },
+        {
+            "name": "IFV_3",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.795622,
+                "y": 0,
+                "z": -0.605794
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.605794,
+                "y": 0,
+                "z": -0.795622
+            },
+            "position": {
+                "x": 255.7295,
+                "y": 88.944648,
+                "z": -272.0367
+            },
+            "id": "Team2_VehicleSpawns/IFV_3"
+        },
+        {
+            "name": "IFV_4",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.795622,
+                "y": 0,
+                "z": -0.605794
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.605794,
+                "y": 0,
+                "z": -0.795622
+            },
+            "position": {
+                "x": 261.1575,
+                "y": 88.944648,
+                "z": -267.9038
+            },
+            "id": "Team2_VehicleSpawns/IFV_4"
+        },
+        {
+            "name": "Heli_1",
+            "VehicleType": "UH60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 295.9061,
+                "y": 84.07452,
+                "z": -310.335
+            },
+            "id": "Team2_VehicleSpawns/Heli_1"
+        },
+        {
+            "name": "Heli_2",
+            "VehicleType": "UH60",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 302.5526,
+                "y": 84.07452,
+                "z": -302.68855
+            },
+            "id": "Team2_VehicleSpawns/Heli_2"
+        },
+        {
+            "name": "Heli_3",
+            "VehicleType": "Eurocopter",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 311.6813,
+                "y": 84.07452,
+                "z": -294.60618
+            },
+            "id": "Team2_VehicleSpawns/Heli_3"
+        },
+        {
+            "name": "Heli_4",
+            "VehicleType": "Eurocopter",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 320.4146,
+                "y": 84.07452,
+                "z": -286.8739
+            },
+            "id": "Team2_VehicleSpawns/Heli_4"
+        },
+        {
+            "name": "Heli_5",
+            "VehicleType": "AH64",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 328.9228,
+                "y": 84.07452,
+                "z": -279.3409
+            },
+            "id": "Team2_VehicleSpawns/Heli_5"
+        },
+        {
+            "name": "Heli_6",
+            "VehicleType": "AH64",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.748713,
+                "y": 0,
+                "z": -0.662895
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.662895,
+                "y": 0,
+                "z": -0.748713
+            },
+            "position": {
+                "x": 338.9955,
+                "y": 84.07452,
+                "z": -270.4228
+            },
+            "id": "Team2_VehicleSpawns/Heli_6"
+        },
+        {
+            "name": "Jet_1",
+            "VehicleType": "JAS39",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.563612,
+                "y": 0,
+                "z": -0.826039
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.826039,
+                "y": 0,
+                "z": -0.563612
+            },
+            "position": {
+                "x": 307.0392,
+                "y": 85.74822,
+                "z": -194.357
+            },
+            "id": "Team2_VehicleSpawns/Jet_1"
+        },
+        {
+            "name": "Jet_2",
+            "VehicleType": "JAS39",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -0.385197,
+                "y": 0,
+                "z": -0.922834
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.922834,
+                "y": 0,
+                "z": -0.385197
+            },
+            "position": {
+                "x": 301.5189,
+                "y": 86.12727,
+                "z": -209.6052
+            },
+            "id": "Team2_VehicleSpawns/Jet_2"
+        },
+        {
+            "name": "Jet_3",
+            "VehicleType": "F22",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 311.1668,
+                "y": 83.90786,
+                "z": -230.3643
+            },
+            "id": "Team2_VehicleSpawns/Jet_3"
+        },
+        {
+            "name": "Jet_4",
+            "VehicleType": "F22",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 321.0435,
+                "y": 83.90786,
+                "z": -239.433
+            },
+            "id": "Team2_VehicleSpawns/Jet_4"
+        },
+        {
+            "name": "Jet_5",
+            "VehicleType": "F16",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 331.6296,
+                "y": 82.70827,
+                "z": -248.063
+            },
+            "id": "Team2_VehicleSpawns/Jet_5"
+        },
+        {
+            "name": "Jet_6",
+            "VehicleType": "F16",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 338.7094,
+                "y": 82.78836,
+                "z": -254.5636
+            },
+            "id": "Team2_VehicleSpawns/Jet_6"
+        },
+        {
+            "name": "Jet_7",
+            "VehicleType": "SU57",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 347.088,
+                "y": 82.78836,
+                "z": -262.8942
+            },
+            "id": "Team2_VehicleSpawns/Jet_7"
+        },
+        {
+            "name": "Jet_8",
+            "VehicleType": "SU57",
+            "P_AutoSpawnEnabled": true,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 0.736593,
+                "y": 0,
+                "z": -0.676336
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.676336,
+                "y": 0,
+                "z": 0.736593
+            },
+            "position": {
+                "x": 353.939,
+                "y": 82.78836,
+                "z": -269.1847
+            },
+            "id": "Team2_VehicleSpawns/Jet_8"
         },
         {
             "name": "CombatArea",
@@ -229,1472 +2497,6 @@
                     "z": 1783.596
                 }
             ]
-        },
-        {
-            "name": "TEAM_1_HQ",
-            "AltTeam": "TeamNeutral",
-            "ObjId": 1,
-            "InfantrySpawns": [
-                "TEAM_1_HQ/SpawnPoint_1_1",
-                "TEAM_1_HQ/SpawnPoint_1_2",
-                "TEAM_1_HQ/SpawnPoint_1_3",
-                "TEAM_1_HQ/SpawnPoint_1_4"
-            ],
-            "HQArea": "TEAM_1_HQ/HQ_Team1",
-            "type": "HQ_PlayerSpawner",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -399.041,
-                "y": 83.5063,
-                "z": -227.852
-            },
-            "id": "TEAM_1_HQ",
-            "linked": [
-                "HQArea",
-                "InfantrySpawns"
-            ]
-        },
-        {
-            "name": "HQ_Team1",
-            "type": "PolygonVolume",
-            "id": "TEAM_1_HQ/HQ_Team1",
-            "height": 0,
-            "points": [
-                {
-                    "x": -394.041,
-                    "y": 88.5063,
-                    "z": -222.852
-                },
-                {
-                    "x": -394.041,
-                    "y": 88.5063,
-                    "z": -232.852
-                },
-                {
-                    "x": -404.041,
-                    "y": 88.5063,
-                    "z": -232.852
-                },
-                {
-                    "x": -404.041,
-                    "y": 88.5063,
-                    "z": -222.852
-                }
-            ]
-        },
-        {
-            "name": "SpawnPoint_1_1",
-            "type": "SpawnPoint",
-            "right": {
-                "x": 0.999884,
-                "y": 0,
-                "z": 0.0152535
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.0152535,
-                "y": 0,
-                "z": 0.999884
-            },
-            "position": {
-                "x": -399.041,
-                "y": 83.5063,
-                "z": -230.852
-            },
-            "id": "TEAM_1_HQ/SpawnPoint_1_1"
-        },
-        {
-            "name": "SpawnPoint_1_2",
-            "type": "SpawnPoint",
-            "right": {
-                "x": -0.9995,
-                "y": 0,
-                "z": 0.0316198
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.0316198,
-                "y": 0,
-                "z": -0.9995
-            },
-            "position": {
-                "x": -396.041,
-                "y": 83.5063,
-                "z": -227.852
-            },
-            "id": "TEAM_1_HQ/SpawnPoint_1_2"
-        },
-        {
-            "name": "SpawnPoint_1_3",
-            "type": "SpawnPoint",
-            "right": {
-                "x": -0.0428871,
-                "y": 0,
-                "z": -0.99908
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.99908,
-                "y": 0,
-                "z": -0.0428871
-            },
-            "position": {
-                "x": -402.041,
-                "y": 83.5063,
-                "z": -227.852
-            },
-            "id": "TEAM_1_HQ/SpawnPoint_1_3"
-        },
-        {
-            "name": "SpawnPoint_1_4",
-            "type": "SpawnPoint",
-            "right": {
-                "x": 0.0841819,
-                "y": 0,
-                "z": 0.99645
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.99645,
-                "y": 0,
-                "z": 0.0841819
-            },
-            "position": {
-                "x": -399.041,
-                "y": 83.5063,
-                "z": -224.852
-            },
-            "id": "TEAM_1_HQ/SpawnPoint_1_4"
-        },
-        {
-            "name": "VEH_F16",
-            "type": "VEH_F16",
-            "right": {
-                "x": -0.0979823,
-                "y": 0,
-                "z": 0.995188
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.995188,
-                "y": 0,
-                "z": -0.0979823
-            },
-            "position": {
-                "x": 505.1339,
-                "y": 84.40531,
-                "z": -619.3632
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_F16"
-        },
-        {
-            "name": "VEH_F17",
-            "type": "VEH_F16",
-            "right": {
-                "x": -0.0979823,
-                "y": 0,
-                "z": 0.995188
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.995188,
-                "y": 0,
-                "z": -0.0979823
-            },
-            "position": {
-                "x": 512.9478,
-                "y": 84.40531,
-                "z": -609.8767
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_F17"
-        },
-        {
-            "name": "VEH_F22",
-            "type": "VEH_F22",
-            "right": {
-                "x": 0.0698087,
-                "y": 0,
-                "z": 0.99756
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.99756,
-                "y": 0,
-                "z": 0.0698087
-            },
-            "position": {
-                "x": 505.8782,
-                "y": 84.90348,
-                "z": -585.4331
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_F22"
-        },
-        {
-            "name": "VEH_F23",
-            "type": "VEH_F22",
-            "right": {
-                "x": 0.0281311,
-                "y": 0,
-                "z": 0.999604
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.999604,
-                "y": 0,
-                "z": 0.0281311
-            },
-            "position": {
-                "x": 516.9133,
-                "y": 83.85501,
-                "z": -595.72592
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_F23"
-        },
-        {
-            "name": "VEH_JAS39",
-            "type": "VEH_JAS39",
-            "right": {
-                "x": -0.0274506,
-                "y": 0,
-                "z": -0.999623
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.999623,
-                "y": 0,
-                "z": -0.0274506
-            },
-            "position": {
-                "x": 367.4581,
-                "y": 87.078974,
-                "z": -618.9164
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_JAS39"
-        },
-        {
-            "name": "VEH_JAS40",
-            "type": "VEH_JAS39",
-            "right": {
-                "x": -0.0274506,
-                "y": 0,
-                "z": -0.999623
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.999623,
-                "y": 0,
-                "z": -0.0274506
-            },
-            "position": {
-                "x": 362.4226,
-                "y": 87.078974,
-                "z": -608.6086
-            },
-            "id": "Team2_vehicle_spawns/Jets/VEH_JAS40"
-        },
-        {
-            "name": "VEH_Eurocopter2",
-            "type": "VEH_Eurocopter",
-            "right": {
-                "x": 0.435813,
-                "y": 0,
-                "z": 0.900038
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.900038,
-                "y": 0,
-                "z": 0.435813
-            },
-            "position": {
-                "x": 515.6163,
-                "y": 86.050951,
-                "z": -560.385
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_Eurocopter2"
-        },
-        {
-            "name": "VEH_Eurocopter3",
-            "type": "VEH_Eurocopter",
-            "right": {
-                "x": 0.435813,
-                "y": 0,
-                "z": 0.900038
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.900038,
-                "y": 0,
-                "z": 0.435813
-            },
-            "position": {
-                "x": 523.3587,
-                "y": 86.050951,
-                "z": -547.5622
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_Eurocopter3"
-        },
-        {
-            "name": "VEH_UH60",
-            "type": "VEH_UH60",
-            "right": {
-                "x": 0.598003,
-                "y": 0,
-                "z": 0.801494
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.801494,
-                "y": 0,
-                "z": 0.598003
-            },
-            "position": {
-                "x": 524.8302,
-                "y": 85.854906,
-                "z": -528.42062
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_UH60"
-        },
-        {
-            "name": "VEH_UH61",
-            "type": "VEH_UH60",
-            "right": {
-                "x": -0.883111,
-                "y": 0,
-                "z": 0.469163
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.469163,
-                "y": 0,
-                "z": -0.883111
-            },
-            "position": {
-                "x": 508.3498,
-                "y": 87.006525,
-                "z": -510.5508
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_UH61"
-        },
-        {
-            "name": "VEH_AH64E",
-            "type": "VEH_AH64E",
-            "right": {
-                "x": -0.00404918,
-                "y": 0,
-                "z": -0.999992
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.999992,
-                "y": 0,
-                "z": -0.00404918
-            },
-            "position": {
-                "x": 475.774034,
-                "y": 88.26531,
-                "z": -531.4421
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_AH64E"
-        },
-        {
-            "name": "VEH_AH64E2",
-            "type": "VEH_AH64E",
-            "right": {
-                "x": 0.838499,
-                "y": 0,
-                "z": -0.544902
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.544902,
-                "y": 0,
-                "z": 0.838499
-            },
-            "position": {
-                "x": 491.6387,
-                "y": 87.493349,
-                "z": -544.7522
-            },
-            "id": "Team2_vehicle_spawns/Helis/VEH_AH64E2"
-        },
-        {
-            "name": "VEH_Abrams",
-            "type": "VEH_Abrams",
-            "right": {
-                "x": -0.914847,
-                "y": 0,
-                "z": 0.403801
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.403801,
-                "y": 0,
-                "z": -0.914847
-            },
-            "position": {
-                "x": 483.88552,
-                "y": 87.5017,
-                "z": -483.8929
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Abrams"
-        },
-        {
-            "name": "VEH_Abrams2",
-            "type": "VEH_Abrams",
-            "right": {
-                "x": -0.914847,
-                "y": 0,
-                "z": 0.403801
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.403801,
-                "y": 0,
-                "z": -0.914847
-            },
-            "position": {
-                "x": 479.78984,
-                "y": 87.5017,
-                "z": -481.8874
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Abrams2"
-        },
-        {
-            "name": "VEH_Leopard",
-            "type": "VEH_Leopard",
-            "right": {
-                "x": -0.831605,
-                "y": 0,
-                "z": 0.555367
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.555367,
-                "y": 0,
-                "z": -0.831605
-            },
-            "position": {
-                "x": 474.29182,
-                "y": 88.16493,
-                "z": -479.3874
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Leopard"
-        },
-        {
-            "name": "VEH_Leopard2",
-            "type": "VEH_Leopard",
-            "right": {
-                "x": -0.831605,
-                "y": 0,
-                "z": 0.555367
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.555367,
-                "y": 0,
-                "z": -0.831605
-            },
-            "position": {
-                "x": 469.53471,
-                "y": 88.16493,
-                "z": -476.1382
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Leopard2"
-        },
-        {
-            "name": "VEH_Gepard",
-            "type": "VEH_Gepard",
-            "right": {
-                "x": -0.981777,
-                "y": 0,
-                "z": -0.190038
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.190038,
-                "y": 0,
-                "z": -0.981777
-            },
-            "position": {
-                "x": 414.04532,
-                "y": 89.50716,
-                "z": -462.9015
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Gepard"
-        },
-        {
-            "name": "VEH_Gepard2",
-            "type": "VEH_Gepard",
-            "right": {
-                "x": -0.986754,
-                "y": 0,
-                "z": -0.162224
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.162224,
-                "y": 0,
-                "z": -0.986754
-            },
-            "position": {
-                "x": 422.42272,
-                "y": 89.92133,
-                "z": -461.4518
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Gepard2"
-        },
-        {
-            "name": "VEH_Cheetah",
-            "type": "VEH_Cheetah",
-            "right": {
-                "x": -0.984007,
-                "y": 0,
-                "z": 0.178132
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.178132,
-                "y": 0,
-                "z": -0.984007
-            },
-            "position": {
-                "x": 459.76322,
-                "y": 88.59891,
-                "z": -470.6331
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Cheetah"
-        },
-        {
-            "name": "VEH_Cheetah2",
-            "type": "VEH_Cheetah",
-            "right": {
-                "x": -0.984007,
-                "y": 0,
-                "z": 0.178132
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.178132,
-                "y": 0,
-                "z": -0.984007
-            },
-            "position": {
-                "x": 451.36242,
-                "y": 88.59891,
-                "z": -470.2443
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Cheetah2"
-        },
-        {
-            "name": "VEH_Flyer60",
-            "type": "VEH_Flyer60",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 441.26122,
-                "y": 90.64233,
-                "z": -503.7619
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Flyer60"
-        },
-        {
-            "name": "VEH_Flyer61",
-            "type": "VEH_Flyer60",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 438.46622,
-                "y": 91.0231585,
-                "z": -503.5323
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Flyer61"
-        },
-        {
-            "name": "VEH_Vector",
-            "type": "VEH_Vector",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 434.24122,
-                "y": 91.0136904,
-                "z": -504.0946
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Vector"
-        },
-        {
-            "name": "VEH_Vector2",
-            "type": "VEH_Vector",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 431.18622,
-                "y": 91.0136904,
-                "z": -504.2273
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Vector2"
-        },
-        {
-            "name": "VEH_Quadbike",
-            "type": "VEH_Quadbike",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 427.28462,
-                "y": 91.0785479,
-                "z": -505.4846
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Quadbike"
-        },
-        {
-            "name": "VEH_Quadbike2",
-            "type": "VEH_Quadbike",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 424.26662,
-                "y": 91.0785479,
-                "z": -505.5872
-            },
-            "id": "Team2_vehicle_spawns/GroundVehs/VEH_Quadbike2"
-        },
-        {
-            "name": "VEH_F16",
-            "type": "VEH_F16",
-            "right": {
-                "x": -0.944422,
-                "y": 0,
-                "z": -0.328735
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.328735,
-                "y": 0,
-                "z": -0.944422
-            },
-            "position": {
-                "x": -503.6535,
-                "y": 81.51939,
-                "z": -291.231
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_F16"
-        },
-        {
-            "name": "VEH_F17",
-            "type": "VEH_F16",
-            "right": {
-                "x": -0.920947,
-                "y": 0,
-                "z": -0.389686
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.389686,
-                "y": 0,
-                "z": -0.920947
-            },
-            "position": {
-                "x": -508.8897,
-                "y": 81.70677,
-                "z": -308.3401
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_F17"
-        },
-        {
-            "name": "VEH_F22",
-            "type": "VEH_F22",
-            "right": {
-                "x": 0.939484,
-                "y": 0,
-                "z": 0.342594
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.342594,
-                "y": 0,
-                "z": 0.939484
-            },
-            "position": {
-                "x": -434.9413,
-                "y": 89.67698,
-                "z": -403.4879
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_F22"
-        },
-        {
-            "name": "VEH_F23",
-            "type": "VEH_F22",
-            "right": {
-                "x": 0.961947,
-                "y": 0,
-                "z": 0.273237
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.273237,
-                "y": 0,
-                "z": 0.961947
-            },
-            "position": {
-                "x": -457.47912,
-                "y": 88.62851,
-                "z": -415.1633
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_F23"
-        },
-        {
-            "name": "VEH_JAS39",
-            "type": "VEH_JAS39",
-            "right": {
-                "x": -0.921694,
-                "y": 0,
-                "z": -0.387918
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.387918,
-                "y": 0,
-                "z": -0.921694
-            },
-            "position": {
-                "x": -493.6625,
-                "y": 81.1308,
-                "z": -285.7724
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_JAS39"
-        },
-        {
-            "name": "VEH_JAS40",
-            "type": "VEH_JAS39",
-            "right": {
-                "x": -0.897997,
-                "y": 0,
-                "z": -0.440002
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.440002,
-                "y": 0,
-                "z": -0.897997
-            },
-            "position": {
-                "x": -482.7302,
-                "y": 81.4042,
-                "z": -283.5837
-            },
-            "id": "Team1_vehicle_spawns/Jets/VEH_JAS40"
-        },
-        {
-            "name": "VEH_Eurocopter2",
-            "type": "VEH_Eurocopter",
-            "right": {
-                "x": -0.0546544,
-                "y": 0,
-                "z": -0.998505
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.998505,
-                "y": 0,
-                "z": -0.0546544
-            },
-            "position": {
-                "x": -560.823,
-                "y": 84.17755,
-                "z": -242.83015
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_Eurocopter2"
-        },
-        {
-            "name": "VEH_Eurocopter3",
-            "type": "VEH_Eurocopter",
-            "right": {
-                "x": 0.0908756,
-                "y": 0,
-                "z": -0.995862
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.995862,
-                "y": 0,
-                "z": 0.0908756
-            },
-            "position": {
-                "x": -558.851,
-                "y": 83.55886,
-                "z": -227.8358
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_Eurocopter3"
-        },
-        {
-            "name": "VEH_UH60",
-            "type": "VEH_UH60",
-            "right": {
-                "x": -0.854658,
-                "y": 0,
-                "z": -0.519191
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.519191,
-                "y": 0,
-                "z": -0.854658
-            },
-            "position": {
-                "x": -539.859,
-                "y": 85.98186,
-                "z": -163.9793
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_UH60"
-        },
-        {
-            "name": "VEH_UH61",
-            "type": "VEH_UH60",
-            "right": {
-                "x": -0.798026,
-                "y": 0,
-                "z": -0.602623
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.602623,
-                "y": 0,
-                "z": -0.798026
-            },
-            "position": {
-                "x": -526.912,
-                "y": 85.48539,
-                "z": -151.2181
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_UH61"
-        },
-        {
-            "name": "VEH_AH64E",
-            "type": "VEH_AH64E",
-            "right": {
-                "x": -0.00404918,
-                "y": 0,
-                "z": -0.999992
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.999992,
-                "y": 0,
-                "z": -0.00404918
-            },
-            "position": {
-                "x": -562.552,
-                "y": 84.7855,
-                "z": -195.6917
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_AH64E"
-        },
-        {
-            "name": "VEH_AH64E2",
-            "type": "VEH_AH64E",
-            "right": {
-                "x": 0.085469,
-                "y": 0,
-                "z": -0.996341
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.996341,
-                "y": 0,
-                "z": 0.085469
-            },
-            "position": {
-                "x": -562.194,
-                "y": 84.04415,
-                "z": -210.5361
-            },
-            "id": "Team1_vehicle_spawns/Helis/VEH_AH64E2"
-        },
-        {
-            "name": "VEH_Abrams",
-            "type": "VEH_Abrams",
-            "right": {
-                "x": -0.475056,
-                "y": 0,
-                "z": -0.879956
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.879956,
-                "y": 0,
-                "z": -0.475056
-            },
-            "position": {
-                "x": -402.89037,
-                "y": 86.10829,
-                "z": -153.0129
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Abrams"
-        },
-        {
-            "name": "VEH_Abrams2",
-            "type": "VEH_Abrams",
-            "right": {
-                "x": -0.501934,
-                "y": 0,
-                "z": -0.864906
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.864906,
-                "y": 0,
-                "z": -0.501934
-            },
-            "position": {
-                "x": -399.47642,
-                "y": 87.6719,
-                "z": -148.0888
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Abrams2"
-        },
-        {
-            "name": "VEH_Leopard",
-            "type": "VEH_Leopard",
-            "right": {
-                "x": 0.963158,
-                "y": 0,
-                "z": -0.268937
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.268937,
-                "y": 0,
-                "z": 0.963158
-            },
-            "position": {
-                "x": -380.13858,
-                "y": 86.66214,
-                "z": -193.481
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Leopard"
-        },
-        {
-            "name": "VEH_Leopard2",
-            "type": "VEH_Leopard",
-            "right": {
-                "x": 0.946565,
-                "y": 0,
-                "z": -0.322513
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.322513,
-                "y": 0,
-                "z": 0.946565
-            },
-            "position": {
-                "x": -385.42908,
-                "y": 88.16573,
-                "z": -191.0031
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Leopard2"
-        },
-        {
-            "name": "VEH_Gepard",
-            "type": "VEH_Gepard",
-            "right": {
-                "x": -0.981777,
-                "y": 0,
-                "z": -0.190038
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.190038,
-                "y": 0,
-                "z": -0.981777
-            },
-            "position": {
-                "x": -475.67518,
-                "y": 74.66255,
-                "z": -150.9348
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Gepard"
-        },
-        {
-            "name": "VEH_Gepard2",
-            "type": "VEH_Gepard",
-            "right": {
-                "x": -0.986754,
-                "y": 0,
-                "z": -0.162224
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0.162224,
-                "y": 0,
-                "z": -0.986754
-            },
-            "position": {
-                "x": -467.33298,
-                "y": 75.07665,
-                "z": -149.5573
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Gepard2"
-        },
-        {
-            "name": "VEH_Cheetah",
-            "type": "VEH_Cheetah",
-            "right": {
-                "x": -0.984007,
-                "y": 0,
-                "z": 0.178132
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.178132,
-                "y": 0,
-                "z": -0.984007
-            },
-            "position": {
-                "x": -437.53358,
-                "y": 85.90352,
-                "z": -160.98799
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Cheetah"
-        },
-        {
-            "name": "VEH_Cheetah2",
-            "type": "VEH_Cheetah",
-            "right": {
-                "x": -0.984007,
-                "y": 0,
-                "z": 0.178132
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": -0.178132,
-                "y": 0,
-                "z": -0.984007
-            },
-            "position": {
-                "x": -445.93438,
-                "y": 85.90352,
-                "z": -160.59913
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Cheetah2"
-        },
-        {
-            "name": "VEH_Flyer60",
-            "type": "VEH_Flyer60",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -452.07478,
-                "y": 81.41625,
-                "z": -249.6809
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Flyer60"
-        },
-        {
-            "name": "VEH_Flyer61",
-            "type": "VEH_Flyer60",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -454.86978,
-                "y": 81.79705,
-                "z": -249.4513
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Flyer61"
-        },
-        {
-            "name": "VEH_Vector",
-            "type": "VEH_Vector",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -461.36248,
-                "y": 79.98935,
-                "z": -248.3521
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Vector"
-        },
-        {
-            "name": "VEH_Vector2",
-            "type": "VEH_Vector",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -464.41748,
-                "y": 79.98935,
-                "z": -248.4848
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Vector2"
-        },
-        {
-            "name": "VEH_Quadbike",
-            "type": "VEH_Quadbike",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -468.31908,
-                "y": 80.05415,
-                "z": -249.7421
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Quadbike"
-        },
-        {
-            "name": "VEH_Quadbike2",
-            "type": "VEH_Quadbike",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -471.33708,
-                "y": 80.05415,
-                "z": -249.8447
-            },
-            "id": "Team1_vehicle_spawns/GroundVehs/VEH_Quadbike2"
         },
         {
             "name": "FiringRange_Target_01",
@@ -1795,6 +2597,56 @@
                 "z": -292.98029
             },
             "id": "targets/FiringRange_Target_04"
+        },
+        {
+            "name": "VEH_Stationary_GDF011",
+            "type": "VEH_Stationary_GDF009",
+            "right": {
+                "x": -0.383892,
+                "y": 0,
+                "z": 0.923378
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.923378,
+                "y": 0,
+                "z": -0.383892
+            },
+            "position": {
+                "x": 202.655,
+                "y": 96.0288,
+                "z": -345.012
+            },
+            "id": "VEH_Stationary_GDF011"
+        },
+        {
+            "name": "VEH_Stationary_GDF012",
+            "type": "VEH_Stationary_GDF009",
+            "right": {
+                "x": -0.44279,
+                "y": 0,
+                "z": -0.896626
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.896626,
+                "y": 0,
+                "z": -0.44279
+            },
+            "position": {
+                "x": -163.296,
+                "y": 91.8572,
+                "z": -314.964
+            },
+            "id": "VEH_Stationary_GDF012"
         }
     ],
     "Static": [
