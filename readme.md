@@ -11,7 +11,7 @@ This repo holds the "source files" for the "**Florent's Vehicle Training**" Port
 - Much bigger combat area
 - No bots
 
-![vehicles.jpg](vehicles.jpg)
+![vehicles.jpg](imgs/readme.jpg)
 
 ## Future features (maybe)
 
@@ -24,3 +24,8 @@ This repo holds the "source files" for the "**Florent's Vehicle Training**" Port
 - UI to change team anytime
 - UI to spawn any vehicles in front of player
 
+## Content of the repo
+
+- `src/MP_Tungsten_Vehicle_Training.tscn` is the map file from Godot. This the map Mirak with my stuff added. To use it, place it somewhere inside the `GodotProject` folder that came with the SDK
+- `src/MP_Tungsten_Vehicle_Training.spacial.json` is matching spatial that contain all the added stuff, generated from Godot
+- `experience/florent's_vehicle_training.json` is the export of the experience I created from the Portal web builder
