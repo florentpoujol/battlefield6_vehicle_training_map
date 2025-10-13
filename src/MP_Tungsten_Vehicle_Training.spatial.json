@@ -21,8 +21,8 @@
             },
             "position": {
                 "x": 20.6384,
-                "y": 257.525,
-                "z": -357.248
+                "y": 167.695,
+                "z": -341.174
             },
             "id": "DeployCam"
         },
@@ -296,6 +296,7 @@
         {
             "name": "Tank_1",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -325,6 +326,7 @@
             "name": "AntiAir_1",
             "VehicleType": "Cheetah",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -354,6 +356,7 @@
             "name": "AntiAir_2",
             "VehicleType": "Cheetah",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -383,6 +386,7 @@
             "name": "AntiAir_3",
             "VehicleType": "Gepard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -412,6 +416,7 @@
             "name": "AntiAir_4",
             "VehicleType": "Gepard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -440,6 +445,7 @@
         {
             "name": "Tank_2",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -469,6 +475,7 @@
             "name": "Tank_3",
             "VehicleType": "Leopard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -498,6 +505,7 @@
             "name": "Tank_4",
             "VehicleType": "Leopard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -527,6 +535,7 @@
             "name": "IFV_1",
             "VehicleType": "CV90",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -556,6 +565,7 @@
             "name": "IFV_2",
             "VehicleType": "CV90",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -585,6 +595,7 @@
             "name": "IFV_3",
             "VehicleType": "M2Bradley",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -614,6 +625,7 @@
             "name": "IFV_4",
             "VehicleType": "M2Bradley",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -643,6 +655,7 @@
             "name": "Car_1",
             "VehicleType": "Vector",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -672,6 +685,7 @@
             "name": "Car_3",
             "VehicleType": "Flyer60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -701,6 +715,7 @@
             "name": "Car_4",
             "VehicleType": "Flyer60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -730,6 +745,7 @@
             "name": "Car_2",
             "VehicleType": "Vector",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -759,6 +775,7 @@
             "name": "Car_5",
             "VehicleType": "Quadbike",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -788,6 +805,7 @@
             "name": "Car_6",
             "VehicleType": "Quadbike",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -817,6 +835,7 @@
             "name": "Heli_1",
             "VehicleType": "UH60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -846,6 +865,7 @@
             "name": "Heli_2",
             "VehicleType": "UH60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -875,6 +895,7 @@
             "name": "Jet_1",
             "VehicleType": "JAS39",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -904,6 +925,7 @@
             "name": "Jet_2",
             "VehicleType": "JAS39",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -933,6 +955,7 @@
             "name": "Jet_3",
             "VehicleType": "F22",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -962,6 +985,7 @@
             "name": "Jet_4",
             "VehicleType": "F22",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -991,6 +1015,7 @@
             "name": "Jet_5",
             "VehicleType": "F16",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1020,6 +1045,7 @@
             "name": "Jet_7",
             "VehicleType": "SU57",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1049,6 +1075,7 @@
             "name": "Jet_8",
             "VehicleType": "SU57",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1078,6 +1105,7 @@
             "name": "Jet_6",
             "VehicleType": "F16",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1107,6 +1135,7 @@
             "name": "Heli_3",
             "VehicleType": "Eurocopter",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1136,6 +1165,7 @@
             "name": "Heli_4",
             "VehicleType": "Eurocopter",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1165,6 +1195,7 @@
             "name": "Heli_5",
             "VehicleType": "AH64",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1194,6 +1225,7 @@
             "name": "Heli_6",
             "VehicleType": "AH64",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1513,6 +1545,7 @@
         {
             "name": "Abrams",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1541,6 +1574,7 @@
         {
             "name": "Abrams_2",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1570,6 +1604,7 @@
             "name": "Leopard",
             "VehicleType": "Leopard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1599,6 +1634,7 @@
             "name": "Leopard2",
             "VehicleType": "Leopard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1628,6 +1664,7 @@
             "name": "AntiAir_1",
             "VehicleType": "Gepard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1657,6 +1694,7 @@
             "name": "AntiAir_2",
             "VehicleType": "Gepard",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1686,6 +1724,7 @@
             "name": "AntiAir_3",
             "VehicleType": "Cheetah",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1715,6 +1754,7 @@
             "name": "AntiAir_4",
             "VehicleType": "Cheetah",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1744,6 +1784,7 @@
             "name": "Car_1",
             "VehicleType": "Quadbike",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1773,6 +1814,7 @@
             "name": "Car_2",
             "VehicleType": "Quadbike",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1802,6 +1844,7 @@
             "name": "Car_3",
             "VehicleType": "Vector",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1831,6 +1874,7 @@
             "name": "Car_4",
             "VehicleType": "Vector",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1860,6 +1904,7 @@
             "name": "Car_5",
             "VehicleType": "Flyer60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1889,6 +1934,7 @@
             "name": "Car_6",
             "VehicleType": "Flyer60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1918,6 +1964,7 @@
             "name": "IFV_1",
             "VehicleType": "M2Bradley",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1947,6 +1994,7 @@
             "name": "IFV_2",
             "VehicleType": "M2Bradley",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -1976,6 +2024,7 @@
             "name": "IFV_3",
             "VehicleType": "CV90",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2005,6 +2054,7 @@
             "name": "IFV_4",
             "VehicleType": "CV90",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2034,6 +2084,7 @@
             "name": "Heli_1",
             "VehicleType": "UH60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2063,6 +2114,7 @@
             "name": "Heli_2",
             "VehicleType": "UH60",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2092,6 +2144,7 @@
             "name": "Heli_3",
             "VehicleType": "Eurocopter",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2121,6 +2174,7 @@
             "name": "Heli_4",
             "VehicleType": "Eurocopter",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2150,6 +2204,7 @@
             "name": "Heli_5",
             "VehicleType": "AH64",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2179,6 +2234,7 @@
             "name": "Heli_6",
             "VehicleType": "AH64",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2208,6 +2264,7 @@
             "name": "Jet_1",
             "VehicleType": "JAS39",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2237,6 +2294,7 @@
             "name": "Jet_2",
             "VehicleType": "JAS39",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2266,6 +2324,7 @@
             "name": "Jet_3",
             "VehicleType": "F22",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2295,6 +2354,7 @@
             "name": "Jet_4",
             "VehicleType": "F22",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2324,6 +2384,7 @@
             "name": "Jet_5",
             "VehicleType": "F16",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2353,6 +2414,7 @@
             "name": "Jet_6",
             "VehicleType": "F16",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2382,6 +2444,7 @@
             "name": "Jet_7",
             "VehicleType": "SU57",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2411,6 +2474,7 @@
             "name": "Jet_8",
             "VehicleType": "SU57",
             "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
@@ -2435,6 +2499,35 @@
                 "z": -269.1847
             },
             "id": "Team2_VehicleSpawns/Jet_8"
+        },
+        {
+            "name": "MapVersion",
+            "ObjId": 0,
+            "metadata/autor": "Florent Poujol",
+            "metadata/Version": "v10",
+            "metadata/Date": "2025-10-13",
+            "type": "ACUnit_04",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "id": "MapVersion"
         },
         {
             "name": "CombatArea",
@@ -2647,6 +2740,972 @@
                 "z": -314.964
             },
             "id": "VEH_Stationary_GDF012"
+        },
+        {
+            "name": "VehicleSpawner",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -124.375,
+                "y": 94.55888,
+                "z": -473.4204
+            },
+            "id": "TankRange/Start/VehicleSpawner"
+        },
+        {
+            "name": "VehicleSpawner2",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -115.8805,
+                "y": 94.55888,
+                "z": -473.4204
+            },
+            "id": "TankRange/Start/VehicleSpawner2"
+        },
+        {
+            "name": "VehicleSpawner3",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -106.8401,
+                "y": 94.55888,
+                "z": -474.0431
+            },
+            "id": "TankRange/Start/VehicleSpawner3"
+        },
+        {
+            "name": "VehicleSpawner4",
+            "VehicleType": "Leopard",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -98.7168,
+                "y": 94.55888,
+                "z": -474.686
+            },
+            "id": "TankRange/Start/VehicleSpawner4"
+        },
+        {
+            "name": "VehicleSpawner5",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -90.6832,
+                "y": 93.46654,
+                "z": -475.3218
+            },
+            "id": "TankRange/Start/VehicleSpawner5"
+        },
+        {
+            "name": "VehicleSpawner6",
+            "VehicleType": "M2Bradley",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -82.50992,
+                "y": 93.46654,
+                "z": -475.9686
+            },
+            "id": "TankRange/Start/VehicleSpawner6"
+        },
+        {
+            "name": "VehicleSpawner7",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -73.92002,
+                "y": 93.46654,
+                "z": -476.6485
+            },
+            "id": "TankRange/Start/VehicleSpawner7"
+        },
+        {
+            "name": "VehicleSpawner8",
+            "VehicleType": "CV90",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -64.4866,
+                "y": 93.46654,
+                "z": -477.395
+            },
+            "id": "TankRange/Start/VehicleSpawner8"
+        },
+        {
+            "name": "ConstructionFloorConcrete_01_512x64x512",
+            "type": "ConstructionFloorConcrete_01_512x64x512",
+            "right": {
+                "x": -15,
+                "y": 0,
+                "z": -2.26494e-06
+            },
+            "up": {
+                "x": -2.26494e-06,
+                "y": -6.55671e-07,
+                "z": 15
+            },
+            "front": {
+                "x": -9.90035e-14,
+                "y": 15,
+                "z": 6.55671e-07
+            },
+            "position": {
+                "x": -48.0946,
+                "y": 90.56777,
+                "z": -512.28917
+            },
+            "id": "TankRange/Start/ConstructionFloorConcrete_01_512x64x512"
+        },
+        {
+            "name": "ConstructionFloorConcrete_01_512x64x513",
+            "type": "ConstructionFloorConcrete_01_512x64x512",
+            "right": {
+                "x": -15,
+                "y": -5.68434e-14,
+                "z": -2.26494e-06
+            },
+            "up": {
+                "x": -1.67846e-06,
+                "y": -10.0715,
+                "z": 11.1159
+            },
+            "front": {
+                "x": -1.52076e-06,
+                "y": 11.1159,
+                "z": 10.0715
+            },
+            "position": {
+                "x": -48.0946,
+                "y": 84.80952,
+                "z": -515.44994
+            },
+            "id": "TankRange/Start/ConstructionFloorConcrete_01_512x64x513"
+        },
+        {
+            "name": "ConstructionFloorConcrete_01_512x64x514",
+            "type": "ConstructionFloorConcrete_01_512x64x512",
+            "right": {
+                "x": -15,
+                "y": -1.1418e-06,
+                "z": -1.95607e-06
+            },
+            "up": {
+                "x": -1.67846e-06,
+                "y": -3.09434,
+                "z": 14.6774
+            },
+            "front": {
+                "x": -1.52076e-06,
+                "y": 14.6774,
+                "z": 3.09434
+            },
+            "position": {
+                "x": -48.095,
+                "y": 88.5964,
+                "z": -502.885
+            },
+            "id": "TankRange/Start/ConstructionFloorConcrete_01_512x64x514"
+        },
+        {
+            "name": "VehicleSpawner",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -55.891,
+                "y": 90.4974,
+                "z": -571.335
+            },
+            "id": "TankRange/targets/VehicleSpawner"
+        },
+        {
+            "name": "VehicleSpawner2",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -65.269,
+                "y": 90.4974,
+                "z": -621.335
+            },
+            "id": "TankRange/targets/VehicleSpawner2"
+        },
+        {
+            "name": "VehicleSpawner4",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -75.269,
+                "y": 90.4974,
+                "z": -621.335
+            },
+            "id": "TankRange/targets/VehicleSpawner4"
+        },
+        {
+            "name": "VehicleSpawner3",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -86.113,
+                "y": 90.4974,
+                "z": -671.335
+            },
+            "id": "TankRange/targets/VehicleSpawner3"
+        },
+        {
+            "name": "VehicleSpawner5",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -98.9744,
+                "y": 90.4974,
+                "z": -671.335
+            },
+            "id": "TankRange/targets/VehicleSpawner5"
+        },
+        {
+            "name": "VehicleSpawner6",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -106.113,
+                "y": 86.63643,
+                "z": -721.335
+            },
+            "id": "TankRange/targets/VehicleSpawner6"
+        },
+        {
+            "name": "VehicleSpawner7",
+            "P_AutoSpawnEnabled": true,
+            "P_DefaultRespawnTime": 10,
+            "P_ApplyDamageToAbandonVehicle": false,
+            "P_AbandonVehiclesOutOfCombatArea": false,
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -118.9245,
+                "y": 86.6364,
+                "z": -721.335
+            },
+            "id": "TankRange/targets/VehicleSpawner7"
+        },
+        {
+            "name": "50",
+            "type": "FiringRange_NumberFive_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -53.2161,
+                "y": 88.177565,
+                "z": -571.9126
+            },
+            "id": "TankRange/targets/50"
+        },
+        {
+            "name": "FiringRange_NumberZero_01",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -52.544427,
+                "y": 88.177565,
+                "z": -571.9126
+            },
+            "id": "TankRange/targets/50/FiringRange_NumberZero_01"
+        },
+        {
+            "name": "MissileContainer_01_B4",
+            "type": "MissileContainer_01_B",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -8.74228e-08,
+                "z": 2
+            },
+            "front": {
+                "x": 0,
+                "y": -2,
+                "z": -8.74228e-08
+            },
+            "position": {
+                "x": -53.843217,
+                "y": 89.203575,
+                "z": -574.48603
+            },
+            "id": "TankRange/targets/50/MissileContainer_01_B4"
+        },
+        {
+            "name": "FiringRange_NumberOne_01",
+            "type": "FiringRange_NumberOne_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -70.67113,
+                "y": 87.18004,
+                "z": -618.4065
+            },
+            "id": "TankRange/targets/101/FiringRange_NumberOne_01"
+        },
+        {
+            "name": "FiringRange_NumberZero_02",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -70.07113,
+                "y": 87.18004,
+                "z": -618.4065
+            },
+            "id": "TankRange/targets/101/FiringRange_NumberZero_02"
+        },
+        {
+            "name": "FiringRange_NumberZero_01",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -69.47113,
+                "y": 87.18004,
+                "z": -618.4065
+            },
+            "id": "TankRange/targets/101/FiringRange_NumberZero_01"
+        },
+        {
+            "name": "MissileContainer_01_B3",
+            "type": "MissileContainer_01_B",
+            "right": {
+                "x": 3,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -1.31134e-07,
+                "z": 3
+            },
+            "front": {
+                "x": 0,
+                "y": -3,
+                "z": -1.31134e-07
+            },
+            "position": {
+                "x": -71.336406,
+                "y": 88.10856,
+                "z": -622.45984
+            },
+            "id": "TankRange/targets/101/MissileContainer_01_B3"
+        },
+        {
+            "name": "FiringRange_NumberOne_01",
+            "type": "FiringRange_NumberOne_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -92.888225,
+                "y": 87.601057,
+                "z": -671.3
+            },
+            "id": "TankRange/targets/150/FiringRange_NumberOne_01"
+        },
+        {
+            "name": "FiringRange_NumberFive_01",
+            "type": "FiringRange_NumberFive_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -91.675678,
+                "y": 87.601057,
+                "z": -671.3
+            },
+            "id": "TankRange/targets/150/FiringRange_NumberFive_01"
+        },
+        {
+            "name": "FiringRange_NumberZero_01",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -90.50526,
+                "y": 87.601057,
+                "z": -671.3
+            },
+            "id": "TankRange/targets/150/FiringRange_NumberZero_01"
+        },
+        {
+            "name": "MissileContainer_01_B2",
+            "type": "MissileContainer_01_B",
+            "right": {
+                "x": 4,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -1.74846e-07,
+                "z": 4
+            },
+            "front": {
+                "x": 0,
+                "y": -4,
+                "z": -1.74846e-07
+            },
+            "position": {
+                "x": -93.5806,
+                "y": 89.401057,
+                "z": -676.5146
+            },
+            "id": "TankRange/targets/150/MissileContainer_01_B2"
+        },
+        {
+            "name": "FiringRange_NumberTwo_01",
+            "type": "FiringRange_NumberTwo_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -113.941826,
+                "y": 86.34213,
+                "z": -721.3
+            },
+            "id": "TankRange/targets/200/FiringRange_NumberTwo_01"
+        },
+        {
+            "name": "FiringRange_NumberZero_02",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -112.84183,
+                "y": 86.34213,
+                "z": -721.3
+            },
+            "id": "TankRange/targets/200/FiringRange_NumberZero_02"
+        },
+        {
+            "name": "FiringRange_NumberZero_01",
+            "type": "FiringRange_NumberZero_01",
+            "right": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 2,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "position": {
+                "x": -111.74183,
+                "y": 86.34213,
+                "z": -721.3
+            },
+            "id": "TankRange/targets/200/FiringRange_NumberZero_01"
+        },
+        {
+            "name": "ConstructionFloorConcrete_01_512x64x512",
+            "type": "ConstructionFloorConcrete_01_512x64x512",
+            "right": {
+                "x": 5,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 5,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 5
+            },
+            "position": {
+                "x": -125.2543,
+                "y": 83.09695,
+                "z": -714.10212
+            },
+            "id": "TankRange/targets/200/ConstructionFloorConcrete_01_512x64x512"
+        },
+        {
+            "name": "MissileContainer_01_B",
+            "type": "MissileContainer_01_B",
+            "right": {
+                "x": 4,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": -1.74846e-07,
+                "z": 4
+            },
+            "front": {
+                "x": 0,
+                "y": -4,
+                "z": -1.74846e-07
+            },
+            "position": {
+                "x": -114.740097,
+                "y": 88.18617,
+                "z": -726.48207
+            },
+            "id": "TankRange/targets/200/MissileContainer_01_B"
+        },
+        {
+            "name": "VEH_Stationary_BGM71TOW",
+            "type": "VEH_Stationary_BGM71TOW",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": 8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -117.8853,
+                "y": 90.60834,
+                "z": -520.82561
+            },
+            "id": "TankRange/VEH_Stationary_BGM71TOW"
+        },
+        {
+            "name": "VEH_Stationary_BGM71TOW2",
+            "type": "VEH_Stationary_BGM71TOW",
+            "right": {
+                "x": -1,
+                "y": 0,
+                "z": -8.74228e-08
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 8.74228e-08,
+                "y": 0,
+                "z": -1
+            },
+            "position": {
+                "x": -99.779,
+                "y": 90.59479,
+                "z": -520.82665
+            },
+            "id": "TankRange/VEH_Stationary_BGM71TOW2"
         }
     ],
     "Static": [
