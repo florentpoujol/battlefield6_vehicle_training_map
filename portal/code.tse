@@ -1,4 +1,15 @@
 
+/**
+ * Script for the Florent's Vehicle Training map on Mirak 
+ * Build by Florent Poujol 
+ * Sources: https://github.com/florentpoujol/battlefield6_vehicle_training_map
+ * 
+ * {date}
+ */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// UIHelpers
+
 /*
 Helper functions to create UI from a JSON object tree.
 
@@ -311,10 +322,184 @@ function __addUIWidget(params: UIParams) {
     return undefined;
 }
 
-function ParseUI(...params: any[]) {
+export function ParseUI(...params: any[]) {
     let widget: mod.UIWidget | undefined;
     for (let a = 0; a < params.length; a++) {
         widget = __addUIWidget(params[a] as UIParams);
     }
     return widget;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// code
+
+import {ParseUI} from './UIHelpers';
+
+
+// --------------------------------------------------
+// Utils
+
+class DevTools
+{
+    log(message: string, player: mod.Player): void
+    {
+        mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.any, message), player);
+    }
+}
+
+
+
+
+// --------------------------------------------------
+
+
+let team1hqPosition: mod.Vector;
+let team2hqPosition: mod.Vector;
+
+export function OnGameModeStarted(): void
+{
+	// spawn vehicle
+	// Moves the Object by the delta position and rotation over the time provided. Options to loop indefinitely and reverse
+    // mode.MoveObjectOverTime(
+    //     object: mod.Object,
+    //     positionDelta: Vector,
+    //     rotationDelta: Vector,
+    //     timeInSeconds: number,
+    //     shouldLoop: boolean,
+    //     shouldReverse: boolean
+    // ): void;
+
+
+    // mod.AddUIText()
+
+    // team1hqPosition = mod.GetObjectPosition(mod.GetHQ(1))
+    // team2hqPosition = mod.GetObjectPosition(mod.GetHQ(2))
+}
+
+
+// allow to spawn : 
+// - when a player whant one, spawn the vehicle and Move the vehicle
+// ou just SpawnObject(RuntimeSpawn_Common.{VehicleOfChoise}, position)
+
+
+
+export function OnPlayerJoined(player: mod.Player): void
+{
+    const playerId = mod.GetObjId(player);
+
+    ParseUI({
+        playerId: player,
+        type: "Container",
+        name: "welcome_screen" + playerId,
+        position: [0, 0, 0], // position relative à l'ancre
+        size: [500, 500, 500], // what is the Z ?
+        anchor: mod.UIAnchor.Center,
+        bgColor: [1, 1, 1], // white
+        bgFill: mod.UIBgFill.Solid,
+        padding: 20, // pixels
+        visible: true,
+        children: [
+            {
+                type: "Text",
+                
+                size: [100, 100],
+                position: [0, 0],
+                anchor: mod.UIAnchor.TopLeft,
+                bgFill: mod.UIBgFill.Solid,
+                bgColor: [0.5, 0.5, 0.5], // grey
+                textColor: [1, 1, 1],
+                textAnchor: mod.UIAnchor.Center,
+                textLabel: mod.Message(mod.stringkeys.text1),
+                textSize: 50 // about the height in pixels
+            },
+            {
+                type: "Container",
+                
+                size: [5, 5],
+                position: [0, 0],
+                anchor: mod.UIAnchor.TopRight,
+                bgFill: mod.UIBgFill.Solid,
+                bgColor: [0.1, 0.5, 1],
+            },
+            {
+                type: "Text",
+                
+                size: [50, 50],
+                position: [10, 10],
+                anchor: mod.UIAnchor.TopRight,
+                bgFill: mod.UIBgFill.OutlineThick,
+                bgColor: [0.1, 0.5, 1],
+                textColor: [1, 0.5, 1],
+                textAnchor: mod.UIAnchor.Center,
+                textLabel: mod.Message(mod.stringkeys.text2),
+                textSize: 50
+            },
+            {
+                type: "Button",
+                name: "button_text_3" + playerId,
+                size: [100, 100],
+                position: [0, 0],
+                anchor: mod.UIAnchor.BottomLeft,
+                bgFill: mod.UIBgFill.Solid,
+                bgColor: [1, 0, 0],
+                children: [
+                    {
+                        type: "Text",
+                        name: "text3" + playerId,
+                        textLabel: mod.Message(mod.stringkeys.text3)
+                    }
+                ]
+            }
+        ]
+        
+    });
+
+    let button: mod.UIWidget = mod.FindUIWidgetWithName("button_text_3" +  playerId);
+
+    mod.EnableUIButtonEvent(button, mod.UIButtonEvent.ButtonUp, true);
+    mod.EnableUIInputMode(true, player);
+}
+
+export function OnPlayerUIButtonEvent(
+            eventPlayer: mod.Player,
+            eventUIWidget: mod.UIWidget,
+            eventUIButtonEvent: mod.UIButtonEvent
+        ): void 
+{
+    // mod.GetUIWidgetName(eventUIWidget);
+    const playerId = mod.GetObjId(eventPlayer);
+
+    let containerWidget: mod.UIWidget = mod.FindUIWidgetWithName("welcome_screen" + playerId);
+    mod.SetUIWidgetVisible(containerWidget, false);
+}
+
+
+export function OnPlayerDeployed(eventPlayer: mod.Player): void
+{
+    const devTools = new DevTools()
+
+
+    // console.log(mod.stringkeys.player_spawned);
+    
+    // let msg = mod.Message(mod.stringkeys.builtin_message);
+    // mod.DisplayNotificationMessage(msg, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.world_log);
+    // mod.DisplayHighlightedWorldLogMessage(msg, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.custom_1);
+    // mod.DisplayCustomNotificationMessage(msg, mod.CustomNotificationSlots.HeaderText, 60, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.custom_2);
+    // mod.DisplayCustomNotificationMessage(msg, mod.CustomNotificationSlots.MessageText1, 60, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.custom_3);
+    // mod.DisplayCustomNotificationMessage(msg, mod.CustomNotificationSlots.MessageText2, 60, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.custom_4);
+    // mod.DisplayCustomNotificationMessage(msg, mod.CustomNotificationSlots.MessageText3, 60, eventPlayer);
+
+    // msg = mod.Message(mod.stringkeys.custom_5);
+    // mod.DisplayCustomNotificationMessage(msg, mod.CustomNotificationSlots.MessageText4, 60, eventPlayer);
+
 }

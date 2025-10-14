@@ -1,0 +1,384 @@
+
+/**
+ * Helper functions to create UI from a JSON object tree.
+ * Only export ParseUI() at the end
+ * Taken from the example mods.
+ * 
+ * This has been modified with the following differences:
+ * - The type is now the UIWidgetType enum
+ * - the colors can be set as an RGB array
+ */
+
+type UIVector = mod.Vector | number[];
+
+export enum UIWidgetType {
+    Container,
+    Text,
+    Button,
+    Image
+}
+
+interface UIParams {
+    type: UIWidgetType;
+    name?: string;
+    position?: UIVector;
+    size?: UIVector;
+    anchor?: mod.UIAnchor;
+    parent?: mod.UIWidget;
+    visible?: boolean;
+    textLabel?: string|mod.Message;
+    textColor?: UIVector;
+    textAlpha?: number;
+    textSize?: number;
+    textAnchor?: mod.UIAnchor;
+    padding?: number;
+    bgColor?: UIVector;
+    bgAlpha?: number;
+    bgFill?: mod.UIBgFill;
+    imageType?: mod.UIImageType;
+    imageColor?: UIVector;
+    imageAlpha?: number;
+    team?: mod.Team;
+    player?: mod.Player;
+    children?: UIParams[];
+    buttonEnabled?: boolean;
+    buttonColorBase?: UIVector;
+    buttonAlphaBase?: number;
+    buttonColorDisabled?: UIVector;
+    buttonAlphaDisabled?: number;
+    buttonColorPressed?: UIVector;
+    buttonAlphaPressed?: number;
+    buttonColorHover?: UIVector;
+    buttonAlphaHover?: number;
+    buttonColorFocused?: UIVector;
+    buttonAlphaFocused?: number;
+}
+
+interface UIParamsWithDefaultFilled {
+    type: UIWidgetType;
+    name: string;
+    position: UIVector;
+    size: UIVector;
+    anchor: mod.UIAnchor;
+    parent: mod.UIWidget;
+    visible: boolean;
+    textLabel: string|mod.Message;
+    textColor: UIVector;
+    textAlpha: number;
+    textSize: number;
+    textAnchor: mod.UIAnchor;
+    padding: number;
+    bgColor: UIVector;
+    bgAlpha: number;
+    bgFill: mod.UIBgFill;
+    imageType: mod.UIImageType;
+    imageColor: UIVector;
+    imageAlpha: number;
+    team?: mod.Team;
+    player?: mod.Player;
+    children?: any[];
+    buttonEnabled: boolean;
+    buttonColorBase: UIVector;
+    buttonAlphaBase: number;
+    buttonColorDisabled: UIVector;
+    buttonAlphaDisabled: number;
+    buttonColorPressed: UIVector;
+    buttonAlphaPressed: number;
+    buttonColorHover: UIVector;
+    buttonAlphaHover: number;
+    buttonColorFocused: UIVector;
+    buttonAlphaFocused: number;
+}
+
+function __asModVector(param: UIVector, isColor: boolean = false): mod.Vector 
+{
+    if (Array.isArray(param)) {
+        param[2] ??= 0
+
+        if (isColor) {
+            if (param[0] > 1) param[0] /= 255;
+            if (param[1] > 1) param[1] /= 255;
+            if (param[2] > 1) param[2] /= 255;
+        }
+
+        return mod.CreateVector(param[0], param[1], param[2]);
+    }
+    
+    return param;
+}
+
+function __asModMessage(param: string | mod.Message): mod.Message
+{
+    if (typeof (param) === "string")
+        return mod.Message(param);
+
+    return param;
+}
+
+function __fillInDefaultArgs(params: UIParams): UIParamsWithDefaultFilled 
+{
+    if (!params.hasOwnProperty('name'))
+        params.name = "";
+    if (!params.hasOwnProperty('position'))
+        params.position = mod.CreateVector(0, 0, 0);
+    if (!params.hasOwnProperty('size'))
+        params.size = mod.CreateVector(100, 100, 0);
+    if (!params.hasOwnProperty('anchor'))
+        params.anchor = mod.UIAnchor.Center;
+    if (!params.hasOwnProperty('parent'))
+        params.parent = mod.GetUIRoot();
+    if (!params.hasOwnProperty('visible'))
+        params.visible = true;
+    if (!params.hasOwnProperty('padding'))
+        params.padding = 10;
+    if (!params.hasOwnProperty('bgColor'))
+        params.bgColor = mod.CreateVector(1, 1, 1); // white
+    if (!params.hasOwnProperty('bgAlpha'))
+        params.bgAlpha = 1.0;
+    if (!params.hasOwnProperty('bgFill'))
+        params.bgFill = mod.UIBgFill.Solid;
+
+    return params as UIParamsWithDefaultFilled;
+}
+
+function __setNameAndGetWidget(uniqueName: string, params: UIParamsWithDefaultFilled): mod.UIWidget
+{
+    let widget = mod.FindUIWidgetWithName(uniqueName) as mod.UIWidget;
+    mod.SetUIWidgetName(widget, params.name);
+    return widget;
+}
+
+const __cUniqueName = "----uniquename----";
+
+function __addUIContainer(params: UIParams) {
+    const params2 = __fillInDefaultArgs(params);
+    const restrict = params2.team ?? params2.player;
+
+    if (restrict) {
+        mod.AddUIContainer(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill,
+            restrict);
+    } else {
+        mod.AddUIContainer(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill);
+    }
+
+    const widget = __setNameAndGetWidget(__cUniqueName, params2);
+    if (params2.children) {
+        params2.children.forEach((childParams: UIParams) => {
+            childParams.parent = widget;
+            ParseUI(childParams);
+        });
+    }
+    return widget;
+}
+
+function __fillInDefaultTextArgs(params: UIParams): UIParamsWithDefaultFilled
+{
+    if (!params.hasOwnProperty('textLabel'))
+        params.textLabel = "{missing text}";
+    if (!params.hasOwnProperty('textSize'))
+        params.textSize = 50;
+    if (!params.hasOwnProperty('textColor'))
+        params.textColor = mod.CreateVector(0.25, 0.25, 0.25); // (63/63/63) #3F3F3F black grey / charcoal;
+    if (!params.hasOwnProperty('textAlpha'))
+        params.textAlpha = 1;
+    if (!params.hasOwnProperty('textAnchor'))
+        params.textAnchor = mod.UIAnchor.Center;
+
+    return params as UIParamsWithDefaultFilled;
+}
+
+function __addUIText(params: UIParams): mod.UIWidget {
+    const params2 = __fillInDefaultArgs(params);
+    const params3 = __fillInDefaultTextArgs(params2);
+
+    let restrict = params3.team ?? params3.player;
+    if (restrict) {
+        mod.AddUIText(__cUniqueName,
+            __asModVector(params3.position),
+            __asModVector(params3.size),
+            params3.anchor,
+            params3.parent,
+            params3.visible,
+            params3.padding,
+            __asModVector(params3.bgColor, true),
+            params3.bgAlpha,
+            params3.bgFill,
+            __asModMessage(params3.textLabel),
+            params3.textSize,
+            __asModVector(params3.textColor, true),
+            params3.textAlpha,
+            params3.textAnchor,
+            restrict);
+    } else {
+        mod.AddUIText(__cUniqueName,
+            __asModVector(params3.position),
+            __asModVector(params3.size),
+            params3.anchor,
+            params3.parent,
+            params3.visible,
+            params3.padding,
+            __asModVector(params3.bgColor, true),
+            params3.bgAlpha,
+            params3.bgFill,
+            __asModMessage(params3.textLabel),
+            params3.textSize,
+            __asModVector(params3.textColor, true),
+            params3.textAlpha,
+            params3.textAnchor);
+    }
+    return __setNameAndGetWidget(__cUniqueName, params3);
+}
+
+function __fillInDefaultImageArgs(params: UIParams): UIParamsWithDefaultFilled
+{
+    if (!params.hasOwnProperty('imageType'))
+        params.imageType = mod.UIImageType.None;
+    if (!params.hasOwnProperty('imageColor'))
+        params.imageColor = mod.CreateVector(1, 1, 1);
+    if (!params.hasOwnProperty('imageAlpha'))
+        params.imageAlpha = 1;
+
+    return params as UIParamsWithDefaultFilled;
+}
+
+function __addUIImage(params: UIParams): mod.UIWidget
+{
+    const params2 = __fillInDefaultImageArgs(__fillInDefaultArgs(params));
+    const restrict = params2.team ?? params2.player;
+
+    if (restrict) {
+        mod.AddUIImage(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill,
+            params2.imageType,
+            __asModVector(params2.imageColor, true),
+            params2.imageAlpha,
+            restrict);
+    } else {
+        mod.AddUIImage(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill,
+            params2.imageType,
+            __asModVector(params2.imageColor, true),
+            params2.imageAlpha);
+    }
+
+    return __setNameAndGetWidget(__cUniqueName, params2);
+}
+
+function __fillInDefaultButtonArgs(params: UIParams): UIParamsWithDefaultFilled
+{
+    if (!params.hasOwnProperty('buttonEnabled'))
+        params.buttonEnabled = true;
+    if (!params.hasOwnProperty('buttonColorBase'))
+        params.buttonColorBase = mod.CreateVector(0.7, 0.7, 0.7);
+    if (!params.hasOwnProperty('buttonAlphaBase'))
+        params.buttonAlphaBase = 1;
+    if (!params.hasOwnProperty('buttonColorDisabled'))
+        params.buttonColorDisabled = mod.CreateVector(0.2, 0.2, 0.2);
+    if (!params.hasOwnProperty('buttonAlphaDisabled'))
+        params.buttonAlphaDisabled = 0.5;
+    if (!params.hasOwnProperty('buttonColorPressed'))
+        params.buttonColorPressed = mod.CreateVector(0.25, 0.25, 0.25);
+    if (!params.hasOwnProperty('buttonAlphaPressed'))
+        params.buttonAlphaPressed = 1;
+    if (!params.hasOwnProperty('buttonColorHover'))
+        params.buttonColorHover = mod.CreateVector(1, 1, 1);
+    if (!params.hasOwnProperty('buttonAlphaHover'))
+        params.buttonAlphaHover = 1;
+    if (!params.hasOwnProperty('buttonColorFocused'))
+        params.buttonColorFocused = mod.CreateVector(1, 1, 1);
+    if (!params.hasOwnProperty('buttonAlphaFocused'))
+        params.buttonAlphaFocused = 1;
+
+    return params as UIParamsWithDefaultFilled;
+}
+
+function __addUIButton(params: UIParams): mod.UIWidget
+{
+    const params2 = __fillInDefaultButtonArgs(__fillInDefaultArgs(params));
+    const restrict = params2.team ?? params2.player;
+
+    if (restrict) {
+        mod.AddUIButton(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill,
+            params2.buttonEnabled,
+            __asModVector(params2.buttonColorBase, true), params2.buttonAlphaBase,
+            __asModVector(params2.buttonColorDisabled, true), params2.buttonAlphaDisabled,
+            __asModVector(params2.buttonColorPressed, true), params2.buttonAlphaPressed,
+            __asModVector(params2.buttonColorHover, true), params2.buttonAlphaHover,
+            __asModVector(params2.buttonColorFocused, true), params2.buttonAlphaFocused,
+            restrict);
+    } else {
+        mod.AddUIButton(__cUniqueName,
+            __asModVector(params2.position),
+            __asModVector(params2.size),
+            params2.anchor,
+            params2.parent,
+            params2.visible,
+            params2.padding,
+            __asModVector(params2.bgColor, true),
+            params2.bgAlpha,
+            params2.bgFill,
+            params2.buttonEnabled,
+            __asModVector(params2.buttonColorBase, true), params2.buttonAlphaBase,
+            __asModVector(params2.buttonColorDisabled, true), params2.buttonAlphaDisabled,
+            __asModVector(params2.buttonColorPressed, true), params2.buttonAlphaPressed,
+            __asModVector(params2.buttonColorHover, true), params2.buttonAlphaHover,
+            __asModVector(params2.buttonColorFocused, true), params2.buttonAlphaFocused);
+    }
+
+    return __setNameAndGetWidget(__cUniqueName, params2);
+}
+
+export function ParseUI(params: UIParams): mod.UIWidget
+{
+    switch(params.type) {
+        case UIWidgetType.Container: return __addUIContainer(params);
+        case UIWidgetType.Text: return __addUIText(params);
+        case UIWidgetType.Image: return __addUIImage(params);
+        case UIWidgetType.Button: return __addUIButton(params);           
+    }
+    
+    throw new Error("no specified UI type");
+}

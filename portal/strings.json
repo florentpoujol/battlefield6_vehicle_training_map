@@ -1,0 +1,16 @@
+{
+  "starting": "S T A R T I N G",
+  "any": "{}",
+  "close_button": "X",
+  "welcome": "Welcome on the server",
+  "ai_spawned": "ai_spawned",
+  "vehicle_spawned": "vehicle_spawned",
+  "ai_in_vehicle": "ai_in_vehicle",
+  "no_ai_or_vehicle": "no_ai_or_vehicle",
+  "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel euismod lacus. Nam at scelerisque purus, quis cursus nibh. Praesent odio elit, cursus a nulla in, tristique posuere ligula. Nunc dictum eleifend purus, ut bibendum ligula sodales vel. Nulla laoreet scelerisque nisi, eget bibendum nisl condimentum eu. Duis condimentum elit sed feugiat molestie. Nam vitae sem viverra, placerat velit vel, faucibus libero. Aliquam finibus eget odio ut fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc consequat lacinia sapien at imperdiet. Donec vel aliquet mi. Vivamus tristique, enim a porttitor fringilla, lectus diam iaculis neque, eu maximus est felis a quam. Suspendisse at leo nulla. Ut porttitor ornare imperdiet. Donec non enim metus. Proin augue risus, varius vel velit eu, pretium ultrices turpis. Fusce pharetra, urna ac pretium mollis, metus orci lacinia felis, id viverra nunc neque et orci. Aliquam lobortis odio accumsan urna pretium ornare. Aenean ac placerat nibh, in porta diam. Vestibulum scelerisque erat quis ante blandit scelerisque. Quisque laoreet vulputate nisl ut finibus. Suspendisse aliquam, dolor quis eleifend maximus, ex risus interdum metus, ut molestie ipsum nisl vel leo. Fusce id eros sed lorem ullamcorper placerat et id lacus. Vestibulum tristique luctus felis, a ultricies eros rhoncus nec. Sed viverra nulla quis tellus dictum efficitur. Nulla lacinia tortor commodo lacus porttitor sollicitudin. Phasellus in lacus consectetur, pellentesque ipsum sagittis, vehicula leo. Aenean iaculis sed est at euismod. Cras vel dui condimentum odio vestibulum sodales a et ligula. Sed viverra consequat ullamcorper. Curabitur nec porttitor nibh. Morbi quis pharetra nulla, et sollicitudin augue. Nullam risus quam, cursus eget risus a, faucibus convallis magna. Cras interdum congue odio, imperdiet eleifend dui pulvinar in. Proin at erat bibendum nulla pulvinar tempor. Donec sit amet tortor vitae mi ultrices facilisis porttitor pretium orci. Sed pharetra, magna non molestie scelerisque, justo sapien dapibus felis, non viverra risus odio vitae nunc. In hac habitasse platea dictumst. Vestibulum luctus porttitor venenatis. Praesent iaculis eros lectus, non aliquet orci tincidunt at. Aliquam at mauris ultrices, tristique risus quis, suscipit quam. Sed eget nunc porta, venenatis libero vel, gravida ex. Fusce a malesuada nulla. Praesent malesuada elit at magna vestibulum auctor. Suspendisse molestie ipsum sit amet pharetra aliquam. In quis auctor dolor, ac euismod tortor. Curabitur a dapibus dui. Aliquam vitae ante augue.",
+  "OnAIWaypointIdleFailed": "OnAIWaypointIdleFailed",
+  "OnAIWaypointIdleRunning": "OnAIWaypointIdleRunning",
+  "OnAIWaypointIdleSucceeded": "OnAIWaypointIdleSucceeded",
+  "Player": "Player deployed, show UI",
+  "aitowaypoint": "AI to waypoint"
+}
