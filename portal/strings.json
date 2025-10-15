@@ -1,9 +1,12 @@
 {
-  "starting": "S T A R T I N G",
-  "any": "{}",
+  "devtools": {
+    "log": "{} {}"
+  },
+  "starting": "OnGameModeStarted after 20 seconds",
+  "any": "{} {}",
   "close_button": "X",
   "welcome": "Welcome on the server",
-  "ai_spawned": "ai_spawned",
+  "OnPlayerJoinGame": "OnPlayerJoinGame ai joined game",
   "vehicle_spawned": "vehicle_spawned",
   "ai_in_vehicle": "ai_in_vehicle",
   "no_ai_or_vehicle": "no_ai_or_vehicle",
@@ -12,5 +15,12 @@
   "OnAIWaypointIdleRunning": "OnAIWaypointIdleRunning",
   "OnAIWaypointIdleSucceeded": "OnAIWaypointIdleSucceeded",
   "Player": "Player deployed, show UI",
-  "aitowaypoint": "AI to waypoint"
+  "OnPlayerDeployed": "OnPlayerDeployed AI deployed",
+  "playerInteracted": "player interacted",
+  "bot_names": {
+    "bot1": "bot1",
+    "bot2": "bot2"
+  },
+  "botname": "Bot {}",
+  "vehicle_id": "Vehicle id: {}"
 }
