@@ -2,11 +2,10 @@
 
 This repo holds the "source files" for the "**Florent's Vehicle Training**" Portal experience (code 3374).  
 
-## Current features (for the published "v9")
+## Current features (for the published "v10")
 
 - Mirak Valley
 - Two or more of every vehicles on each side (except SU59 which doesn't spawn)
-- Immediate player and vehicle respawn
 - Infinite, no objective custom game mode
 - Much bigger combat area
 - No bots
@@ -26,6 +25,8 @@ This repo holds the "source files" for the "**Florent's Vehicle Training**" Port
 
 ## Content of the repo
 
-- `src/MP_Tungsten_Vehicle_Training.tscn` is the map file from Godot. This the map Mirak with my stuff added. To use it, place it somewhere inside the `GodotProject` folder that came with the SDK
-- `src/MP_Tungsten_Vehicle_Training.spacial.json` is matching spatial that contain all the added stuff, generated from Godot
-- `experience/florent's_vehicle_training.json` is the export of the experience I created from the Portal web builder
+- the `experience` folder contain the export of the experience created through Portal
+- the `godot` folder contain the scene (`.tscn`) file
+- the `portal` folder contain the generated `code.ts` script, the `string.json` file, and the `.spatial.json` files to be uploaded in portal
+- the `src` folder contain the various `.ts` scripts that will be combined into `portal/code.ts`
+- the `tools` folder contain bash and pythons script
