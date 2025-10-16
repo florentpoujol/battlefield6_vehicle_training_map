@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# GENRATED BY CHAT GPT 5
+# GENRATED BY CHAT GPT5
 
-from __future__ import print_function
 import sys
 import os
 import io
@@ -10,32 +9,22 @@ import json
 import re
 import argparse
 
-PATTERN = re.compile(r"mod\.stringkeys\.([a-zA-Z0-9_.-]+)")
-
-# Compat Python 2/3
-try:
-    text_type = unicode  # py2
-except NameError:
-    text_type = str      # py3
-
-def to_text(s):
-    return s if isinstance(s, text_type) else text_type(s)
+PATTERN = re.compile(r"mod\.stringkeys\.([A-Za-z0-9_.-]+)")
 
 def read_file_text(path):
-    # Lecture UTF-8 tolérante
+    """Read a text file as UTF-8, replacing invalid bytes."""
     with io.open(path, 'r', encoding='utf-8', errors='replace') as f:
         return f.read()
 
 def flatten_dict(d, prefix=""):
     """
-    Aplati un dict potentiellement imbriqué en clés 'a.b.c' -> valeur.
-    Les tableaux ne sont pas convertis en chemins numérotés : on s'arrête à la clé du tableau.
+    Flatten a (possibly nested) dict into dot-notation keys.
+    Arrays are treated as terminal values: we stop at the array key.
     """
     flat = {}
     if isinstance(d, dict):
-        it = d.iteritems() if hasattr(d, 'iteritems') else d.items()
-        for k, v in it:
-            key = (prefix + "." + to_text(k)) if prefix else to_text(k)
+        for k, v in d.items():
+            key = f"{prefix}.{k}" if prefix else str(k)
             if isinstance(v, dict):
                 flat.update(flatten_dict(v, key))
             else:
@@ -43,6 +32,7 @@ def flatten_dict(d, prefix=""):
     return flat
 
 def collect_used_keys(paths):
+    """Collect unique keys referenced as mod.stringkeys.<key> across TS files."""
     used = set()
     for p in paths:
         text = read_file_text(p)
@@ -51,6 +41,7 @@ def collect_used_keys(paths):
     return used
 
 def load_json_keys(strings_json_path):
+    """Load strings.json and return the set of flattened keys."""
     with io.open(strings_json_path, 'r', encoding='utf-8', errors='strict') as f:
         data = json.load(f)
     flat = flatten_dict(data)
@@ -61,61 +52,51 @@ def main(argv=None):
         argv = sys.argv[1:]
 
     parser = argparse.ArgumentParser(
-        description="Vérifie que toutes les clés mod.stringkeys.<clé> utilisées dans le JS existent dans strings.json."
+        description="Ensure all mod.stringkeys.<key> usages in TS exist in strings.json."
     )
-    parser.add_argument("strings_json", help="Chemin vers strings.json")
-    parser.add_argument("js_files", nargs="*", help="Un ou plusieurs fichiers .js à analyser")
-    parser.add_argument("--list-json-keys", action="store_true",
-                        help="Affiche toutes les clés disponibles dans strings.json (aplaties) et quitte")
+    parser.add_argument("strings_json", help="Path to strings.json")
+    parser.add_argument("ts_files", nargs="+", help="One or more .ts files to analyze")
     parser.add_argument("--show-unused", action="store_true",
-                        help="Affiche aussi les clés présentes dans strings.json mais non utilisées (optionnel).")
-
+                        help="Also list keys present in strings.json but not used in TS.")
     args = parser.parse_args(argv)
 
     if not os.path.isfile(args.strings_json):
-        print("ERREUR: strings.json introuvable: {}".format(args.strings_json))
+        print(f"ERROR: strings.json not found: {args.strings_json}")
         return 2
 
-    for p in args.js_files:
+    for p in args.ts_files:
         if not os.path.isfile(p):
-            print("ERREUR: fichier JS introuvable: {}".format(p))
+            print(f"ERROR: TS file not found: {p}")
             return 2
 
     try:
         json_keys = load_json_keys(args.strings_json)
     except Exception as e:
-        print("ERREUR: impossible de charger/parsing strings.json: {}".format(e))
+        print(f"ERROR: failed to load/parse strings.json: {e}")
         return 2
 
-    if args.list_json_keys:
-        print("Clés disponibles dans {} ({} clés):".format(args.strings_json, len(json_keys)))
-        for k in sorted(json_keys):
-            print(k)
-        return 0
-
-    used_keys = collect_used_keys(args.js_files)
+    used_keys = collect_used_keys(args.ts_files)
 
     missing = sorted(k for k in used_keys if k not in json_keys)
 
-    exit_code = 0
-    # print("Fichiers JS analysés: {}".format(len(args.js_files)))
-    # print("Clés utilisées (uniques): {}".format(len(used_keys)))
-    # print("Clés disponibles dans JSON: {}".format(len(json_keys)))
+    # print(f"Analyzed TS files: {len(args.ts_files)}")
+    # print(f"Used keys (unique): {len(used_keys)}")
+    # print(f"Available JSON keys: {len(json_keys)}")
 
+    exit_code = 0
     if missing:
-        print("\nMISSING keys in strings.json ({}):".format(len(missing)))
+        print(f"\nERROR: missing keys in strings.json ({len(missing)}):")
         for k in missing:
-            print("- {}".format(k))
+            print(f"- {k}")
         exit_code = 1
     else:
-        print("\n OK: All used keys are present in the strings.json file.")
+        print("\nOK: All used keys are present in strings.json.")
 
-    # --show-used
     if args.show_unused:
         unused = sorted(k for k in json_keys if k not in used_keys)
-        print("\nClés JSON non utilisées ({}):".format(len(unused)))
+        print(f"\nUnused json keys ({len(unused)}):")
         for k in unused:
-            print("- {}".format(k))
+            print(f"- {k}")
 
     return exit_code
 

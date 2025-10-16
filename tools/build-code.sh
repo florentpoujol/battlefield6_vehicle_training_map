@@ -45,5 +45,5 @@ do
 	echo "// - $filename" >> $outputfilepath 
 done
 
-# check the use of "mod.stringkeys.xxxx"
 py ./tools/check-string-keys.py ./portal/strings.json $outputfilepath
+py ./tools/check-callback-typo.py $outputfilepath

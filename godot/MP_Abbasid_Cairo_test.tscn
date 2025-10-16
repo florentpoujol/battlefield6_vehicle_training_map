@@ -1,0 +1,220 @@
+[gd_scene load_steps=19 format=3 uid="uid://miod5ng2dosx"]
+
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_km0gb"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_23k6r"]
+[ext_resource type="PackedScene" path="res://objects/entities/SpawnPoint.tscn" id="3_gv48d"]
+[ext_resource type="Script" uid="uid://ck5uniw0pl6u8" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.gd" id="3_oql5i"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/VehicleSpawner.tscn" id="4_gv48d"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="4_sk18b"]
+[ext_resource type="PackedScene" path="res://static/MP_Abbasid_Terrain.tscn" id="5_82iqt"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_sk18b"]
+[ext_resource type="PackedScene" path="res://static/MP_Abbasid_Assets.tscn" id="6_oql5i"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/AI/AI_Spawner.tscn" id="8_sk18b"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/AI/AI_WaypointPath.tscn" id="10_82iqt"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/InteractPoint.tscn" id="13_4qhi5"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/Sector.tscn" id="14_5hpax"]
+[ext_resource type="PackedScene" path="res://objects/Global/Props/FiringRangeCrate_01.tscn" id="14_f380e"]
+[ext_resource type="PackedScene" path="res://objects/Shared/Generic/Common/Props/ComputerMonitor_01.tscn" id="15_1msks"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Conquest/CapturePoint.tscn" id="15_1x8uy"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/AreaTrigger.tscn" id="16_1msks"]
+
+[sub_resource type="Curve3D" id="Curve3D_oql5i"]
+closed = true
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.61416, -0.3255, 16.0912, 0, 0, 0, 0, 0, 0, 35.2463, -0.520279, 18.153, 0, 0, 0, 0, 0, 0, 35.9512, -0.572372, -15.9179, 0, 0, 0, 0, 0, 0, 0, -0.0784836, -16.1847),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="MP_Abbasid" type="Node3D"]
+
+[node name="DeployCam" parent="." instance=ExtResource("5_sk18b")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 133.912, 0)
+
+[node name="HQ_PlayerSpawner_team_1" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns", "ForwardSpawns") instance=ExtResource("1_km0gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.9889, 64.3885, -61.8869)
+AltTeam = 0
+VehicleSpawnersEnabled = true
+ObjId = 1
+CameraFOV = 70
+HQArea = NodePath("Boundaries_team_1")
+InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
+ForwardSpawns = [NodePath("SpawnPoint_1_5"), null]
+
+[node name="Boundaries_team_1" type="Node3D" parent="HQ_PlayerSpawner_team_1"]
+script = ExtResource("3_oql5i")
+points = PackedVector2Array(-48.9195, -55.4728, -20.1792, -8.867, -23.9372, 5.12016, -20.1789, 22.3744, 11.3692, 22.2636, 12.2143, 14.9338, 23.1383, -11.6055, 34.4137, -67.062)
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="DeployCam" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("5_sk18b")]
+
+[node name="SpawnPoint_1_1" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("3_gv48d")]
+transform = Transform3D(0.999884, 0, -0.0152535, 0, 1, 0, 0.0152535, 0, 0.999884, -5.28609, 0, 0.459969)
+
+[node name="SpawnPoint_1_2" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("3_gv48d")]
+transform = Transform3D(-0.9995, 0, -0.0316198, 0, 1, 0, 0.0316198, 0, -0.9995, -2.28609, 0, 3.45997)
+
+[node name="SpawnPoint_1_3" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("3_gv48d")]
+transform = Transform3D(-0.0428871, 0, 0.99908, 0, 1, 0, -0.99908, 0, -0.0428871, -8.28609, 0, 3.45997)
+
+[node name="SpawnPoint_1_4" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("3_gv48d")]
+transform = Transform3D(0.0841819, 0, -0.99645, 0, 1, 0, 0.99645, 0, 0.0841819, -5.28609, 0, 6.45997)
+
+[node name="SpawnPoint_1_5" parent="HQ_PlayerSpawner_team_1" instance=ExtResource("3_gv48d")]
+transform = Transform3D(0.0841819, 0, -0.99645, 0, 1, 0, 0.99645, 0, 0.0841819, -9.97653, 0, 14.0755)
+
+[node name="Sector" parent="HQ_PlayerSpawner_team_1" node_paths=PackedStringArray("SectorArea") instance=ExtResource("14_5hpax")]
+SectorArea = NodePath("../Boundaries_team_1")
+
+[node name="TEAM_2_HQ" parent="." node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_km0gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.1664, 64.1217, 80.0452)
+Team = 2
+AltTeam = 0
+ObjId = 2
+HQArea = NodePath("HQ_Team2")
+InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
+
+[node name="HQ_Team2" parent="TEAM_2_HQ" instance=ExtResource("2_23k6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="SpawnPoint_2_1" parent="TEAM_2_HQ" instance=ExtResource("3_gv48d")]
+transform = Transform3D(0.87795, 0, -0.478754, 0, 1, 0, 0.478754, 0, 0.87795, 0, 0, -3)
+
+[node name="SpawnPoint_2_2" parent="TEAM_2_HQ" instance=ExtResource("3_gv48d")]
+transform = Transform3D(-0.997604, 0, 0.0691822, 0, 1, 0, -0.0691822, 0, -0.997604, 3, 0, 0)
+
+[node name="SpawnPoint_2_3" parent="TEAM_2_HQ" instance=ExtResource("3_gv48d")]
+transform = Transform3D(0.162758, 0, 0.986666, 0, 1, 0, -0.986666, 0, 0.162758, -3, 0, 0)
+
+[node name="SpawnPoint_2_4" parent="TEAM_2_HQ" instance=ExtResource("3_gv48d")]
+transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771, 0, 0, 3)
+
+[node name="DeployCam" parent="TEAM_2_HQ" instance=ExtResource("5_sk18b")]
+
+[node name="CombatArea" parent="." node_paths=PackedStringArray("CombatVolume") instance=ExtResource("4_sk18b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.0394, 0)
+CombatVolume = NodePath("CollisionPolygon3D")
+
+[node name="CollisionPolygon3D" parent="CombatArea" instance=ExtResource("2_23k6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.8971, 0)
+points = PackedVector2Array(-112.438, -105.449, -168.181, -66.2023, -204.785, -38.1857, -250.306, 1.27442, -252.769, 63.4065, -252.888, 112.066, -194.636, 123.613, -96.5864, 122.566, -45.649, 97.6191, 57.9097, 7.09969, 78.8298, -11.1813, 80.208, -51.1729, 79.2165, -89.1882, 57.2282, -118.955, 25.4904, -126.176, -5.84673, -125.503, -60.0603, -114.585)
+height = 15.0
+
+[node name="Static" type="Node3D" parent="."]
+
+[node name="MP_Abbasid_Terrain" parent="Static" instance=ExtResource("5_82iqt")]
+metadata/_edit_lock_ = true
+
+[node name="MP_Abbasid_Assets" parent="Static" instance=ExtResource("6_oql5i")]
+metadata/_edit_lock_ = true
+
+[node name="AIs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1093, 67.7713, 13.7445)
+
+[node name="AI_Spawner" parent="AIs" instance=ExtResource("8_sk18b")]
+transform = Transform3D(0.0988161, 0, 0.995106, 0, 1, 0, -0.995106, 0, 0.0988161, 3.06501, -3.65281, 15.9055)
+ObjId = 666
+
+[node name="VehicleSpawner" parent="AIs" instance=ExtResource("4_gv48d")]
+transform = Transform3D(-1, 0, -0.000244379, 0, 1, 0, 0.000244379, 0, -1, -12.7075, -0.875061, 17.1453)
+ObjId = 667
+VehicleType = 3
+P_AutoSpawnEnabled = true
+P_DefaultRespawnTime = 20
+metadata/test_florent = "test_florent_value"
+
+[node name="VehicleSpawner2" parent="AIs" instance=ExtResource("4_gv48d")]
+transform = Transform3D(-1, 0, -0.000244379, 0, 1, 0, 0.000244379, 0, -1, -12.7075, -0.875061, -1.27398)
+ObjId = 668
+VehicleType = 8
+P_AutoSpawnEnabled = true
+P_DefaultRespawnTime = 25
+
+[node name="AI_WaypointPath" parent="AIs" instance=ExtResource("10_82iqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.51154, -0.415096)
+curve = SubResource("Curve3D_oql5i")
+ObjId = 671
+
+[node name="PathFollow3D" type="PathFollow3D" parent="AIs/AI_WaypointPath"]
+transform = Transform3D(-0.994989, 0.00200039, -0.0997912, -8.20434e-06, 0.999795, 0.0201232, 0.0998104, 0.0200236, -0.994795, 0.108645, -0.0219086, 1.08306)
+progress = 1.08872
+
+[node name="InteractPoint" parent="AIs" instance=ExtResource("13_4qhi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6217, -2.79985, -68.7435)
+ObjId = 222
+
+[node name="FiringRangeCrate_01" parent="AIs/InteractPoint" instance=ExtResource("14_f380e")]
+transform = Transform3D(0.999914, 0, 0.0131245, 0, 1, 0, -0.0131245, 0, 0.999914, 0.114937, -0.765129, -0.0284576)
+
+[node name="ComputerMonitor_01" parent="AIs/InteractPoint" instance=ExtResource("15_1msks")]
+transform = Transform3D(-0.0283578, 0, 0.999598, 0, 1, 0, -0.999598, 0, -0.0283578, 0.181671, -0.339218, 0.473431)
+
+[node name="AreaTrigger" parent="AIs/InteractPoint" node_paths=PackedStringArray("Area") instance=ExtResource("16_1msks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150452, -3.43843, 0.00539398)
+ObjId = 1010
+Area = NodePath("PolygonVolume")
+
+[node name="PolygonVolume" type="Node3D" parent="AIs/InteractPoint/AreaTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296356, 0, 0.0161438)
+script = ExtResource("3_oql5i")
+points = PackedVector2Array(-0.448914, -1.71579, -0.393044, 1.86484, 2.52094, 2.34944, 2.47304, -2.07694)
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="Sector" parent="AIs" node_paths=PackedStringArray("CapturePoints") instance=ExtResource("14_5hpax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8388, -3.13374, -76.3257)
+ObjId = 99
+CapturePoints = [NodePath("CapturePoint"), NodePath("../CapturePoint2")]
+
+[node name="PolygonVolume" type="Node3D" parent="AIs/Sector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80997, -0.765907, -2.69065)
+script = ExtResource("3_oql5i")
+points = PackedVector2Array(-15.5875, -15.4612, -62.8613, 51.7231, -15.7174, 73.4612, 21.3384, -23.5849)
+color = Color(5.29438e-06, 0.591369, 0.747161, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="CapturePoint" parent="AIs/Sector" node_paths=PackedStringArray("CaptureArea", "InfantrySpawnPoints_Team1", "InfantrySpawnPoints_Team2") instance=ExtResource("15_1x8uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80073, 0, 0)
+InitialOwner = 1
+CaptureArea = NodePath("PolygonVolume2")
+InfantrySpawnPoints_Team1 = [NodePath("SpawnPoint")]
+InfantrySpawnPoints_Team2 = [NodePath("SpawnPoint2")]
+
+[node name="PolygonVolume2" type="Node3D" parent="AIs/Sector/CapturePoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765907, 0)
+script = ExtResource("3_oql5i")
+points = PackedVector2Array(-7.12852, -7.46243, -10.8079, 4.12513, 5.54395, 4.74829, 7.67973, -6.24421)
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="SpawnPoint" parent="AIs/Sector/CapturePoint" instance=ExtResource("3_gv48d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309738, -3.15779)
+
+[node name="SpawnPoint2" parent="AIs/Sector/CapturePoint" instance=ExtResource("3_gv48d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309738, 2.71642)
+
+[node name="DeployCam" parent="AIs/Sector/CapturePoint" instance=ExtResource("5_sk18b")]
+
+[node name="CapturePoint2" parent="AIs" node_paths=PackedStringArray("InfantrySpawnPoints_Team1", "InfantrySpawnPoints_Team2") instance=ExtResource("15_1x8uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8105, -3.13374, -38.841)
+InitialOwner = 2
+InfantrySpawnPoints_Team1 = [NodePath("SpawnPoint")]
+InfantrySpawnPoints_Team2 = [NodePath("SpawnPoint2")]
+
+[node name="PolygonVolume2" type="Node3D" parent="AIs/CapturePoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765907, 0)
+script = ExtResource("3_oql5i")
+points = PackedVector2Array(-10.4188, -16.8467, -18.28, 17.4116, 3.51682, 20.9332, 15.2919, -14.3391)
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="SpawnPoint" parent="AIs/CapturePoint2" instance=ExtResource("3_gv48d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309738, -3.15779)
+
+[node name="SpawnPoint2" parent="AIs/CapturePoint2" instance=ExtResource("3_gv48d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309738, 2.71642)
+
+[node name="DeployCam" parent="AIs/CapturePoint2" instance=ExtResource("5_sk18b")]
