@@ -3,7 +3,7 @@
  * Script for the "Florent's Vehicle Training" map on Mirak 
  * Build by Florent Poujol
  * Sources: https://github.com/florentpoujol/battlefield6_vehicle_training_map
- * Built on: Thu Oct 16 16:44:38     2025
+ * Built on: Fri Oct 17 17:18:38     2025
  */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11,12 +11,12 @@
 
 /**
  * Helper functions to create UI from a JSON object tree.
- * Only export ParseUI() at the end
  * Taken from the example mods.
  * 
  * This has been modified with the following differences:
  * - The type is now the UIWidgetType enum
  * - the colors can be set as an RGB array
+ * - main method is CreateUI() instead of ParseUI()
  */
 
 type UIVector = mod.Vector | number[];
@@ -193,7 +193,7 @@ function __addUIContainer(params: UIParams) {
     if (params2.children) {
         params2.children.forEach((childParams: UIParams) => {
             childParams.parent = widget;
-            ParseUI(childParams);
+            CreateUI(childParams);
         });
     }
     return widget;
@@ -381,7 +381,7 @@ function __addUIButton(params: UIParams): mod.UIWidget
     return __setNameAndGetWidget(__cUniqueName, params2);
 }
 
-export function ParseUI(params: UIParams): mod.UIWidget
+export function CreateUI(params: UIParams): mod.UIWidget
 {
     switch(params.type) {
         case UIWidgetType.Container: return __addUIContainer(params);
@@ -398,109 +398,254 @@ export function ParseUI(params: UIParams): mod.UIWidget
 
 export class DevTools
 {
-    log(message: string|mod.Message): void
+    public log(message: string|mod.Message): void
     {
         const date = new Date();
-        const dateStr = `[${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}.${date.getMilliseconds()}] `;
-        const callingFunction = (new Error()).stack.split('\n')[2].trim();
-        console.log(dateStr, callingFunction, message);
+        const timeElapsed = mod.GetMatchTimeElapsed().toFixed(3);
+
+        console.log(
+            `[${date.getMinutes()}m ${date.getSeconds()}s ${date.getMilliseconds()}ms] `, 
+            `[${timeElapsed}] `, 
+            message
+        );
     }
 
-    #loggedOnce: {[index: string]: boolean} = {};
+    private loggedOnce: {[index: string]: boolean} = {};
 
-    logOnce(message: string): void
+    public logOnce(message: string): void
     {
-        if (this.#loggedOnce.hasOwnProperty(message)) {
+        if (this.loggedOnce.hasOwnProperty(message)) {
             return;
         }
 
-        this.#loggedOnce[message] = true;
+        this.loggedOnce[message] = true;
 
         this.log('[ONCE] ' + message);
     }
+
+    public getRandomValueInArray<T>(array: Array<T>): T
+    {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    public vectorToString(vector: mod.Vector): string
+    {
+        return `(${mod.XComponentOf(vector)}, ${mod.YComponentOf(vector)}, ${mod.ZComponentOf(vector)})`
+    }
 }
+
+export const devTools = new DevTools();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/code.ts
+// src/VehicleManager.ts
 
-// import {ParseUI, UIWidgetType} from './UIHelpers';
-// import {DevTools} from './DevTools';
-const devTools = new DevTools();
+// vehicle spawners are scatered around the map
+// when they spawn, they spawn AIs and set them in their seat
+// there is only a single AI spawner, so this is fairly slow, but it's OK
 
+// import { devTools } from "./DevTools";
 
-// ----------------------------------------
-// 
-
-let availableAis: mod.Player[] = [];
-
-export async function OnPlayerDeployed(player: mod.Player)
+export class VehicleManager 
 {
-    const playerId = mod.GetObjId(player);
+    private vehcileSpawnerIds: number[] = [
+        // 12001,
+        // 12002,
+        // 12003,
+        // 12004,
+    ];
+    private vehcileSpawnerPositionPerId: {[index: string]: mod.Vector} = {
+        // these are not actual spawner position, but just some points in the area
+        // that I don't need to change all the time
+        "12001": mod.CreateVector(-132, 101, 94),
+        "12002": mod.CreateVector(33, 95, 123),
+        "12003": mod.CreateVector(-47, 96, 33),
+    };
 
-    if (mod.GetSoldierState(player, mod.SoldierStateBool.IsAISoldier)) {
-        // devTools.log("OnPlayerDeployed");
 
-        mod.AIEnableShooting(player, false);
-        // mod.AISetMoveSpeed(player, mod.MoveSpeed.Patrol);
-        // mod.AIWaypointIdleBehavior(player, mod.GetWaypointPath(671));
+    private aiSpawnerIds: number[] = [
+        11001, 11002, 11003
+    ];
+    private aiSpawners: Array<mod.Spawner> = [];
+    private aiTeamNumber: number = 3;
+    private aiTeam: mod.Team;
 
-        availableAis.push(player);
+    private availableAis: mod.Player[] = [];
+    private botNameSuffix: number = 1;
 
-        return;
-    }
-
-    devTools.log(mod.stringkeys.Player, player);
-
-}
-
-//-----------------------------------------------------------
-// AI vehcile test
-
-export function OnGameModeStarted()
-{
-    devTools.log("OnGameModeStarted");
-    mod.SetAIToHumanDamageModifier(0);
-    mod.EnableAreaTrigger(mod.GetAreaTrigger(1010), true);
-
-}
-
-let botNameSuffix: number = 1;
-
-export async function OnVehicleSpawned(vehicle: mod.Vehicle)
-{
-    devTools.log("OnVehicleSpawned " + mod.GetObjId(vehicle));
-
-    const aiSpawner = mod.GetSpawner(666);
-    mod.SpawnAIFromAISpawner(aiSpawner, mod.Message(mod.stringkeys.botname, botNameSuffix++), mod.GetTeam(2));
-    await mod.Wait(1);
-    mod.SpawnAIFromAISpawner(aiSpawner, mod.Message(mod.stringkeys.botname, botNameSuffix++), mod.GetTeam(2));
-
-    let count = 0;
-    while (count < 2) {
-        const ai = availableAis.pop();
-        if (ai === undefined) {
-            await mod.Wait(1);
+    constructor()
+    {
+        for (const id of this.aiSpawnerIds) {
+            const spawner = mod.GetSpawner(id);
+            if (spawner) {
+                this.aiSpawners.push(spawner);
+            }
+        }
+        if (this.aiSpawners.length === 0) {
+            throw new Error("No AI spawners found");
         }
 
-        mod.ForcePlayerToSeat(ai as mod.Player, vehicle, count);
-        count++;
+        this.aiTeam = mod.GetTeam(this.aiTeamNumber);
+
+        // for (const id of this.vehcileSpawnerIds) {
+        //     const spawner = mod.GetVehicleSpawner(id);
+        //     this.vehcileSpawnerPositionPerId[String(id)] = mod.GetObjectPosition(spawner);
+        // }
+    }
+
+    private spawnAi(): void
+    {
+        devTools.log("ask to spawn ai with name: " + this.botNameSuffix);
+        mod.SpawnAIFromAISpawner(
+            devTools.getRandomValueInArray(this.aiSpawners),
+            mod.Message(mod.stringkeys.botname, this.botNameSuffix), // name, ie: "bot 1"
+            this.aiTeam
+        );
+        this.botNameSuffix++;
+    }
+
+    public OnAiSpawned(ai: mod.Player): void
+    {
+        devTools.log("OnAiSpawned");
+        mod.EnablePlayerDeploy(ai, true);
+    }
+
+    public OnPlayerDeployed(ai: mod.Player): void
+    {
+        if (!mod.GetSoldierState(ai, mod.SoldierStateBool.IsAISoldier)) {
+            return;
+        }
+
+        devTools.log("ai deployed: " + mod.GetObjId(ai));
+        mod.AIEnableShooting(ai, false);
+
+        this.availableAis.push(ai);
+    }
+
+    private findSpawnerFromVehiclePosition(vehicle: mod.Vehicle): null|string
+    {
+        const vehiclePosition = mod.GetVehicleState(vehicle, mod.VehicleStateVector.VehiclePosition);
+        
+        for (const spawnerIdAsString of Object.keys(this.vehcileSpawnerPositionPerId)) {
+            const spawnerPosition = this.vehcileSpawnerPositionPerId[spawnerIdAsString];
+            const distance = mod.DistanceBetween(vehiclePosition, spawnerPosition);
+            if (distance < 200) {
+                return spawnerIdAsString;
+            }
+        }
+
+        return null;
+    }
+
+    public async OnVehicleSpawned(vehicle: mod.Vehicle): Promise<void>
+    {
+        if (this.findSpawnerFromVehiclePosition(vehicle) === null) {
+            // devTools.log(`no spawner found for vehicle ${mod.GetObjId(vehicle)}`);
+            return;
+        }
+
+        // devTools.log("OnVehicleSpawned " + mod.GetObjId(vehicle));
+
+        let seatNumber = 0;
+        let attemptsLeft = 5;
+        while (seatNumber < 1 && attemptsLeft > 0) { // if 2, vehicle will also have gunners
+            const ai = this.availableAis.shift();
+            if (ai === undefined) {
+                this.spawnAi();
+                attemptsLeft--;
+
+                await mod.Wait(1); // let time for the AI to spawn
+
+                continue;
+            }
+
+            devTools.log(`ForcePlayer ${mod.GetObjId(ai)} to seat in ${mod.GetObjId(vehicle)}, in seat ${seatNumber}`);
+            mod.ForcePlayerToSeat(ai, vehicle, seatNumber);
+
+            const position = mod.GetVehicleState(vehicle, mod.VehicleStateVector.VehiclePosition);
+            mod.AIDefendPositionBehavior(ai, position, 0, 400); 
+
+            seatNumber++;
+        }
+
+        if (attemptsLeft <= 0) {
+            devTools.log("bailed from forcing AI into vehicle after too many attempts");
+        }
     }
 }
 
-// export function OnVehicleDestroyed(vehicle: mod.Vehicle)
-// {
-//     if (mod.GetVehicleTeam(vehicle) !== mod.GetTeam(2)) {
-//         return;
-//     }
-// 
-//     respawn vehicle
-// }
+export const vehicleManager = new VehicleManager();
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// src/main.ts
 
+// import {CreateUI, UIWidgetType} from './UIHelpers';
+// import {devTools} from './DevTools';
+// import {vehicleManager} from './VehicleManager';
 
+// replaced by the concatenation script
+const DEBUG_SCRIPT_BUILD_TIME = 'Fri Oct 17 17:18:38     2025'; 
 
+/*
+Object id prefix for the objects that we may target from the scripts:
 
+Spawners
+10xxx SpawnPoint (Human)
+11xxx Spawner (AI)
+12xxx VehicleSpawner
+13xxx EmplacementSpawner
 
+"Zone" objects
+20xxx HQ
+21xxx Sector
+22xxx CapturePoint
+23xxx MCOM
+24xxx InteractPoint
+25xxx AreaTrigger
+
+Misc
+30xxx WaypointPath
+31xxx ScreenEffect
+32xxx SFX
+33xxx VFX
+34xxx VO
+35xxx WorldIcon
+36xxx SpatialObject
+*/
+
+// ----------------------------------------
+
+export function OnGameModeStarted(): void
+{
+    devTools.log("OnGameModeStarted " + DEBUG_SCRIPT_BUILD_TIME);
+    mod.SetAIToHumanDamageModifier(0);
+
+    const icon = mod.GetWorldIcon(35001);
+    mod.EnableWorldIconImage(icon, true);
+    mod.SetWorldIconText(icon, mod.Message(mod.stringkeys.sectors.moving_ais));
+    mod.EnableWorldIconText(icon, true);
+
+    const icon2 = mod.GetWorldIcon(35002);
+    mod.EnableWorldIconImage(icon2, true);
+    mod.SetWorldIconText(icon2, mod.Message(mod.stringkeys.sectors.tank_range));
+    mod.EnableWorldIconText(icon2, true);
+}
+
+export function OnVehicleSpawned(vehicle: mod.Vehicle): void
+{
+    vehicleManager.OnVehicleSpawned(vehicle);
+}
+
+export function OnSpawnerSpawned(ai: mod.Player): void
+{
+     vehicleManager.OnAiSpawned(ai);
+}
+
+export function OnPlayerDeployed(player: mod.Player): void
+{
+    vehicleManager.OnPlayerDeployed(player);
+
+    mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.debug.script_build_time), player);
+}
 
 export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mod.InteractPoint): void
 {
@@ -512,7 +657,6 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 
     // spawnAI();
 }
-
 
 export function OnPlayerEnterAreaTrigger(eventPlayer: mod.Player, eventAreaTrigger: mod.AreaTrigger)
 {
@@ -577,4 +721,5 @@ Throwable_Incendiary_Grenade,
 // concatenated files:
 // - src/UIHelpers.ts
 // - src/DevTools.ts
-// - src/code.ts
+// - src/VehicleManager.ts
+// - src/main.ts

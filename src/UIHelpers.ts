@@ -1,12 +1,12 @@
 
 /**
  * Helper functions to create UI from a JSON object tree.
- * Only export ParseUI() at the end
  * Taken from the example mods.
  * 
  * This has been modified with the following differences:
  * - The type is now the UIWidgetType enum
  * - the colors can be set as an RGB array
+ * - main method is CreateUI() instead of ParseUI()
  */
 
 type UIVector = mod.Vector | number[];
@@ -183,7 +183,7 @@ function __addUIContainer(params: UIParams) {
     if (params2.children) {
         params2.children.forEach((childParams: UIParams) => {
             childParams.parent = widget;
-            ParseUI(childParams);
+            CreateUI(childParams);
         });
     }
     return widget;
@@ -371,7 +371,7 @@ function __addUIButton(params: UIParams): mod.UIWidget
     return __setNameAndGetWidget(__cUniqueName, params2);
 }
 
-export function ParseUI(params: UIParams): mod.UIWidget
+export function CreateUI(params: UIParams): mod.UIWidget
 {
     switch(params.type) {
         case UIWidgetType.Container: return __addUIContainer(params);

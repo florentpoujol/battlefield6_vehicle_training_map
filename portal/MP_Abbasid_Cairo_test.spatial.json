@@ -1,7 +1,61 @@
 {
     "Portal_Dynamic": [
         {
+            "name": "SurroundingCombatArea",
+            "type": "SurroundingCombatArea",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": 0,
+                "y": 103.993,
+                "z": 0
+            },
+            "id": "SurroundingCombatArea"
+        },
+        {
+            "name": "PolygonVolume",
+            "type": "PolygonVolume",
+            "id": "SurroundingCombatArea/PolygonVolume",
+            "height": 50,
+            "points": [
+                {
+                    "x": -131.31,
+                    "y": 61.4789,
+                    "z": -113.785
+                },
+                {
+                    "x": -224.203,
+                    "y": 61.4789,
+                    "z": 84.4884
+                },
+                {
+                    "x": 35.7207,
+                    "y": 61.4789,
+                    "z": 103.489
+                },
+                {
+                    "x": 13.327,
+                    "y": 61.4789,
+                    "z": -77.4882
+                }
+            ]
+        },
+        {
             "name": "DeployCam",
+            "ObjId": 999999,
             "type": "DeployCam",
             "right": {
                 "x": 1,
@@ -15,15 +69,97 @@
             },
             "front": {
                 "x": 0,
-                "y": 1,
+                "y": 0.999999,
                 "z": -4.37114e-08
             },
             "position": {
                 "x": 0,
-                "y": 133.912,
+                "y": 198.249,
                 "z": 0
             },
             "id": "DeployCam"
+        },
+        {
+            "name": "Canary",
+            "type": "AmmoChest_Small_01",
+            "right": {
+                "x": 0.832322,
+                "y": 0,
+                "z": 0.554293
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.554293,
+                "y": 0,
+                "z": 0.832322
+            },
+            "position": {
+                "x": -81.8905,
+                "y": 66.0459,
+                "z": -52.0634
+            },
+            "id": "Canary"
+        },
+        {
+            "name": "CombatArea",
+            "CombatVolume": "CombatArea/CollisionPolygon3D",
+            "type": "CombatArea",
+            "right": {
+                "x": 1,
+                "y": -0.000339703,
+                "z": 0.000116846
+            },
+            "up": {
+                "x": 0.000339849,
+                "y": 0.999999,
+                "z": -0.00122238
+            },
+            "front": {
+                "x": -0.000116419,
+                "y": 0.00122242,
+                "z": 0.999999
+            },
+            "position": {
+                "x": -72.0373,
+                "y": 34.7359,
+                "z": 0
+            },
+            "id": "CombatArea",
+            "linked": [
+                "CombatVolume"
+            ]
+        },
+        {
+            "name": "CollisionPolygon3D",
+            "type": "PolygonVolume",
+            "id": "CombatArea/CollisionPolygon3D",
+            "height": 150,
+            "points": [
+                {
+                    "x": -299.4072708453586,
+                    "y": 47.70784849309999,
+                    "z": -158.71091823240965
+                },
+                {
+                    "x": -338.1362708453586,
+                    "y": 47.70784849309999,
+                    "z": 223.98008176759035
+                },
+                {
+                    "x": 144.4187291546414,
+                    "y": 47.70784849309999,
+                    "z": 240.87308176759035
+                },
+                {
+                    "x": 157.6437291546414,
+                    "y": 47.70784849309999,
+                    "z": -161.68491823240967
+                }
+            ]
         },
         {
             "name": "HQ_PlayerSpawner_team_1",
@@ -123,31 +259,6 @@
                     "z": -128.9489
                 }
             ]
-        },
-        {
-            "name": "DeployCam",
-            "type": "DeployCam",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -78.9889,
-                "y": 64.3885,
-                "z": -61.8869
-            },
-            "id": "HQ_PlayerSpawner_team_1/DeployCam"
         },
         {
             "name": "SpawnPoint_1_1",
@@ -275,9 +386,34 @@
             "id": "HQ_PlayerSpawner_team_1/SpawnPoint_1_5"
         },
         {
-            "name": "Sector",
-            "SectorArea": "HQ_PlayerSpawner_team_1/Boundaries_team_1",
-            "type": "Sector",
+            "name": "VehicleSpawner",
+            "VehicleType": "AH64",
+            "type": "VehicleSpawner",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -92.9979,
+                "y": 65.062832,
+                "z": -86.594
+            },
+            "id": "HQ_PlayerSpawner_team_1/VehicleSpawner"
+        },
+        {
+            "name": "DeployCam",
+            "type": "DeployCam",
             "right": {
                 "x": 1,
                 "y": 0,
@@ -298,10 +434,7 @@
                 "y": 64.3885,
                 "z": -61.8869
             },
-            "id": "HQ_PlayerSpawner_team_1/Sector",
-            "linked": [
-                "SectorArea"
-            ]
+            "id": "HQ_PlayerSpawner_team_1/DeployCam"
         },
         {
             "name": "TEAM_2_HQ",
@@ -496,130 +629,8 @@
             "id": "TEAM_2_HQ/DeployCam"
         },
         {
-            "name": "CombatArea",
-            "CombatVolume": "CombatArea/CollisionPolygon3D",
-            "type": "CombatArea",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": 0,
-                "y": 47.0394,
-                "z": 0
-            },
-            "id": "CombatArea",
-            "linked": [
-                "CombatVolume"
-            ]
-        },
-        {
-            "name": "CollisionPolygon3D",
-            "type": "PolygonVolume",
-            "id": "CombatArea/CollisionPolygon3D",
-            "height": 15,
-            "points": [
-                {
-                    "x": -112.438,
-                    "y": 59.9365,
-                    "z": -105.449
-                },
-                {
-                    "x": -168.181,
-                    "y": 59.9365,
-                    "z": -66.2023
-                },
-                {
-                    "x": -204.785,
-                    "y": 59.9365,
-                    "z": -38.1857
-                },
-                {
-                    "x": -250.306,
-                    "y": 59.9365,
-                    "z": 1.27442
-                },
-                {
-                    "x": -252.769,
-                    "y": 59.9365,
-                    "z": 63.4065
-                },
-                {
-                    "x": -252.888,
-                    "y": 59.9365,
-                    "z": 112.066
-                },
-                {
-                    "x": -194.636,
-                    "y": 59.9365,
-                    "z": 123.613
-                },
-                {
-                    "x": -96.5864,
-                    "y": 59.9365,
-                    "z": 122.566
-                },
-                {
-                    "x": -45.649,
-                    "y": 59.9365,
-                    "z": 97.6191
-                },
-                {
-                    "x": 57.9097,
-                    "y": 59.9365,
-                    "z": 7.09969
-                },
-                {
-                    "x": 78.8298,
-                    "y": 59.9365,
-                    "z": -11.1813
-                },
-                {
-                    "x": 80.208,
-                    "y": 59.9365,
-                    "z": -51.1729
-                },
-                {
-                    "x": 79.2165,
-                    "y": 59.9365,
-                    "z": -89.1882
-                },
-                {
-                    "x": 57.2282,
-                    "y": 59.9365,
-                    "z": -118.955
-                },
-                {
-                    "x": 25.4904,
-                    "y": 59.9365,
-                    "z": -126.176
-                },
-                {
-                    "x": -5.84673,
-                    "y": 59.9365,
-                    "z": -125.503
-                },
-                {
-                    "x": -60.0603,
-                    "y": 59.9365,
-                    "z": -114.585
-                }
-            ]
-        },
-        {
             "name": "AI_Spawner",
-            "ObjId": 666,
+            "ObjId": 11001,
             "type": "AI_Spawner",
             "right": {
                 "x": 0.0988161,
@@ -645,10 +656,10 @@
         },
         {
             "name": "VehicleSpawner",
-            "ObjId": 667,
+            "ObjId": 12001,
             "VehicleType": "CV90",
             "P_AutoSpawnEnabled": true,
-            "P_DefaultRespawnTime": 20,
+            "P_DefaultRespawnTime": 15,
             "metadata/test_florent": "test_florent_value",
             "type": "VehicleSpawner",
             "right": {
@@ -675,10 +686,10 @@
         },
         {
             "name": "VehicleSpawner2",
-            "ObjId": 668,
+            "ObjId": 12002,
             "VehicleType": "Vector",
             "P_AutoSpawnEnabled": true,
-            "P_DefaultRespawnTime": 25,
+            "P_DefaultRespawnTime": 10,
             "type": "VehicleSpawner",
             "right": {
                 "x": -1,
@@ -731,6 +742,451 @@
             "linked": [
                 "Waypoints"
             ]
+        },
+        {
+            "name": "WorldIcon2",
+            "ObjId": 35001,
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 1,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -40.5319
+            },
+            "id": "AIs/WorldIcons/WorldIcon2"
+        },
+        {
+            "name": "WorldIcon3",
+            "iconImagePicker": "Assist",
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 1,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -41.2341
+            },
+            "id": "AIs/WorldIcons/WorldIcon3"
+        },
+        {
+            "name": "WorldIcon4",
+            "iconImagePicker": "SquadPing",
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 2,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -42.0273
+            },
+            "id": "AIs/WorldIcons/WorldIcon4"
+        },
+        {
+            "name": "WorldIcon5",
+            "iconImagePicker": "Alert",
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 2,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -42.859
+            },
+            "id": "AIs/WorldIcons/WorldIcon5"
+        },
+        {
+            "name": "WorldIcon6",
+            "iconImagePicker": "Alert",
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 3,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -43.7116
+            },
+            "id": "AIs/WorldIcons/WorldIcon6"
+        },
+        {
+            "name": "WorldIcon7",
+            "iconImagePicker": "Explosion",
+            "iconImageVisible": true,
+            "iconTeamOwnerId": 3,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -44.5492
+            },
+            "id": "AIs/WorldIcons/WorldIcon7"
+        },
+        {
+            "name": "WorldIcon8",
+            "iconColor": [
+                1.0,
+                0.5,
+                0.0
+            ],
+            "iconImagePicker": "BombArmed",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -45.4439
+            },
+            "id": "AIs/WorldIcons/WorldIcon8"
+        },
+        {
+            "name": "WorldIcon9",
+            "iconColor": [
+                1.0,
+                0.5,
+                0.0
+            ],
+            "iconImagePicker": "Hazard",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -46.2167
+            },
+            "id": "AIs/WorldIcons/WorldIcon9"
+        },
+        {
+            "name": "WorldIcon10",
+            "iconImagePicker": "Flag",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -46.9013
+            },
+            "id": "AIs/WorldIcons/WorldIcon10"
+        },
+        {
+            "name": "WorldIcon14",
+            "iconImagePicker": "DangerPing",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -50.2244
+            },
+            "id": "AIs/WorldIcons/WorldIcon14"
+        },
+        {
+            "name": "WorldIcon13",
+            "iconImagePicker": "EMP",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -49.385
+            },
+            "id": "AIs/WorldIcons/WorldIcon13"
+        },
+        {
+            "name": "WorldIcon12",
+            "iconImagePicker": "Diffuse",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -48.511
+            },
+            "id": "AIs/WorldIcons/WorldIcon12"
+        },
+        {
+            "name": "WorldIcon11",
+            "iconImagePicker": "Bomb",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -47.6778
+            },
+            "id": "AIs/WorldIcons/WorldIcon11"
+        },
+        {
+            "name": "WorldIcon15",
+            "iconImagePicker": "FilledPing",
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -51.0125
+            },
+            "id": "AIs/WorldIcons/WorldIcon15"
+        },
+        {
+            "name": "WorldIcon16",
+            "iconImagePicker": "Cross",
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -51.8403
+            },
+            "id": "AIs/WorldIcons/WorldIcon16"
+        },
+        {
+            "name": "WorldIcon17",
+            "iconImagePicker": "Eye",
+            "type": "WorldIcon",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.5603,
+                "z": -52.6899
+            },
+            "id": "AIs/WorldIcons/WorldIcon17"
         },
         {
             "name": "InteractPoint",
@@ -874,11 +1330,44 @@
             ]
         },
         {
+            "name": "WorldIcon",
+            "IconStringKey": "weapon_here",
+            "iconTextVisible": true,
+            "iconColor": [
+                1.0,
+                0.0,
+                0.0
+            ],
+            "iconImagePicker": "Triangle",
+            "iconImageVisible": true,
+            "type": "WorldIcon",
+            "right": {
+                "x": 0.123168,
+                "y": 0,
+                "z": 0.992386
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": -0.992386,
+                "y": 0,
+                "z": 0.123168
+            },
+            "position": {
+                "x": -93.731,
+                "y": 65.560348,
+                "z": -54.999
+            },
+            "id": "AIs/InteractPoint/WorldIcon"
+        },
+        {
             "name": "Sector",
             "ObjId": 99,
             "CapturePoints": [
-                "AIs/Sector/CapturePoint",
-                "AIs/CapturePoint2"
+                "AIs/Sector/CapturePoint"
             ],
             "type": "Sector",
             "right": {
@@ -920,24 +1409,24 @@
             "height": 0,
             "points": [
                 {
-                    "x": -137.34557,
+                    "x": -146.67907,
                     "y": 63.871653,
-                    "z": -80.73305
+                    "z": -91.81145
                 },
                 {
-                    "x": -184.61937,
+                    "x": -164.71127,
                     "y": 63.871653,
-                    "z": -13.54875
+                    "z": -33.50785
                 },
                 {
-                    "x": -137.47547,
+                    "x": -107.51877,
                     "y": 63.871653,
-                    "z": 8.18935
+                    "z": -35.29945
                 },
                 {
-                    "x": -100.41967,
+                    "x": -94.91887,
                     "y": 63.871653,
-                    "z": -88.85675
+                    "z": -91.54935
                 }
             ]
         },
@@ -1063,177 +1552,6 @@
                 "z": -59.86478
             },
             "id": "AIs/Sector/CapturePoint/SpawnPoint2"
-        },
-        {
-            "name": "DeployCam",
-            "type": "DeployCam",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -113.14737,
-                "y": 64.63756,
-                "z": -62.5812
-            },
-            "id": "AIs/Sector/CapturePoint/DeployCam"
-        },
-        {
-            "name": "CapturePoint2",
-            "InitialOwner": "Team2",
-            "InfantrySpawnPoints_Team1": [
-                "AIs/CapturePoint2/SpawnPoint"
-            ],
-            "InfantrySpawnPoints_Team2": [
-                "AIs/CapturePoint2/SpawnPoint2"
-            ],
-            "type": "CapturePoint",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -147.9198,
-                "y": 64.63756,
-                "z": -25.0965
-            },
-            "id": "AIs/CapturePoint2",
-            "linked": [
-                "InfantrySpawnPoints_Team1",
-                "InfantrySpawnPoints_Team2"
-            ]
-        },
-        {
-            "name": "PolygonVolume2",
-            "type": "PolygonVolume",
-            "metadata/_custom_type_script": "uid://ck5uniw0pl6u8",
-            "color": [
-                0,
-                0.6,
-                0.7,
-                0.42
-            ],
-            "id": "AIs/CapturePoint2/PolygonVolume2",
-            "height": 0,
-            "points": [
-                {
-                    "x": -158.3386,
-                    "y": 63.871653,
-                    "z": -41.9432
-                },
-                {
-                    "x": -166.1998,
-                    "y": 63.871653,
-                    "z": -7.6849
-                },
-                {
-                    "x": -144.40298,
-                    "y": 63.871653,
-                    "z": -4.1633
-                },
-                {
-                    "x": -132.6279,
-                    "y": 63.871653,
-                    "z": -39.4356
-                }
-            ]
-        },
-        {
-            "name": "SpawnPoint",
-            "type": "SpawnPoint",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -147.9198,
-                "y": 64.947298,
-                "z": -28.25429
-            },
-            "id": "AIs/CapturePoint2/SpawnPoint"
-        },
-        {
-            "name": "SpawnPoint2",
-            "type": "SpawnPoint",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -147.9198,
-                "y": 64.947298,
-                "z": -22.38008
-            },
-            "id": "AIs/CapturePoint2/SpawnPoint2"
-        },
-        {
-            "name": "DeployCam",
-            "type": "DeployCam",
-            "right": {
-                "x": 1,
-                "y": 0,
-                "z": 0
-            },
-            "up": {
-                "x": 0,
-                "y": 1,
-                "z": 0
-            },
-            "front": {
-                "x": 0,
-                "y": 0,
-                "z": 1
-            },
-            "position": {
-                "x": -147.9198,
-                "y": 64.63756,
-                "z": -25.0965
-            },
-            "id": "AIs/CapturePoint2/DeployCam"
         },
         {
             "name": "Curve3D_oql5i",

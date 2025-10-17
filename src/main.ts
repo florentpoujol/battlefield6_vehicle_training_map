@@ -1,82 +1,72 @@
 
-import {ParseUI, UIWidgetType} from './UIHelpers';
-import {DevTools} from './DevTools';
-const devTools = new DevTools();
+import {CreateUI, UIWidgetType} from './UIHelpers';
+import {devTools} from './DevTools';
+import {vehicleManager} from './VehicleManager';
 
+// replaced by the concatenation script
+const DEBUG_SCRIPT_BUILD_TIME = '{script_build_time}'; 
+
+/*
+Object id prefix for the objects that we may target from the scripts:
+
+Spawners
+10xxx SpawnPoint (Human)
+11xxx Spawner (AI)
+12xxx VehicleSpawner
+13xxx EmplacementSpawner
+
+"Zone" objects
+20xxx HQ
+21xxx Sector
+22xxx CapturePoint
+23xxx MCOM
+24xxx InteractPoint
+25xxx AreaTrigger
+
+Misc
+30xxx WaypointPath
+31xxx ScreenEffect
+32xxx SFX
+33xxx VFX
+34xxx VO
+35xxx WorldIcon
+36xxx SpatialObject
+*/
 
 // ----------------------------------------
-// 
 
-let availableAis: mod.Player[] = [];
-
-export async function OnPlayerDeployed(player: mod.Player)
+export function OnGameModeStarted(): void
 {
-    const playerId = mod.GetObjId(player);
-
-    if (mod.GetSoldierState(player, mod.SoldierStateBool.IsAISoldier)) {
-        // devTools.log("OnPlayerDeployed");
-
-        mod.AIEnableShooting(player, false);
-        // mod.AISetMoveSpeed(player, mod.MoveSpeed.Patrol);
-        // mod.AIWaypointIdleBehavior(player, mod.GetWaypointPath(671));
-
-        availableAis.push(player);
-
-        return;
-    }
-
-    devTools.log(mod.stringkeys.Player, player);
-
-}
-
-//-----------------------------------------------------------
-// AI vehcile test
-
-export function OnGameModeStarted()
-{
-    devTools.log("OnGameModeStarted");
+    devTools.log("OnGameModeStarted " + DEBUG_SCRIPT_BUILD_TIME);
     mod.SetAIToHumanDamageModifier(0);
-    mod.EnableAreaTrigger(mod.GetAreaTrigger(1010), true);
 
+    const icon = mod.GetWorldIcon(35001);
+    mod.EnableWorldIconImage(icon, true);
+    mod.SetWorldIconText(icon, mod.Message(mod.stringkeys.sectors.moving_ais));
+    mod.EnableWorldIconText(icon, true);
+
+    const icon2 = mod.GetWorldIcon(35002);
+    mod.EnableWorldIconImage(icon2, true);
+    mod.SetWorldIconText(icon2, mod.Message(mod.stringkeys.sectors.tank_range));
+    mod.EnableWorldIconText(icon2, true);
 }
 
-let botNameSuffix: number = 1;
-
-export async function OnVehicleSpawned(vehicle: mod.Vehicle)
+export function OnVehicleSpawned(vehicle: mod.Vehicle): void
 {
-    devTools.log("OnVehicleSpawned " + mod.GetObjId(vehicle));
-
-    const aiSpawner = mod.GetSpawner(666);
-    mod.SpawnAIFromAISpawner(aiSpawner, mod.Message(mod.stringkeys.botname, botNameSuffix++), mod.GetTeam(2));
-    await mod.Wait(1);
-    mod.SpawnAIFromAISpawner(aiSpawner, mod.Message(mod.stringkeys.botname, botNameSuffix++), mod.GetTeam(2));
-
-    let count = 0;
-    while (count < 2) {
-        const ai = availableAis.pop();
-        if (ai === undefined) {
-            await mod.Wait(1);
-        }
-
-        mod.ForcePlayerToSeat(ai as mod.Player, vehicle, count);
-        count++;
-    }
+    vehicleManager.OnVehicleSpawned(vehicle);
 }
 
-// export function OnVehicleDestroyed(vehicle: mod.Vehicle)
-// {
-//     if (mod.GetVehicleTeam(vehicle) !== mod.GetTeam(2)) {
-//         return;
-//     }
-// 
-//     respawn vehicle
-// }
+export function OnSpawnerSpawned(ai: mod.Player): void
+{
+     vehicleManager.OnAiSpawned(ai);
+}
 
+export function OnPlayerDeployed(player: mod.Player): void
+{
+    vehicleManager.OnPlayerDeployed(player);
 
-
-
-
-
+    mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.debug.script_build_time), player);
+}
 
 export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mod.InteractPoint): void
 {
@@ -88,7 +78,6 @@ export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mo
 
     // spawnAI();
 }
-
 
 export function OnPlayerEnterAreaTrigger(eventPlayer: mod.Player, eventAreaTrigger: mod.AreaTrigger)
 {
