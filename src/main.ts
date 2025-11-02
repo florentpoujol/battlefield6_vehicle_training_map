@@ -1,4 +1,6 @@
 
+/** @ts-ignore */
+import {mod} from './index.d.ts';
 import {CreateUI, UIWidgetType} from './UIHelpers';
 import {devTools} from './DevTools';
 import {vehicleManager} from './VehicleManager';
@@ -64,16 +66,14 @@ export function OnSpawnerSpawned(ai: mod.Player): void
 export function OnPlayerDeployed(player: mod.Player): void
 {
     vehicleManager.OnPlayerDeployed(player);
-
-    mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.debug.script_build_time), player);
 }
 
 export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mod.InteractPoint): void
 {
     devTools.log('interaction');
     mod.AddEquipment(eventPlayer, mod.Gadgets.Launcher_Auto_Guided, mod.InventorySlots.GadgetTwo);
-    mod.SetInventoryAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 999999);
-    mod.SetInventoryMagazineAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 999999);
+    mod.SetInventoryAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 99);
+    // mod.SetInventoryMagazineAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 99);
 
 
     // spawnAI();

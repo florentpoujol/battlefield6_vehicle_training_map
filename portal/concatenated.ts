@@ -3,7 +3,7 @@
  * Script for the "Florent's Vehicle Training" map on Mirak 
  * Build by Florent Poujol
  * Sources: https://github.com/florentpoujol/battlefield6_vehicle_training_map
- * Built on: Fri Oct 17 17:18:38     2025
+ * Built on: Sun Nov  2 17:18:17     2025
  */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -447,23 +447,17 @@ export const devTools = new DevTools();
 
 export class VehicleManager 
 {
-    private vehcileSpawnerIds: number[] = [
-        // 12001,
-        // 12002,
-        // 12003,
-        // 12004,
-    ];
     private vehcileSpawnerPositionPerId: {[index: string]: mod.Vector} = {
         // these are not actual spawner position, but just some points in the area
         // that I don't need to change all the time
-        "12001": mod.CreateVector(-132, 101, 94),
-        "12002": mod.CreateVector(33, 95, 123),
-        "12003": mod.CreateVector(-47, 96, 33),
+        "_1": mod.CreateVector(-395, 93, -269),
+        "_2": mod.CreateVector(-384, 95, -185),
+        "_3": mod.CreateVector(-500, 90, -180),
+        "_4": mod.CreateVector(-332, 90, -236),
     };
 
-
     private aiSpawnerIds: number[] = [
-        11001, 11002, 11003
+        11001, 11002, 11003, 11004,
     ];
     private aiSpawners: Array<mod.Spawner> = [];
     private aiTeamNumber: number = 3;
@@ -485,11 +479,6 @@ export class VehicleManager
         }
 
         this.aiTeam = mod.GetTeam(this.aiTeamNumber);
-
-        // for (const id of this.vehcileSpawnerIds) {
-        //     const spawner = mod.GetVehicleSpawner(id);
-        //     this.vehcileSpawnerPositionPerId[String(id)] = mod.GetObjectPosition(spawner);
-        // }
     }
 
     private spawnAi(): void
@@ -528,7 +517,7 @@ export class VehicleManager
         for (const spawnerIdAsString of Object.keys(this.vehcileSpawnerPositionPerId)) {
             const spawnerPosition = this.vehcileSpawnerPositionPerId[spawnerIdAsString];
             const distance = mod.DistanceBetween(vehiclePosition, spawnerPosition);
-            if (distance < 200) {
+            if (distance < 150) {
                 return spawnerIdAsString;
             }
         }
@@ -562,7 +551,12 @@ export class VehicleManager
             mod.ForcePlayerToSeat(ai, vehicle, seatNumber);
 
             const position = mod.GetVehicleState(vehicle, mod.VehicleStateVector.VehiclePosition);
-            mod.AIDefendPositionBehavior(ai, position, 0, 400); 
+
+            let maxDistance = 500;
+            if (mod.CompareVehicleName(vehicle, mod.VehicleList.AH64) || mod.CompareVehicleName(vehicle, mod.VehicleList.Eurocopter)) {
+                maxDistance = 1000;
+            }
+            mod.AIDefendPositionBehavior(ai, position, 0, maxDistance);
 
             seatNumber++;
         }
@@ -578,12 +572,14 @@ export const vehicleManager = new VehicleManager();
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // src/main.ts
 
+/** @ts-ignore */
+// import {mod} from './index.d.ts';
 // import {CreateUI, UIWidgetType} from './UIHelpers';
 // import {devTools} from './DevTools';
 // import {vehicleManager} from './VehicleManager';
 
 // replaced by the concatenation script
-const DEBUG_SCRIPT_BUILD_TIME = 'Fri Oct 17 17:18:38     2025'; 
+const DEBUG_SCRIPT_BUILD_TIME = 'Sun Nov  2 17:18:17     2025'; 
 
 /*
 Object id prefix for the objects that we may target from the scripts:
@@ -643,16 +639,14 @@ export function OnSpawnerSpawned(ai: mod.Player): void
 export function OnPlayerDeployed(player: mod.Player): void
 {
     vehicleManager.OnPlayerDeployed(player);
-
-    mod.DisplayNotificationMessage(mod.Message(mod.stringkeys.debug.script_build_time), player);
 }
 
 export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mod.InteractPoint): void
 {
     devTools.log('interaction');
     mod.AddEquipment(eventPlayer, mod.Gadgets.Launcher_Auto_Guided, mod.InventorySlots.GadgetTwo);
-    mod.SetInventoryAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 999999);
-    mod.SetInventoryMagazineAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 999999);
+    mod.SetInventoryAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 99);
+    // mod.SetInventoryMagazineAmmo(eventPlayer, mod.InventorySlots.GadgetTwo, 99);
 
 
     // spawnAI();

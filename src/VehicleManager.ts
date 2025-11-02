@@ -7,23 +7,17 @@ import { devTools } from "./DevTools";
 
 export class VehicleManager 
 {
-    private vehcileSpawnerIds: number[] = [
-        // 12001,
-        // 12002,
-        // 12003,
-        // 12004,
-    ];
     private vehcileSpawnerPositionPerId: {[index: string]: mod.Vector} = {
         // these are not actual spawner position, but just some points in the area
         // that I don't need to change all the time
-        "12001": mod.CreateVector(-132, 101, 94),
-        "12002": mod.CreateVector(33, 95, 123),
-        "12003": mod.CreateVector(-47, 96, 33),
+        "_1": mod.CreateVector(-395, 93, -269),
+        "_2": mod.CreateVector(-384, 95, -185),
+        "_3": mod.CreateVector(-500, 90, -180),
+        "_4": mod.CreateVector(-332, 90, -236),
     };
 
-
     private aiSpawnerIds: number[] = [
-        11001, 11002, 11003
+        11001, 11002, 11003, 11004,
     ];
     private aiSpawners: Array<mod.Spawner> = [];
     private aiTeamNumber: number = 3;
@@ -45,11 +39,6 @@ export class VehicleManager
         }
 
         this.aiTeam = mod.GetTeam(this.aiTeamNumber);
-
-        // for (const id of this.vehcileSpawnerIds) {
-        //     const spawner = mod.GetVehicleSpawner(id);
-        //     this.vehcileSpawnerPositionPerId[String(id)] = mod.GetObjectPosition(spawner);
-        // }
     }
 
     private spawnAi(): void
@@ -88,7 +77,7 @@ export class VehicleManager
         for (const spawnerIdAsString of Object.keys(this.vehcileSpawnerPositionPerId)) {
             const spawnerPosition = this.vehcileSpawnerPositionPerId[spawnerIdAsString];
             const distance = mod.DistanceBetween(vehiclePosition, spawnerPosition);
-            if (distance < 200) {
+            if (distance < 150) {
                 return spawnerIdAsString;
             }
         }
@@ -122,7 +111,12 @@ export class VehicleManager
             mod.ForcePlayerToSeat(ai, vehicle, seatNumber);
 
             const position = mod.GetVehicleState(vehicle, mod.VehicleStateVector.VehiclePosition);
-            mod.AIDefendPositionBehavior(ai, position, 0, 400); 
+
+            let maxDistance = 500;
+            if (mod.CompareVehicleName(vehicle, mod.VehicleList.AH64) || mod.CompareVehicleName(vehicle, mod.VehicleList.Eurocopter)) {
+                maxDistance = 1000;
+            }
+            mod.AIDefendPositionBehavior(ai, position, 0, maxDistance);
 
             seatNumber++;
         }
