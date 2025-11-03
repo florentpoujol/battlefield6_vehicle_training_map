@@ -4,6 +4,7 @@ import {mod} from './index.d.ts';
 import {CreateUI, UIWidgetType} from './UIHelpers';
 import {devTools} from './DevTools';
 import {vehicleManager} from './VehicleManager';
+import {AiPathManager} from "./AiPathManager";
 
 // replaced by the concatenation script
 const DEBUG_SCRIPT_BUILD_TIME = '{script_build_time}'; 
@@ -37,7 +38,9 @@ Misc
 
 // ----------------------------------------
 
-export function OnGameModeStarted(): void
+let aiPathManager: AiPathManager|undefined;
+
+export async function OnGameModeStarted()
 {
     devTools.log("OnGameModeStarted " + DEBUG_SCRIPT_BUILD_TIME);
     mod.SetAIToHumanDamageModifier(0);
@@ -51,6 +54,14 @@ export function OnGameModeStarted(): void
     mod.EnableWorldIconImage(icon2, true);
     mod.SetWorldIconText(icon2, mod.Message(mod.stringkeys.sectors.tank_range));
     mod.EnableWorldIconText(icon2, true);
+
+    aiPathManager = new AiPathManager(
+        [55001, 55002],
+        55101
+    );
+    await mod.Wait(15);
+    mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.spawnai));
+    aiPathManager.spawnAi();
 }
 
 export function OnVehicleSpawned(vehicle: mod.Vehicle): void
@@ -63,9 +74,13 @@ export function OnSpawnerSpawned(ai: mod.Player): void
      vehicleManager.OnAiSpawned(ai);
 }
 
-export function OnPlayerDeployed(player: mod.Player): void
+export async function OnPlayerDeployed(player: mod.Player): Promise<void>
 {
     vehicleManager.OnPlayerDeployed(player);
+
+    if (aiPathManager) {
+        aiPathManager.OnPlayerDeployed(player);
+    }
 }
 
 export function OnPlayerInteract(eventPlayer: mod.Player, eventInteractPoint: mod.InteractPoint): void

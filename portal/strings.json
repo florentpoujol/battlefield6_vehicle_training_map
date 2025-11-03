@@ -1,5 +1,8 @@
 {
+  "{}": "{}",
   "botname": "Bot {}",
+  "moving_ai_name": "moving_ai_{}",
+  "spawnai": "spawn ai for moving",
   "weapon_here": "Weapon here",
   "debug": {
     "script_build_time": "Script build time: {}"

@@ -35,6 +35,13 @@ export class DevTools
     {
         return `(${mod.XComponentOf(vector)}, ${mod.YComponentOf(vector)}, ${mod.ZComponentOf(vector)})`
     }
+
+    public isPlayerCloseTo(player: mod.Player, position: mod.Vector, maxDistance: number = 10): boolean
+    {
+        const playerPos = mod.GetSoldierState(player, mod.SoldierStateVector.GetPosition);
+
+        return mod.DistanceBetween(playerPos, position) < maxDistance;
+    }
 }
 
 export const devTools = new DevTools();

@@ -33,6 +33,7 @@ function concatenateFile ()
 concatenateFile 'src/UIHelpers.ts'
 concatenateFile 'src/DevTools.ts'
 concatenateFile 'src/VehicleManager.ts'
+concatenateFile 'src/AiPathManager.ts'
 
 # this one must be the last one
 concatenateFile 'src/main.ts'

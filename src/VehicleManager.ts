@@ -64,6 +64,10 @@ export class VehicleManager
             return;
         }
 
+        if (devTools.isPlayerCloseTo(ai, mod.CreateVector(-324, 96, -454))) {
+            return;
+        }
+
         devTools.log("ai deployed: " + mod.GetObjId(ai));
         mod.AIEnableShooting(ai, false);
 
@@ -102,7 +106,7 @@ export class VehicleManager
                 this.spawnAi();
                 attemptsLeft--;
 
-                await mod.Wait(1); // let time for the AI to spawn
+                await mod.Wait(2); // let time for the AI to spawn
 
                 continue;
             }

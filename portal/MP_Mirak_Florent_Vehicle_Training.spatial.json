@@ -20,9 +20,9 @@
                 "z": -4.37114e-08
             },
             "position": {
-                "x": -53.7973,
-                "y": 167.695,
-                "z": -380.239
+                "x": -30,
+                "y": 200,
+                "z": -333
             },
             "id": "DeployCam"
         },
@@ -747,9 +747,9 @@
                 "z": 0.999985
             },
             "position": {
-                "x": -228.54862,
-                "y": 87.55197,
-                "z": -344.5375
+                "x": -185.8685,
+                "y": 88.6690202,
+                "z": -368.7956
             },
             "id": "TEAM1_VehicleSpawns/Car_5"
         },
@@ -762,9 +762,9 @@
             "P_AbandonVehiclesOutOfCombatArea": false,
             "type": "VehicleSpawner",
             "right": {
-                "x": -0.999909,
+                "x": 0.999408,
                 "y": 0,
-                "z": 0.0135259
+                "z": -0.0344111
             },
             "up": {
                 "x": 0,
@@ -772,14 +772,14 @@
                 "z": 0
             },
             "front": {
-                "x": -0.0135259,
+                "x": 0.0344111,
                 "y": 0,
-                "z": -0.999909
+                "z": 0.999408
             },
             "position": {
-                "x": -224.53772,
-                "y": 87.16038,
-                "z": -344.3198
+                "x": -179.3208,
+                "y": 89.85342,
+                "z": -367.749
             },
             "id": "TEAM1_VehicleSpawns/Car_6"
         },
@@ -4012,7 +4012,7 @@
         {
             "name": "AH64",
             "ObjId": 12005,
-            "VehicleType": "Eurocopter",
+            "VehicleType": "AH64",
             "P_AutoSpawnEnabled": true,
             "P_DefaultRespawnTime": 10,
             "P_ApplyDamageToAbandonVehicle": false,
@@ -4287,6 +4287,84 @@
                 "z": -243.331611124
             },
             "id": "Ai Vehicles/WorldIcon"
+        },
+        {
+            "name": "1",
+            "ObjId": 55001,
+            "type": "TrafficCones_01_B",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -326.6358,
+                "y": 91.29795,
+                "z": -444.2382
+            },
+            "id": "MovingVehicle/1"
+        },
+        {
+            "name": "2",
+            "ObjId": 55002,
+            "type": "TrafficCones_01_B",
+            "right": {
+                "x": 1,
+                "y": 0,
+                "z": 0
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "position": {
+                "x": -292.571,
+                "y": 92.34096,
+                "z": -459.007
+            },
+            "id": "MovingVehicle/2"
+        },
+        {
+            "name": "AI_Spawner",
+            "ObjId": 55101,
+            "type": "AI_Spawner",
+            "right": {
+                "x": -0.124086,
+                "y": 0,
+                "z": -0.992271
+            },
+            "up": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+            },
+            "front": {
+                "x": 0.992271,
+                "y": 0,
+                "z": -0.124086
+            },
+            "position": {
+                "x": -268.1866,
+                "y": 89.93009,
+                "z": -439.3512
+            },
+            "id": "MovingVehicle/AI_Spawner"
         }
     ],
     "Static": [
