@@ -1,6 +1,6 @@
 
 /** @ts-ignore */
-import {mod} from './index.d.ts';
+import {mod} from '../index.d.ts';
 import {CreateUI, UIWidgetType} from './UIHelpers';
 import {devTools} from './DevTools';
 import {vehicleManager} from './VehicleManager';

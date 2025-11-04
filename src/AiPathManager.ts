@@ -1,5 +1,5 @@
 
-import {mod} from './index.d.ts';
+import {mod} from '../index.d.ts';
 import {devTools} from "./DevTools";
 
 export class AiPathManager
