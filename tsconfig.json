@@ -5,6 +5,7 @@
     "moduleResolution": "nodenext",
     "strict": true,
     "outDir": "portal",
+    "allowImportingTsExtensions": true,
     "types": [
       "node",
       "./src"

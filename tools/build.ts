@@ -2,12 +2,10 @@
  * copy/pasted and then modified from https://github.com/gazreyn/bf6-portal-firing-range/blob/main/scripts/build.ts
  */
 
-import { Project, SyntaxKind } from "ts-morph";
+import {Project, SourceFile, SyntaxKind} from "ts-morph";
 import path from "node:path";
 import fs from "node:fs/promises";
-
-const ENTRY = "src/main.ts";
-const OUT = "portal/script.ts";
+import assert from 'node:assert/strict';
 
 // If you need to treat some packages as externals that Battlefield Portal provides,
 // add them here so we keep their import statements.
@@ -19,50 +17,71 @@ const EXCLUDE_FILES = new Set<string>([
 ]);
 
 async function main() {
+    // get .tscn and .spatial.json files from Godot
+    fs.copyFile(
+        'G:\\bf6_portal\\GodotProject\\levels\\MP_Mirak_Florent_Vehicle_Training.tscn',
+        'G:\\code\\bf6_vehicle_training_map\\godot\\MP_Mirak_Florent_Vehicle_Training.tscn'
+    );
+    fs.copyFile(
+        'G:\\bf6_portal\\export\\levels\\MP_Mirak_Florent_Vehicle_Training.spatial.json',
+        'G:\\code\\bf6_vehicle_training_map\\portal\\MP_Mirak_Florent_Vehicle_Training.spatial.json'
+    );
+
+    // --------------------------------------------------
+    // Concatenate all sources files.
+    // Find all sources to concatenate by the import statements.
+    // Most of the code is related to removing or transforming most import and export statements.
+
+    const contentToOutput: string[] = [];
+
+    // add watermark at the top
+    let watermark = (await fs.readFile('./tools/watermark.ts')).toString();
+    const date = new Date();
+    contentToOutput.push(watermark.replace('{date}', date.toISOString()));
+
     const project = new Project({
         tsConfigFilePath: "tsconfig.json",
         // Ensure we load all src files, not only those TS thinks are referenced
         skipAddingFilesFromTsConfig: false,
     });
 
-    const entry = project.getSourceFile(ENTRY);
-    if (!entry) throw new Error(`Entry not found: ${ENTRY}`);
+    const mainSourceFile = project.getSourceFile('src/main.ts');
+    assert(mainSourceFile instanceof SourceFile);
 
-    const orderedSourceFiles = topoOrder(entry);
-    const pieces: string[] = [];
-
+    const orderedSourceFiles = orderSourceFiles(mainSourceFile);
+    const cwd = process.cwd();
     for (const sourceFile of orderedSourceFiles) {
         // Skip excluded files
-        const relativePath = path.relative(process.cwd(), sourceFile.getFilePath());
+        const relativePath = path.relative(cwd, sourceFile.getFilePath());
         if (EXCLUDE_FILES.has(relativePath.replace(/\\/g, '/'))) {
             continue;
         }
 
         // Remove import declarations for local files. Keep externals.
-        for (const imp of sourceFile.getImportDeclarations()) {
+        for (const importDecl of sourceFile.getImportDeclarations()) {
             const isLocal =
-                !!imp.getModuleSpecifierSourceFile() &&
-                !EXTERNALS.has(imp.getModuleSpecifierValue());
+                !!importDecl.getModuleSpecifierSourceFile() &&
+                !EXTERNALS.has(importDecl.getModuleSpecifierValue());
             if (isLocal) {
                 // If it is "type-only" import, safe to drop.
                 // If it's value import, we rely on inlined symbols being in scope.
-                imp.remove();
+                importDecl.remove();
             }
         }
 
         // Flatten re-exports like `export { x } from './y'`
-        for (const ex of sourceFile.getExportDeclarations()) {
-            const target = ex.getModuleSpecifierSourceFile();
+        for (const exportDecl of sourceFile.getExportDeclarations()) {
+            const target = exportDecl.getModuleSpecifierSourceFile();
             if (target) {
                 // Replace with in-file export to keep symbol visibility
-                const named = ex.getNamedExports();
+                const named = exportDecl.getNamedExports();
                 if (named.length) {
-                    pieces.push(
+                    contentToOutput.push(
                         `// Re-export from ${path.relative(process.cwd(), target.getFilePath())}\n` +
                         named.map(n => `export { ${n.getName()} };`).join("\n")
                     );
                 }
-                ex.remove();
+                exportDecl.remove();
             } else {
                 // `export { a, b }` stays as-is
             }
@@ -73,15 +92,16 @@ async function main() {
         const isMainFile = path.basename(sourceFile.getFilePath()) === 'main.ts';
 
         for (const statement of sourceFile.getStatements()) {
-            if (statement.getKind() === SyntaxKind.FunctionDeclaration ||
+            if (
+                statement.getKind() === SyntaxKind.FunctionDeclaration ||
                 statement.getKind() === SyntaxKind.ClassDeclaration ||
                 statement.getKind() === SyntaxKind.VariableStatement ||
                 statement.getKind() === SyntaxKind.InterfaceDeclaration ||
-                statement.getKind() === SyntaxKind.TypeAliasDeclaration) {
-
+                statement.getKind() === SyntaxKind.TypeAliasDeclaration
+            ) {
                 // Cast to a type that has modifiers
                 const declarationNode = statement as any;
-                if (declarationNode.getModifiers) {
+                if (declarationNode.getModifiers) { // if the method exists
                     const modifiers = declarationNode.getModifiers();
                     const exportModifier = modifiers.find((mod: any) => mod.getKind() === SyntaxKind.ExportKeyword);
                     if (exportModifier) {
@@ -116,32 +136,39 @@ async function main() {
         if (isMainFile) {
             // For main.ts: Remove exports from non-function declarations only
             fileText = fileText.replace(/^export\s+(class|const|let|var|interface|type)/gm, '$1');
+
+            fileText = fileText.replace("{script_build_time}", date.toISOString());
         } else {
             // For other files: Remove all export keywords
             fileText = fileText.replace(/^export\s+(function|class|const|let|var|interface|type)/gm, '$1');
         }
 
+        if (sourceFile.getBaseName() === 'SpatialData.ts') {
+            fileText = await extractSpatialData(fileText);
+        }
+
         // Add a banner per file for readability and use processed text
-        pieces.push(
+        contentToOutput.push(
             `\n// ===== File: ${path.relative(process.cwd(), sourceFile.getFilePath())} =====\n` +
             fileText
         );
     }
 
-    // Optional: Prepend a generated header
-    const header = ``;
+    // --------------------------------------------------
+    // write the output
 
-    await fs.mkdir(path.dirname(OUT), { recursive: true });
-    await fs.writeFile(OUT, header + pieces.join("\n"));
+    const outFilePath = 'portal/script.ts';
+    await fs.writeFile(outFilePath, contentToOutput.join("\n"));
 
-    console.log(`Wrote ${OUT}`);
+    console.log(`Wrote ${outFilePath}`);
 }
 
 /**
  * Find all unique source files, recursively, taking the import statements into account
  * and order them logically
  */
-function topoOrder(entry: import("ts-morph").SourceFile) {
+function orderSourceFiles(entry: import("ts-morph").SourceFile)
+{
     const seen = new Set<string>();
     const ordered: import("ts-morph").SourceFile[] = [];
 
@@ -162,10 +189,60 @@ function topoOrder(entry: import("ts-morph").SourceFile) {
     return ordered;
 }
 
-function inferDefaultName(base: string) {
+function inferDefaultName(base: string)
+{
     // index -> module name from folder, else filename
     if (base === "index") return "defaultExport";
     return `${base}Default`;
+}
+
+/**
+ * Take the *.spatial.json file,
+ * extract all objects that have an Object Id
+ * in a data structure that is usable in the scripts
+ * so that you can query the object by the id or by their name.
+ *
+ * It will also alert on duplicate object ids.
+ */
+async function extractSpatialData(fileText: string): Promise<string>
+{
+    const stringContent = (await fs.readFile('./portal/MP_Mirak_Florent_Vehicle_Training.spatial.json')).toString();
+    const data = JSON.parse(stringContent);
+
+    const keptObjects: any[] = [];
+    const objectFullnamesPerObjId = new Map<number, string[]>();
+
+    for (const object of data.Portal_Dynamic) {
+        if (
+            object.ObjId && object.ObjId > 0
+            // && object.type.toLowerCase().includes('spawner')
+        ) {
+            keptObjects.push(object);
+
+            const objId = object.ObjId;
+            if (objectFullnamesPerObjId.has(objId)) {
+                objectFullnamesPerObjId.get(objId)?.push(object.id); // "id" is the full name
+            } else {
+                objectFullnamesPerObjId.set(objId, [object.id]);
+            }
+        }
+    }
+
+    for (const [objId, names] of objectFullnamesPerObjId.entries()) {
+        if (names.length < 2) {
+            continue;
+        }
+
+        // TODO this kind of check should be done regardless of the SpatialData.ts script being used
+        console.log(`WARNING: Multiple objects with the same ObjId '${objId}': `, names);
+    }
+
+    const rawSpatialData = JSON.stringify(keptObjects);
+
+    return fileText.replace(
+        /const RAW_SPATIAL_DATA = .+];/g,
+        `const RAW_SPATIAL_DATA = ${rawSpatialData};`
+    );
 }
 
 main().catch(err => {

@@ -30,7 +30,6 @@
             "name": "TEAM_1_HQ",
             "AltTeam": "TeamNeutral",
             "VehicleSpawnersEnabled": true,
-            "ObjId": 1,
             "InfantrySpawns": [
                 "TEAM_1_HQ/SpawnPoint_1_1",
                 "TEAM_1_HQ/SpawnPoint_1_2",
@@ -1268,7 +1267,6 @@
             "Team": "Team2",
             "AltTeam": "TeamNeutral",
             "VehicleSpawnersEnabled": true,
-            "ObjId": 2,
             "InfantrySpawns": [
                 "TEAM_2_HQ/SpawnPoint_1_1",
                 "TEAM_2_HQ/SpawnPoint_1_2",
@@ -2643,7 +2641,6 @@
         },
         {
             "name": "MapInfo",
-            "ObjId": 0,
             "metadata/autor": "Florent Poujol",
             "metadata/Version": "v4",
             "metadata/Date": "2025-11-02",
@@ -4309,7 +4306,7 @@
             },
             "position": {
                 "x": -326.6358,
-                "y": 91.29795,
+                "y": 91.51124,
                 "z": -444.2382
             },
             "id": "MovingVehicle/1"

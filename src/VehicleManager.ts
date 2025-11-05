@@ -3,7 +3,7 @@
 // when they spawn, they spawn AIs and set them in their seat
 // there is only a single AI spawner, so this is fairly slow, but it's OK
 
-import { devTools } from "./DevTools";
+import { devTools } from "./DevTools.ts";
 
 export class VehicleManager 
 {

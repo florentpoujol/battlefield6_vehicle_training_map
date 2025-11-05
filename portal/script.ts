@@ -3,11 +3,11 @@
  * Script for the "Florent's Vehicle Training" map on Mirak 
  * Build by Florent Poujol
  * Sources: https://github.com/florentpoujol/battlefield6_vehicle_training_map
- * Built on: Mon Nov  3 23:45:28     2025
+ * Built on: 2025-11-05T22:50:59.900Z
  */
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/UIHelpers.ts
+
+// ===== File: src\UIHelpers.ts =====
 
 /**
  * Helper functions to create UI from a JSON object tree.
@@ -381,7 +381,7 @@ function __addUIButton(params: UIParams): mod.UIWidget
     return __setNameAndGetWidget(__cUniqueName, params2);
 }
 
-export function CreateUI(params: UIParams): mod.UIWidget
+function CreateUI(params: UIParams): mod.UIWidget
 {
     switch(params.type) {
         case UIWidgetType.Container: return __addUIContainer(params);
@@ -393,10 +393,10 @@ export function CreateUI(params: UIParams): mod.UIWidget
     throw new Error("no specified UI type");
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/DevTools.ts
 
-export class DevTools
+// ===== File: src\DevTools.ts =====
+
+class DevTools
 {
     public log(message: string|mod.Message): void
     {
@@ -441,18 +441,16 @@ export class DevTools
     }
 }
 
-export const devTools = new DevTools();
+const devTools = new DevTools();
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/VehicleManager.ts
+
+// ===== File: src\VehicleManager.ts =====
 
 // vehicle spawners are scatered around the map
 // when they spawn, they spawn AIs and set them in their seat
 // there is only a single AI spawner, so this is fairly slow, but it's OK
 
-// import { devTools } from "./DevTools";
-
-export class VehicleManager 
+class VehicleManager 
 {
     private vehcileSpawnerPositionPerId: {[index: string]: mod.Vector} = {
         // these are not actual spawner position, but just some points in the area
@@ -578,15 +576,12 @@ export class VehicleManager
     }
 }
 
-export const vehicleManager = new VehicleManager();
+const vehicleManager = new VehicleManager();
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/AiPathManager.ts
 
-// import {mod} from './index.d.ts';
-// import {devTools} from "./DevTools";
+// ===== File: src\AiPathManager.ts =====
 
-export class AiPathManager
+class AiPathManager
 {
     private pathPositions = new Array<mod.Vector>();
     private spawner: mod.Spawner;
@@ -680,18 +675,123 @@ export class AiPathManager
     }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// src/main.ts
+
+// ===== File: src\SpatialData.ts =====
+
+// this is "filled" on-the-fly by the build.ts script
+import assert from "node:assert/strict";
+
+const RAW_SPATIAL_DATA: {ObjId: number, name: string, id: string, type: string, position:any}[] = [];
+
+class SpatialData
+{
+    public static objectsPerId: Map<number, SpatialObject>;
+    public static objectsPerHierarchy: Map<string, SpatialObject>;
+    public static objectsPerName: Map<string, SpatialObject>; // note that the name may be not unique
+
+    public static init(): void
+    {
+        for (const object of RAW_SPATIAL_DATA) {
+            const type = object.type;
+
+            let objectFqcn: string = 'SpatialObject';
+            switch (type) {
+                case "VehicleSpawner": objectFqcn = 'VehicleSpawner'; break;
+            }
+
+            const objectType = {
+                SpatialObject, VehicleSpawner,
+            }[objectFqcn];
+            if (objectType === undefined) {
+                continue;
+            }
+
+            let metadata: {[index: string]: string} = {};
+            for (let [key, value] of Object.entries(object)) {
+                if (key.startsWith('metadata/')) {
+                    metadata[key.substring(9)] = value;
+                }
+            }
+
+            const instance = new objectType(
+                object.ObjId, // Object id as defined in Godot
+                object.name, // last part of the Godot object hierarchy. Ie: "VehicleSpawner5"
+                object.id, // Godot object hierarchy. ie: "TankRange/Start/VehicleSpawner5"
+                // @ts-ignore
+                mod.Types[object.type], // object.type is the name of the object as found in Godot's asset library. Ie: "VehicleSpawner"
+                mod.CreateVector(object.position.x, object.position.y, object.position.z),
+                metadata,
+                object,
+            );
+
+            this.objectsPerId.set(instance.id, instance);
+            this.objectsPerHierarchy.set(instance.hierarchy, instance);
+            this.objectsPerName.set(instance.name, instance);
+        }
+    }
+
+    public static getByObjectId(objectId: number): SpatialObject|null
+    {
+        return this.objectsPerId.get(objectId) ?? null;
+    }
+
+    public static getByHierarchy(name: string): SpatialObject|null
+    {
+        return this.objectsPerHierarchy.get(name) ?? null;
+    }
+
+    public static getByName(name: string): SpatialObject|null
+    {
+        return this.objectsPerName.get(name) ?? null;
+    }
+}
+
+class SpatialObject
+{
+    constructor(
+        public readonly id: number,
+        public readonly name: string,
+        public readonly hierarchy: string,
+        public readonly type: mod.Types,
+        public readonly position: mod.Vector,
+        public readonly metadata: {[index: string]: string}, // an object
+        public readonly rawData: {[index: string]: any}, // this a JSON object, but its more practical to type is as any
+    ) {
+        this.initFromRawData();
+    }
+
+    protected initFromRawData(): void
+    {
+        // allow for child classes to define more properties with the raw data
+        // without having to redeclare a constructor
+    }
+}
+
+class VehicleSpawner extends SpatialObject
+{
+    // @ts-ignore
+    public vehicleType: mod.VehicleList;
+
+    protected initFromRawData(): void
+    {
+        // @ts-ignore
+        this.vehicleType = mod.VehicleList[this.rawData.VehicleType];
+    }
+
+    public getObject(): mod.VehicleSpawner|null
+    {
+        return mod.GetVehicleSpawner(this.id) ?? null;
+    }
+}
+
+
+// ===== File: src\main.ts =====
 
 /** @ts-ignore */
-// import {mod} from './index.d.ts';
-// import {CreateUI, UIWidgetType} from './UIHelpers';
-// import {devTools} from './DevTools';
-// import {vehicleManager} from './VehicleManager';
-// import {AiPathManager} from "./AiPathManager";
+import assert from "node:assert/strict";
 
 // replaced by the concatenation script
-const DEBUG_SCRIPT_BUILD_TIME = 'Mon Nov  3 23:45:28     2025'; 
+const SCRIPT_BUILD_TIME = '2025-11-05T22:50:59.900Z';
 
 /*
 Object id prefix for the objects that we may target from the scripts:
@@ -726,7 +826,7 @@ let aiPathManager: AiPathManager|undefined;
 
 export async function OnGameModeStarted()
 {
-    devTools.log("OnGameModeStarted " + DEBUG_SCRIPT_BUILD_TIME);
+    devTools.log("OnGameModeStarted " + SCRIPT_BUILD_TIME);
     mod.SetAIToHumanDamageModifier(0);
 
     const icon = mod.GetWorldIcon(35001);
@@ -746,6 +846,17 @@ export async function OnGameModeStarted()
     await mod.Wait(15);
     mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.spawnai));
     aiPathManager.spawnAi();
+
+    //-------------------------
+
+    SpatialData.init();
+
+    let object = SpatialData.getByHierarchy('TankRange/Start/VehicleSpawner');
+    console.log(object);
+    object = SpatialData.getByObjectId(12001);
+    console.log(object);
+    assert(object instanceof VehicleSpawner);
+    console.log(object.getObject());
 }
 
 export function OnVehicleSpawned(vehicle: mod.Vehicle): void
@@ -838,9 +949,3 @@ Throwable_Anti_Vehicle_Grenade,
 Throwable_Fragmentation_Grenade,
 Throwable_Incendiary_Grenade,
 */
-// concatenated files:
-// - src/UIHelpers.ts
-// - src/DevTools.ts
-// - src/VehicleManager.ts
-// - src/AiPathManager.ts
-// - src/main.ts

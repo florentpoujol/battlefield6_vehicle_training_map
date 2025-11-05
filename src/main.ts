@@ -1,13 +1,15 @@
 
 /** @ts-ignore */
 import {mod} from '../index.d.ts';
-import {CreateUI, UIWidgetType} from './UIHelpers';
-import {devTools} from './DevTools';
-import {vehicleManager} from './VehicleManager';
-import {AiPathManager} from "./AiPathManager";
+import {CreateUI, UIWidgetType} from './UIHelpers.ts';
+import {devTools} from './DevTools.ts';
+import {vehicleManager} from './VehicleManager.ts';
+import {AiPathManager} from './AiPathManager.ts';
+import {SpatialData, SpatialObject, VehicleSpawner} from "./SpatialData.ts";
+import assert from "node:assert/strict";
 
 // replaced by the concatenation script
-const DEBUG_SCRIPT_BUILD_TIME = '{script_build_time}'; 
+const SCRIPT_BUILD_TIME = '{script_build_time}';
 
 /*
 Object id prefix for the objects that we may target from the scripts:
@@ -42,7 +44,7 @@ let aiPathManager: AiPathManager|undefined;
 
 export async function OnGameModeStarted()
 {
-    devTools.log("OnGameModeStarted " + DEBUG_SCRIPT_BUILD_TIME);
+    devTools.log("OnGameModeStarted " + SCRIPT_BUILD_TIME);
     mod.SetAIToHumanDamageModifier(0);
 
     const icon = mod.GetWorldIcon(35001);
@@ -62,6 +64,17 @@ export async function OnGameModeStarted()
     await mod.Wait(15);
     mod.DisplayHighlightedWorldLogMessage(mod.Message(mod.stringkeys.spawnai));
     aiPathManager.spawnAi();
+
+    //-------------------------
+
+    SpatialData.init();
+
+    let object = SpatialData.getByHierarchy('TankRange/Start/VehicleSpawner');
+    console.log(object);
+    object = SpatialData.getByObjectId(12001);
+    console.log(object);
+    assert(object instanceof VehicleSpawner);
+    console.log(object.getObject());
 }
 
 export function OnVehicleSpawned(vehicle: mod.Vehicle): void
